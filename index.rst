@@ -5,6 +5,7 @@ DIMS Test Plan
 ==============
 
 .. toctree::
+   :numbered:
    :maxdepth: 2
 
 
