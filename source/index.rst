@@ -8,6 +8,15 @@ DIMS Test Plan
    :numbered:
    :maxdepth: 2
 
+   scope
+   referenceddocs
+   testenvironment
+   testidentification
+   schedules
+   requirementstraceability
+   notes
+   license
+   appendices
 
 Contact
 -------
