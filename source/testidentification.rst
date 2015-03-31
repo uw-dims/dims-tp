@@ -59,30 +59,26 @@ DIMS components will be tested at four distinct levels.
 Test classes
 ~~~~~~~~~~~~~
 
-.. todo::
+We will employ one or more of the following classes of tests to DIMS
+components:
 
-   This paragraph shall describe the types or classes of tests that will be
-   performed, for example:
+* Expected value testing: values from the expected classes of the input
+  domain will be used to test nominal performance
 
-   * Expected value testing: values from the expected classes of the input
-     domain will be used to test nominal performance
+* Simulated data: simulated data for nominal and extreme geophysical
+  conditions will be used to support error detection, recovery and reporting
 
-   * Simulated data: simulated data for nominal and extreme geophysical
-     conditions will be used to support error detection, recovery and reporting
+* Erroneous input: sample values known to be erroneous will be used to test
+  error detection, recovery and reporting
 
-   * Erroneous input: sample values known to be erroneous will be used to test
-     error detection, recovery and reporting
+* Stress testing: maximum capacity of the input domain, including concurrent
+  execution of multiple processes will be used to test external interfaces,
+  error handling and size and execution time
 
-   * Stress testing: maximum capacity of the input domain, including concurrent
-     execution of multiple processes will be used to test external interfaces,
-     error handling and size and execution time
+* Timing testing: wall clock time, CPU time and I/O time will be recorded
 
-   * Timing testing: wall clock time, CPU time and I/O time will be recorded
-
-   * Desk check testing: both code and output will be manually inspected and
-     analyzed
-
-..
+* Desk check testing: both code and output will be manually inspected and
+  analyzed
 
 
 .. _testconditions:
