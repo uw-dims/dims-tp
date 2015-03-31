@@ -22,6 +22,15 @@ Tupelo store is as expected.  The tests also cover expected and actual
 answers to questions such as "does the store contain an artifact named *X*?"
 
 
+Site
+----
+
+::
+
+   $ mvn site
+
+..
+
 Components to be tested
 -----------------------
 
