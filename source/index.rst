@@ -12,6 +12,7 @@ DIMS Test Plan
    referenceddocs
    testenvironment
    testidentification
+   tupelo-testing
    schedules
    requirementstraceability
    notes
