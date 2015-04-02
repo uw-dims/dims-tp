@@ -14,34 +14,53 @@ with name *F*, or contain a file whose content hash is *C*.
 
 Tupelo supports acquiring many drives at many points in time.  Thus
 drive *D1* might be acquired at times *T1, T3, T5*, while drive
-*D2* might be acquired at times *T2* and *T5*.
+*D2* might be acquired at times *T2* and *T5*.  Once acquired, any
+*Di,Ti* is never changed, it becomes read-only.
 
-The test cases noted in this document relate to testing the correct
-acquisition (upload) of drives over time,so that the contents of a
+The test cases noted in this section relate to testing the correct
+acquisition (upload) of drives over time, so that the contents of a
 Tupelo store is as expected.  The tests also cover expected and actual
 answers to questions such as "does the store contain an artifact named *X*?"
 
 
+Site
+----
+
+::
+
+   $ mvn site
+
+..
+
 Components to be tested
 -----------------------
 
-Tupelo is a Java codebase, organized as multiple Maven *modules*
-(http://books.sonatype.com/mvnex-book/reference/multimodule.html) under
-a common root.  Adhering to accepted Maven build practices, each
-Tupelo module builds a single *artifact*.  Most artifacts in Tupelo
-are simply libraries of code to be used by larger applications.  
+Tupelo is a Java codebase.  The source code is organized as multiple
+Maven `modules
+<http://books.sonatype.com/mvnex-book/reference/multimodule.html>`_
+under a common root filesystem directory.  Adhering to accepted Maven
+build practices, each Tupelo module builds a single *artifact*.  Most
+artifacts in Tupelo are simply libraries of code to be used by larger
+applications. In Java, such libraries are packaged as *.jar*
+files. Source version control for the Tupelo codebase is via git.
 
-The remaining modules comprise one Java web application and two
-command line programs.  These three programs are deployable units of
-code and are the primary targets for testing.
+There remain three artifacts which can be classed as applications.  One
+is a Java web application and the other two are command line programs.
+These three programs are deployable units of code and are the primary
+targets for testing.  The programs are
 
 1. Tupelo networked-accessible component called the ``Store``, also known
-   as the Tupelo ``server``.
+   as the Tupelo ``server``. The CSCI (Computer Software Component
+   Item) identifier for this component shall be ``Tupelo-Server``.
    
-2. Tupelo command-line program called the ``Shell``.
+2. Tupelo command-line program called the ``Shell``. The shell is the
+   primary user interface for uploading local disk contents to a
+   remote Tupelo server. The CSCI identifier for this component shall
+   be ``Tupelo-Shell``.
    
 3. Tupelo command-line programs using AMQP message bus to ask and answer
-   questions related to Tupelo store content.
+   questions related to Tupelo store content.  The CSCI identifier for
+   this component shall be ``Tupelo-Query``.
    
 
 .. note::
@@ -85,11 +104,23 @@ environment is essentially just
    $ mvn test -Ptester
 
 
-Integration testing
--------------------
+Tupelo-Server CSCI
+------------------
 
-Server component
-~~~~~~~~~~~~~~~~
+
+Test Levels
+~~~~~~~~~~~
+
+Formal testing of the Tupelo-Server CSCI will be accomplished at the:
+
+* Unit test level 
+  
+* CSCI level
+  
+* CSCI to CSCI level
+
+Test Classes
+~~~~~~~~~~~~
 
 Once web app running, can test 3 basic pieces of functionality:
 
@@ -129,13 +160,16 @@ of all the
 ..
 
 
-Shell component
-+++++++++++++++
+Tupelo-Shell CSCI
+-----------------
 
-Query component
-+++++++++++++++
+Tupelo-Query CSCI
+-----------------
 
 
+
+Integration testing
+-------------------
 
 
 Performance testing
