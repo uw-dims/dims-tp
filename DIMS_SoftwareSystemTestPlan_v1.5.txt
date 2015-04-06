@@ -1,16 +1,10 @@
-Table 2.	References
-Document
-Description
-DIMS_Architectural_Design_v0.1_20140330_DD
-Overall architecture of each existing system and the 
-integrated solution
-DIMS_Systems_Requirements_and_CONOPS_v0.1_201403_DD
-Use Cases and requirement narrative
-SOW APL-UW-dd-20130905
 Explicit statements of expected work
+
 4.	SOFTWARE TEST STRATEGY
 4.1	Overview
+
 Delivery of software for testing will be conducted in the following manner:
+
 *	Software for the project will be developed using the Agile Methodology and will therefore be 
 delivered incrementally, based on completed functionality for each Sprint.
 *	Each Sprint cycle is anticipated to be two to four (2-4) weeks.
@@ -20,10 +14,13 @@ software module(s).
 *	Feature complete builds will be tested as integrated modules.
 *	Iterations of testing will be conducted as builds are delivered to address bug fixes as well as 
 delivered features or functionality.
+
 4.2	Scope of Testing
+
 The following are features/functions that will be tested, but does not represent the order in which it will be 
 tested, as testing is based on each Sprint's delivered functionality.  The scope of this project's testing 
 includes the following:
+
 *	Integration of existing systems (PRISEM and OpsTrust) with DIMS
 *	Human-centered User Interface
 *	User Roles 
@@ -34,6 +31,7 @@ o	Preferences
 o	Site-specific information
 ?	CIDR blocks
 ?	Top level DNS Domains
+
 User Tasks
 *	Search CIF
 *	Search historic network flow records
@@ -46,7 +44,7 @@ User notifications
 *	Tailored Reports
 *	Activity of Interest Alerts 
 
-    User Experience 
+User Experience 
 *	User Authentication
 *	Single Sign-on
 *	Browser Based Dashboard: 
@@ -166,12 +164,16 @@ triage process within the integrated system
 *	Forensic information linking (linking host computer data with network traffic data)
 *	The anonymization of security event data
 *	Redacted and un-redacted data sharing 
+
 The delivery of functionality will be based on development cycles and delivery schedule; the above scope 
 of testing does not indicate what functionality will be delivered in which Sprint.
 NOTE: Testing or Regression testing of existing systems (i.e., PRISEM or Ops-Trust) is not included 
 within the scope of testing.
+
 4.3	Assumptions
+
 Testing makes the following assumptions:
+
 1.	Existing components, i.e. PRISEM and OpsTrust, work as expected
 2.	Users of existing functionality will verify related tasks within DIMS application
 3.	Functionality delivered in each Sprint is modular and is not dependent upon any other module(s)
@@ -180,7 +182,9 @@ Testing makes the following assumptions:
 6.	Specific format of expected output/data is supplied
 4.4	Risks to Test Schedule
 4.4.1	Identified Schedule Risk(s)
+
 Risks negatively affect the testing timeline and are listed below.
+
 Table 3.	Test Schedule Risk - Mitigation Table
 Risk
 Description
@@ -275,23 +279,33 @@ testing, missed
 requirement
 Clear, concise, testable 
 requirements
+
 4.4.2	Mitigation for Schedule Risk(s)
+
 Please see Table 3 above for mitigation of schedule risks.
+
 4.5	Turnover to SQE 
+
 Turn over to SQE will include:
+
 *	Manifest of delivered functionality
 *	Release notes
 *	Delivery of software will be downloadable/accessible from Secure Wiki
 *	Identified build/Sprint number per development schedule
 *	Bi-Weekly builds
+
 4.6	Test Readiness Reviews
+
 The purpose of the Test Readiness Review is to ensure the readiness of the following:
+
 1.	Test cases for execution and for test coverage of requirements
 2.	Software to be tested
 3.	Test environment
 4.	Any testing tools utilized for testing
 5.	Issue tracking
+
 Test Readiness review will be conducted by the following core team members:
+
 *	Principle Investigator
 *	Program Manager
 *	Software Quality Engineer
@@ -301,6 +315,7 @@ Test Types
 The following table identifies which types of testing will be utilized for the project.  Within each test 
 type is an explanation of how that type will be used and a justification of how it meets the scope of 
 testing for the project.
+
 Table 4.	Test Types
 Test Type
 Test Explanation
@@ -362,18 +377,24 @@ push the DIMS
 components to each  
 user's server 
 automatically
+
 4.7.1	Test Strategy 
+
 User stories will be converted into test cases that exercise the various portions of the user interface 
 and functionality of the software in light of each representative user's tasks.  This will be 
 accomplished through a breakdown of the user story as exampled below.  
+
 The strategy for testing each user story is to:
+
 1.	Translate each user story into an end to end test case
 2.	Determine if additional use cases are needed to test variations of a use case
 3.	Parse the test case(s) into testable sections based on:
 a.	The portion of software utilized in each section of the user story
 b.	The pre-determined functionality delivered in each sprint
 4.	Enter that test case (each parsed portion) based on the format described above into the Test 
+
 Case Management Tool indicated in the Tools section, 4.10
+
 5.	Verify that each parsed portion of a user story has its own test case
 6.	At the end of each sprint, the relevant/applicable test case(s) will be executed to verify its 
 functionality, based on:
@@ -383,6 +404,7 @@ b.	The expected behavior of the software.
 a.	Entered into defect tracking tool (as noted in the tools section, 4.10)
 b.	Reviewed/evaluated by the core team
 c.	Dispositioned
+
 i.	 Fix issue
 ii.	Reject-Working as Designed (issue will be closed with justification)
 iii.	Need more information
@@ -401,30 +423,43 @@ ii.	Enters Pass/Fail note indicating
 1.	Steps utilized to verify the issue
 2.	Any input data utilized to verify the issue
 3.	Outcome of verification (Pass/Fail)
+
 4.7.2	End User Acceptance Test Strategy
-Software produced within each sprint will be accessible to stakeholders to remotely access and 
-interact with the functionality available in the interim builds of the DIMS software.  Feedback from 
-stakeholders about the delivered software will be evaluated and processed into functional changes to 
-the software to improve the user experience and task execution.
-End user acceptance testing will be conducted throughout the development process, and will utilize a 
-replica or prototype of the DIMS System to exercise the software in an environment that will closely 
-resemble the finished product.  Users will exercise the system much in the same way that they would 
-in order to accomplish the various tasks in a given day.  This environment will receive incremental 
-builds of software where by the end user can interact with the software as it is being built, and give 
-vital feedback to help guide and direct the development efforts.  This essential feedback will 
-communicate to the development when the various functionalities have reached maturity.
+
+Software produced within each sprint will be accessible to stakeholders to
+remotely access and interact with the functionality available in the interim
+builds of the DIMS software.  Feedback from stakeholders about the delivered
+software will be evaluated and processed into functional changes to the
+software to improve the user experience and task execution.
+
+End user acceptance testing will be conducted throughout the development
+process, and will utilize a replica or prototype of the DIMS System to exercise
+the software in an environment that will closely resemble the finished product.
+Users will exercise the system much in the same way that they would in order to
+accomplish the various tasks in a given day.  This environment will receive
+incremental builds of software where by the end user can interact with the
+software as it is being built, and give vital feedback to help guide and direct
+the development efforts.  This essential feedback will communicate to the
+development when the various functionalities have reached maturity.
+
 4.7.3	Test Cases
-Testing will be based on requirements, user stories and use cases.  Delivered features during each 
-sprint will be tested as they are made available. Individual test cases will be developed in support of 
-the Sprint. (See Figure 1 for an example of a test case.)
-The test cases will be reviewed and approved in accordance with the core team's current test case 
-review policy, prior to conducting testing.  Evidence of the review and approval, along with copies of 
-the test cases approved is documented. The test case review ensures: the objectives in the DIMS 
-Software System Test Plan are met, the accuracy of requirement references, the completeness and 
-consistency of test cases, and that the required data elements are contained in each test case. 
-Test cases will contain the following minimum data elements:  Test Case Name/Title, Author, Cross 
-reference to the applicable software release, Test Objective, Cross-reference to the requirement if 
+
+Testing will be based on requirements, user stories and use cases.  Delivered
+features during each sprint will be tested as they are made available.
+Individual test cases will be developed in support of the Sprint. (See Figure 1
+for an example of a test case.)
+
+The test cases will be reviewed and approved in accordance with the core team's
+current test case review policy, prior to conducting testing.  Evidence of the
+review and approval, along with copies of the test cases approved is
+documented. The test case review ensures: the objectives in the DIMS Software
+System Test Plan are met, the accuracy of requirement references, the
+completeness and consistency of test cases, and that the required data elements
+are contained in each test case.  Test cases will contain the following minimum
+data elements:  Test Case Name/Title, Author, Cross reference to the applicable
+software release, Test Objective, Cross-reference to the requirement if
 applicable, test set up, test steps and expected outcome.
+
 *	Test Case Name/Title 
 *	Author
 *	Cross reference to the applicable software release, i.e. build number/version
@@ -436,38 +471,52 @@ hardware configuration and specific hardware components
 *	Expected Result - indicating the desired behavior by the system when subject to the action in 
 the Test Step
 
-The following fields are included and left blank for the initial test cases.  The fields are then 
-populated during test case execution:
+
+The following fields are included and left blank for the initial test cases.
+The fields are then populated during test case execution:
+
 *	Actual test results - the real time recording of observed results during a test case execution. 
 Note: Any raw data collected during the test execution will be attached to the Test Execution 
 Report 
 *	Status of the test - Pass or Fail
 *	Test Unit Configuration - the software versions and hardware configurations for all modules 
 incorporated into the test as applicable.
+
 4.7.4	Reporting Test Status 
-Test status will be delivered at the end of each Sprint's testing effort.  To include the following:
+
+Test status will be delivered at the end of each Sprint's testing effort.  To
+include the following:
+
 *	Total number of test cases for the sprint
 *	Total number of test cases executed
 *	Total number of Pass/Fail, respectively
 *	Total number of defects for the Sprint
 *	Percent complete
+
 4.8	Test Environments
-The DIMS team will use two test environments (i.e., two sets of DIMS service components), one for 
-development and the other for end-user testing.
-For development purposes using the agile model, an instance of the DIMS system components will 
-be used as part of the Continuous Integration build/deploy/test cycles.  This environment will consist 
-of dedicated severs for DNS, web portal, single-sign on, CIF, AMQP Broker, data processing 
-services, DIMS data back end, etc.  The environment will also include Open VPN remote access, a 
-browser-based dashboard UI and Linux command line front end.  This environment will be refreshed 
-every two weeks, according to the development sprint cycles, with interim builds of software 
-containing new features.
-For end-user testing a separate instantiation of the DIMS system components will be made available 
-on-site at the UW and/or deployed on-site in the stakeholder's computing facilities as desired by the 
-specific stakeholder.  This environment will include all of the components listed above, but dedicated 
-to end-user testing and feedback.  This environment will be refreshed with build iterations at a 
-specified rate not necessarily consistent with the development build cycles.  Deployment of new 
-feature builds will depend on the timeframe in which end users are able to use the system and return 
-feedback to the project team to help drive their development efforts.
+
+The DIMS team will use two test environments (i.e., two sets of DIMS service
+components), one for development and the other for end-user testing.
+
+For development purposes using the agile model, an instance of the DIMS system
+components will be used as part of the Continuous Integration build/deploy/test
+cycles.  This environment will consist of dedicated severs for DNS, web portal,
+single-sign on, CIF, AMQP Broker, data processing services, DIMS data back end,
+etc.  The environment will also include Open VPN remote access, a browser-based
+dashboard UI and Linux command line front end.  This environment will be
+refreshed every two weeks, according to the development sprint cycles, with
+interim builds of software containing new features.
+
+For end-user testing a separate instantiation of the DIMS system components
+will be made available on-site at the UW and/or deployed on-site in the
+stakeholder's computing facilities as desired by the specific stakeholder.
+This environment will include all of the components listed above, but dedicated
+to end-user testing and feedback.  This environment will be refreshed with
+build iterations at a specified rate not necessarily consistent with the
+development build cycles.  Deployment of new feature builds will depend on the
+timeframe in which end users are able to use the system and return feedback to
+the project team to help drive their development efforts.
+
 The test environments will also consist of:
 1.	Input data from the following stakeholders:
 *	Ops-Trust
@@ -482,10 +531,14 @@ d.	A platform-independent "API" or "middleware" model
 
  
 Figure 1 - Example Test Case
+
 4.9	Traceability
+
 Test cases executed will be traced to requirements and/or user stories as stated in the System 
 Requirements document.
+
 4.10	Tools Analysis
+
 Testing tools will be utilized to effectively document, track and reuse tests, and to provide traceability.  
 The exact tools that will be used during testing have not been selected; however, the tools currently 
 under evaluation and consideration have been provided in the table below.  The table below 
@@ -498,460 +551,179 @@ Testing tools and their intended use will be documented accordingly.
     All testing tools utilized during testing will be documented within the Test Report.
 
  Test Management tool:
-Behave 
-for 
-JIRA
-Behave for JIRA is a powerful 
-and easy to use agile testing 
-and requirements discovery 
-tool. It allows users to take 
-TDD to the next step, 
-Behavior Driven 
-Development. Specific needs 
-of a software product are 
-expressed as acceptance 
-criteria on User Stories, 
-invaluable for discovering the 
-real requirements through 
-discussion. The acceptance 
-criteria can be automated as 
-tests using Cucumber to 
-provide instant feedback on 
-software development 
-progress. Can be downloaded 
-and installed inside the 
-Atlassian application. If you 
-use Scenario Outlines in your 
-test, the report will show in an 
-"Unknown" state. This is not a 
-problem with this plugin, but 
-instead with how Cucumber is 
-doing the JSON reports. If 
-you use the HTML reports 
-currently provided by 
-Cucumber, you will love this 
-plugin.
-Feature Highlights:  Add 
-scenarios to individual User 
-stories (or any JIRA Issue) as 
-acceptance tests; scenarios 
-are written in a natural 
-language called Gherkin 
-(Given When Then) so any 
-one can write them; simple 
-test management with the 
-choice between manual and 
-automated testing; 
-scenarios/acceptance tests 
-can be automated using 
-Cucumber, a popular open 
-source testing tool. No 
-vendor lock in; export tests 
-from JIRA with Cucumber; 
-selectively run automated 
-tests based on if the parent 
-JIRA issue is closed or in 
-progress. No $10 starter 
-license. Technical support for 
-customers using the JIRA 
-Plugin and Maven 
-integrations is $100 for 10 
-users.
+Behave for JIRA Behave for JIRA is a powerful and easy to use agile testing and
+requirements discovery tool. It allows users to take TDD to the next step,
+Behavior Driven Development. Specific needs of a software product are expressed
+as acceptance criteria on User Stories, invaluable for discovering the real
+requirements through discussion. The acceptance criteria can be automated as
+tests using Cucumber to provide instant feedback on software development
+progress. Can be downloaded and installed inside the Atlassian application. If
+you use Scenario Outlines in your test, the report will show in an "Unknown"
+state. This is not a problem with this plugin, but instead with how Cucumber is
+doing the JSON reports. If you use the HTML reports currently provided by
+Cucumber, you will love this plugin.  Feature Highlights:  Add scenarios to
+individual User stories (or any JIRA Issue) as acceptance tests; scenarios are
+written in a natural language called Gherkin (Given When Then) so any one can
+write them; simple test management with the choice between manual and automated
+testing; scenarios/acceptance tests can be automated using Cucumber, a popular
+open source testing tool. No vendor lock in; export tests from JIRA with
+Cucumber; selectively run automated tests based on if the parent JIRA issue is
+closed or in progress. No $10 starter license. Technical support for customers
+using the JIRA Plugin and Maven integrations is $100 for 10 users.
  
-Cost, simplicity, and integration, 
-are the most notable.
-Recommended for DIMS.
+Cost, simplicity, and integration, are the most notable.  Recommended for DIMS.
  
 
-Zephyr 
-for 
-JIRA
-Zephyr provides end-to-end 
-management of the testing 
-lifecycle including resources, 
-releases and sprints, test 
-cases, scheduling, test 
-execution, defects, 
-documents, collaboration and 
-all aspects of reporting and 
-metrics in real-time. Built on 
-an extensible management 
-platform, Zephyr allows users 
-to leverage their existing tool 
-investments by providing 
-seamless integration with 
-popular defect tracking 
-systems like JIRA and 
-interoperating with 
-commercial, open source or 
-home grown automation tools. 
-As a native add-on built 
-exclusively for the JIRA 5 and 
-6 platforms, Zephyr for JIRA 
-completes end-to-end project 
-management in JIRA by 
-adding testing to the overall 
-planning, development, bug 
-tracking and reporting 
-process. Tests are written for 
-a JIRA project. They can be 
-further organized and 
-grouped by Versions, 
-Components and Labels that 
-have been set up for that 
-project. A test can belong to 
-one or more of these. These 
-tests can also be searched 
-using the "Issue Navigator" 
-and bulk changes can be 
-made on them.
-Just like with any other issue, 
-you can do the following with 
-tests: Create; Import; Clone; 
-Search; Bulk Modify; Link; 
-Label; Share; Export; Print; 
-Vote; and Comment on them. 
-Zephyr for JIRA is best suited 
-for project teams that want to 
-integrate testing into their 
-workflow. ZAPI 1.0 is a 
-powerful new add-on to 
-Zephyr for JIRA, allowing 
-access to its testing data 
-programmatically via RESTful 
-APIs. Zephyr for JIRA is also 
-very useful for nimble teams 
-that just need to create and 
-execute tests in an ad hoc 
-manner and keep track of 
-status at a high level without 
-too much detailed planning.
- Metrics can be broken down 
-by projects and versions, and 
-grouped by user, test cycles 
-and components. They can 
-be displayed alongside each 
-other in a dashboard to 
-provide a comprehensive 
-testing view for a particular 
-version or project. These self-
-updating charts always 
-provide a near real-time view 
-into the quality of your 
-software releases giving you 
-the confidence to make 
-important business decisions 
-based on them.
+Zephyr for JIRA Zephyr provides end-to-end management of the testing lifecycle
+including resources, releases and sprints, test cases, scheduling, test
+execution, defects, documents, collaboration and all aspects of reporting and
+metrics in real-time. Built on an extensible management platform, Zephyr allows
+users to leverage their existing tool investments by providing seamless
+integration with popular defect tracking systems like JIRA and interoperating
+with commercial, open source or home grown automation tools.  As a native
+add-on built exclusively for the JIRA 5 and 6 platforms, Zephyr for JIRA
+completes end-to-end project management in JIRA by adding testing to the
+overall planning, development, bug tracking and reporting process. Tests are
+written for a JIRA project. They can be further organized and grouped by
+Versions, Components and Labels that have been set up for that project. A test
+can belong to one or more of these. These tests can also be searched using the
+"Issue Navigator" and bulk changes can be made on them.  Just like with any
+other issue, you can do the following with tests: Create; Import; Clone;
+Search; Bulk Modify; Link; Label; Share; Export; Print; Vote; and Comment on
+them.  Zephyr for JIRA is best suited for project teams that want to integrate
+testing into their workflow. ZAPI 1.0 is a powerful new add-on to Zephyr for
+JIRA, allowing access to its testing data programmatically via RESTful APIs.
+Zephyr for JIRA is also very useful for nimble teams that just need to create
+and execute tests in an ad hoc manner and keep track of status at a high level
+without too much detailed planning.  Metrics can be broken down by projects and
+versions, and grouped by user, test cycles and components. They can be
+displayed alongside each other in a dashboard to provide a comprehensive
+testing view for a particular version or project. These self- updating charts
+always provide a near real-time view into the quality of your software releases
+giving you the confidence to make important business decisions based on them.
  
 Detailed descriptions in tests 
-- like individual test steps, 
-test data and expected 
-results are easily entered in 
-each test with nifty inline edit 
-capabilities, drag-n-drop 
-reordering of steps and 
-deletion. File and 
-screenshots can be attached 
-to every test. Historical 
-information about tests is 
-stored.
-Tests are easily linked to 
-requirements, be they 
-Enhancements, Tasks, Epics, 
-Stories or other issue types. 
-This allows for tracking test 
-coverage and traceability. 
-Look at any particular test 
-and you instantly know which 
-requirements it is linked to, 
-what its execution status is 
-and which defects were filed 
-against it.
-Create tests with Bonfire
-Zephyr for JIRA integrates 
-with Atlassian's Bonfire, 
-allowing users of Bonfire to 
-create tests directly from the 
-web application they are 
-testing. Tests are created 
-with detailed descriptions, 
-instant screenshots and 
-dynamic variables. Tests can 
-also be created and executed 
-as part of Bonfire Test 
-Sessions and existing tests 
-can be added to a new Test 
-Session.
-Test metrics are captured 
-and displayed in Open Social 
-based gadgets that are 
-accessed from JIRA's Gadget 
-Directory. Test Distribution 
-and Test Execution gadgets 
-can be added to any 
-dashboard and customized 
-across various parameters 
-allowing for specificity in the 
-data being displayed.
+- like individual test steps, test data and expected results are easily entered
+  in each test with nifty inline edit capabilities, drag-n-drop reordering of
+steps and deletion. File and screenshots can be attached to every test.
+Historical information about tests is stored.  Tests are easily linked to
+requirements, be they Enhancements, Tasks, Epics, Stories or other issue types.
+This allows for tracking test coverage and traceability.  Look at any
+particular test and you instantly know which requirements it is linked to, what
+its execution status is and which defects were filed against it.  Create tests
+with Bonfire Zephyr for JIRA integrates with Atlassian's Bonfire, allowing
+users of Bonfire to create tests directly from the web application they are
+testing. Tests are created with detailed descriptions, instant screenshots and
+dynamic variables. Tests can also be created and executed as part of Bonfire
+Test Sessions and existing tests can be added to a new Test Session.  Test
+metrics are captured and displayed in Open Social based gadgets that are
+accessed from JIRA's Gadget Directory. Test Distribution and Test Execution
+gadgets can be added to any dashboard and customized across various parameters
+allowing for specificity in the data being displayed.
  
-Zephyr for JIRA is available 
-only for the Download version 
-of JIRA 5.x/6.x and is very 
-affordable. The license model 
-has been structured to align 
-with JIRA's license tiers - 
-which means you have to 
-purchase the same # of 
-licenses as what you have on 
-your JIRA 5.x/6.x server. All 
-licenses are perpetual and 
-include 12 months of 
-software maintenance and 
-support. License tiers cannot 
-be combined nor can we do 
-custom tiers. 10 Users, $10, 
-Perpetual, includes 1st year 
-of software maintenance; 25 
-Users, $750, Perpetual, 
-includes 1st year of software 
-maintenance. As users 
-double, the price doubles, but 
-the software maintenance is 
-the same.
+Zephyr for JIRA is available only for the Download version of JIRA 5.x/6.x and
+is very affordable. The license model has been structured to align with JIRA's
+license tiers - which means you have to purchase the same # of licenses as what
+you have on your JIRA 5.x/6.x server. All licenses are perpetual and include 12
+months of software maintenance and support. License tiers cannot be combined
+nor can we do custom tiers. 10 Users, $10, Perpetual, includes 1st year of
+software maintenance; 25 Users, $750, Perpetual, includes 1st year of software
+maintenance. As users double, the price doubles, but the software maintenance
+is the same.
  
-Cost, simplicity, and integration, 
-are the most notable.
-Recommended for DIMS
+Cost, simplicity, and integration, are the most notable.  Recommended for DIMS
 
-QMetry
-JIRA Plug-in for 
-QMetry: QMetry is a 
-comprehensive Test 
-Management Platform 
-equipped with JIRA 
-integration. The Metric-Rich 
-Dashboard enables real time 
-views into the quality of your 
-software application. QMetry 
-integrates with JIRA to allow 
-testers to enter bugs directly 
-into JIRA from QMetry. These 
-bugs will pull the relevant test 
-case information into the 
-defect to automatically 
-provide steps to reproduce 
-the bug, and testers can 
-provide additional notes and 
-attachments (log files, 
-screenshots, etc.). QMetry 
-can also link existing issues 
-to Test Cases or 
-Requirements or be setup to 
-automatically pull JIRA issues 
-to create new Test Cases or 
-Requirements based on 
-advanced search criteria.
-In addition, with the QMetry 
-plug-in JIRA users can have 
-seamless access to QMetry 
-test cases and requirements 
-right from their JIRA user 
-interface.
-More details on QMetry 
-integration here.
-The plug-in helps to: Capture 
-all relevant details from the 
-JIRA issue to the test case, 
-or requirement in QMetry; 
-browse the test cases from 
-JIRA and readily create a 
-defect with one click. Steps to 
-reproduce the defects 
-migrate from test case to 
-defect automatically; 
-associate a JIRA defect to 
-QMetry test case or 
-requirement right from JIRA; 
-search and find test cases or 
-requirements from within 
-JIRA; browse QMetry 
-projects, releases and builds; 
-the name: JIRA Plug-in for 
-QMetry Version 2.2, QMetry 
-Product Versions: 4.0 and 
-above is free for licensed 
-QMetry Enterprise users.
+QMetry JIRA Plug-in for QMetry: QMetry is a comprehensive Test Management
+Platform equipped with JIRA integration. The Metric-Rich Dashboard enables real
+time views into the quality of your software application. QMetry integrates
+with JIRA to allow testers to enter bugs directly into JIRA from QMetry. These
+bugs will pull the relevant test case information into the defect to
+automatically provide steps to reproduce the bug, and testers can provide
+additional notes and attachments (log files, screenshots, etc.). QMetry can
+also link existing issues to Test Cases or Requirements or be setup to
+automatically pull JIRA issues to create new Test Cases or Requirements based
+on advanced search criteria.  In addition, with the QMetry plug-in JIRA users
+can have seamless access to QMetry test cases and requirements right from their
+JIRA user interface.  More details on QMetry integration here.  The plug-in
+helps to: Capture all relevant details from the JIRA issue to the test case, or
+requirement in QMetry; browse the test cases from JIRA and readily create a
+defect with one click. Steps to reproduce the defects migrate from test case to
+defect automatically; associate a JIRA defect to QMetry test case or
+requirement right from JIRA; search and find test cases or requirements from
+within JIRA; browse QMetry projects, releases and builds; the name: JIRA
+Plug-in for QMetry Version 2.2, QMetry Product Versions: 4.0 and above is free
+for licensed QMetry Enterprise users.
  
-The JIRA plug-in is FREE to all 
-QMetry Professional 
-$50/user/month billed annually and 
-Enterprise customers 
-$75/users/month
+The JIRA plug-in is FREE to all QMetry Professional $50/user/month billed
+annually and Enterprise customers $75/users/month
  
  
-Recommended for possible 
-consideration for DIMS.
+Recommended for possible consideration for DIMS.
  
 
-SpiraTe
-st
-Complete Quality Assurance 
-solution that manages 
-requirements, tests, bugs 
-and issues in one 
-environment, with complete 
-traceability from inception to 
-completion. Free three user 
-30-day trial hosted account; 
-1 concurrent user, software 
-and hosting $5.99/month; 3 
-concurrent users, software 
-and hosting; $69.99/month; 
-5 concurrent users, software 
-and hosting $99.99/month; 
-10 concurrent users, 
-software and hosting 
-$179.99/month
-More details on SpiraTest 
-integration here.
-With the JIRA 
-connector activated, any 
-defects logged during a test 
-execution get routed to JIRA 
-using the SOAP API. Any 
-changes to these issues in 
-JIRA then get synchronized 
-back into SpiraTest using our 
-SOAP API. For the tester, 
-SpiraTest provides the ability 
-to execute containing 
-predefined groups of test 
-cases (along with their test 
-steps) so that the testers can 
-follow the instructions and 
-determine if the system being 
-tested behaves as expected. 
-Any deviations from expected 
-behavior can then be 
-recorded as defects and 
-managed in the built-in defect 
-tracking module. This allows 
-quality assurance software 
-testing activities to be 
-performed exactly as 
-specified by the project 
-manager.
-SpiraTest Hosted Service offers 
-the possibility to synchronize with a 
-local JIRA via a desktop tool. With 
-the help of Inflectra support we got 
-it running.
-Have a complete test management 
-solution for the time needed - 
-Working synchronization with JIRA 
-- Easy-to-install desktop utility for 
-synchronization - low setup and 
-operating costs.
+SpiraTe st Complete Quality Assurance solution that manages requirements,
+tests, bugs and issues in one environment, with complete traceability from
+inception to completion. Free three user 30-day trial hosted account; 1
+concurrent user, software and hosting $5.99/month; 3 concurrent users, software
+and hosting; $69.99/month; 5 concurrent users, software and hosting
+$99.99/month; 10 concurrent users, software and hosting $179.99/month More
+details on SpiraTest integration here.  With the JIRA connector activated, any
+defects logged during a test execution get routed to JIRA using the SOAP API.
+Any changes to these issues in JIRA then get synchronized back into SpiraTest
+using our SOAP API. For the tester, SpiraTest provides the ability to execute
+containing predefined groups of test cases (along with their test steps) so
+that the testers can follow the instructions and determine if the system being
+tested behaves as expected.  Any deviations from expected behavior can then be
+recorded as defects and managed in the built-in defect tracking module. This
+allows quality assurance software testing activities to be performed exactly as
+specified by the project manager.  SpiraTest Hosted Service offers the
+possibility to synchronize with a local JIRA via a desktop tool. With the help
+of Inflectra support we got it running.  Have a complete test management
+solution for the time needed - Working synchronization with JIRA 
+- Easy-to-install desktop utility for synchronization - low setup and operating
+  costs.
  
  
-Recommended for possible 
-consideration for DIMS
-Test 
-Collab
-Test Collab is web based 
-test case management 
-tool with simplest and easy 
-to understand AJAX 
-enabled UI. It offers great 
-features like issue manager 
-integrations, time 
-forecasting, time tracking 
-and in-built reporting. $25/1-
-4 users/month or 
-$250/year/user; $23/5-9 
-users/month or 
-$230/year/user; $20/10-19 
-users/month or 
-$200/year/user
-It supports issue manager 
-integration with famous bug 
-tracking tools like JIRA, 
-Redmine, Unfuddle, Mantis, 
-Lighthouse, and FogBugz. 
-Test Collab is available in 
-both: SaaS and self-hosted 
-editions. A default Jira 
-settings form has 8 pre-
-entered fields. You can click 
-the test button at bottom to 
-make sure that Test Collab is 
-able to create a sample bug 
-in Jira.
-Confident Test Collab can manage 
-test cases with simplicity however, 
-the cost is not the least among 
-others.
+Recommended for possible consideration for DIMS Test Collab Test Collab is web
+based test case management tool with simplest and easy to understand AJAX
+enabled UI. It offers great features like issue manager integrations, time
+forecasting, time tracking and in-built reporting. $25/1- 4 users/month or
+$250/year/user; $23/5-9 users/month or $230/year/user; $20/10-19 users/month or
+$200/year/user It supports issue manager integration with famous bug tracking
+tools like JIRA, Redmine, Unfuddle, Mantis, Lighthouse, and FogBugz.  Test
+Collab is available in both: SaaS and self-hosted editions. A default Jira
+settings form has 8 pre- entered fields. You can click the test button at
+bottom to make sure that Test Collab is able to create a sample bug in Jira.
+Confident Test Collab can manage test cases with simplicity however, the cost
+is not the least among others.
  
-Recommended for possible 
-consideration for DIMS
+Recommended for possible consideration for DIMS
 
-Testuff
-Testuff is an on-
-demand management 
-service that integrates with 
-JIRA. Amongst the standard 
-features, it also includes a test video 
-recorder. The recorder captures 
-bugs as they happen during 
-testing and allows you to send 
-the videos to your developers, 
-making the "works for me" excuse 
-obsolete. All in all Testuff is very 
-easy and intuitive to use, even a 
-beginner tester could get fully 
-working on it within an hour. All 
-Packages Include: 24?7 Support; 
-Maintenance; Hourly Backups; 
-Unlimited Projects; Tests; Free 
-Automatic Upgrades; Unlimited 
-Storage; Secure Access over 
-SSL;$27/user/month; 
+Testuff Testuff is an on- demand management service that integrates with JIRA.
+Amongst the standard features, it also includes a test video recorder. The
+recorder captures bugs as they happen during testing and allows you to send the
+videos to your developers, making the "works for me" excuse obsolete. All in
+all Testuff is very easy and intuitive to use, even a beginner tester could get
+fully working on it within an hour. All Packages Include: 24?7 Support;
+Maintenance; Hourly Backups; Unlimited Projects; Tests; Free Automatic
+Upgrades; Unlimited Storage; Secure Access over SSL;$27/user/month;
 $270/user/year
  
 
-Exports bugs found during test 
-runs directly to the relevant 
-project in JIRA with your JIRA 
-user. The integration is done by 
-the desktop client. Therefore, it 
-should also work if you host JIRA 
-on an internal server. Our server 
-doesn't need to access your bug 
-tracker server and you don't need 
-to change anything in your 
-security or firewall configuration to 
-make it work.
-Unlimited testers, tests, 
-projects, defect reports; 
-Highly secure, 
-authenticated and fully 
-backed-up environment; 
-No need for a server, 
-get started right 
-away;  Highly intuitive, 
-easy to use; Simple 
-license management 
-although the cost adds 
-up quickly with 
-the $270/user/year cost 
-for this on-demand test 
-management service.
+Exports bugs found during test runs directly to the relevant project in JIRA
+with your JIRA user. The integration is done by the desktop client. Therefore,
+it should also work if you host JIRA on an internal server. Our server doesn't
+need to access your bug tracker server and you don't need to change anything in
+your security or firewall configuration to make it work.  Unlimited testers,
+tests, projects, defect reports; Highly secure, authenticated and fully
+backed-up environment; No need for a server, get started right away;  Highly
+intuitive, easy to use; Simple license management although the cost adds up
+quickly with the $270/user/year cost for this on-demand test management
+service.
  
  
  
-Recommended for 
-possible consideration 
-for DIMS
+Recommended for possible consideration for DIMS
 
 4.11	Acceptance Criteria
 Acceptance criteria for release of this product:
@@ -964,9 +736,11 @@ test cases have passed
 *	There are no undefined/undocumented features in the released system
  
 4.12	Time Estimate
+
 Estimation of total testing time is yet to be determined.
 Testing is conducted in conjunction with software development and is dependent upon the complexity 
 of the functionality delivered in each sprint.
+
 Test completion will be as per project schedule.
 5.	DELIVERABLES
 Table 5.	List of SW Test Deliverables
@@ -985,26 +759,3 @@ June 5, 2015
 DIMS Software System 
 Test Plan v.1.5
 
-
-
-
-
-
-
-
-
-Procedure Number: 101 (Attachment 4)	21 March 2015
-	Page of 20	
-1
-
- 
-
-
-Doc #
-Version
-
-
-DIMS Software System Test Plan
-
-Page 
-1 of 13
