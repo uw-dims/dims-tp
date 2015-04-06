@@ -141,6 +141,12 @@ List of Acronyms
    CRADA
        Cooperative Research and Development Agreement
 
+   CSC
+       Computer Software Component
+
+   CSCI
+       Computer Software Configuration Item
+
    CSIRT
        Computer Security Incident Response Team
 
