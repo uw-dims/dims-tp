@@ -32,6 +32,7 @@ mitigation plans.  This plan will be utilized by the project team to properly
 scope, manage, and comprehend test efforts.  This test plan is specific to
 software, as defined within the statement of work.
 
+.. _systemoverview:
 
 System overview
 ---------------
@@ -85,14 +86,55 @@ the existing functionality of their current system
 
 ..
 
+.. _swsystemteststrategy:
+
+Software System Test Strategy (General)
+---------------------------------------
+
+The software system test strategy we will employ is compromised of two
+high-level sets of tests.  The first set of test will be developed as the
+system is being designed using the Agile coding methodology.  Development and
+pre-release testing will be performed during "sprints" (cycles of development
+anticipated to be on 2 week time frames). These tests are centered on
+development and take place within the project team.  The project team will
+extract user stories from the use cases and in turn create epics derived from
+the user stories.  Tests will be written for the user stories and determine the
+necessary development.  This is essentially a test-driven approach that pushes
+development from one sprint to the next.  The other set of tests will be
+performed with interaction from the stakeholders and will entail an environment
+in which the stakeholders will, at determinate intervals, access the system and
+execute one or more user stories.  This environment, set up specifically for
+stakeholders, will enable them to interact with the system at their discretion
+and direct their feedback to the project team about the functionality delivered
+within their environment. 
+
+.. _documentoverview:
+
 Document overview
 -----------------
 
-.. todo::
+The purpose of this document is to establish the requirements for the testing
+of the Distributed Incident Management System (DIMS). The structure of this
+document and the strategy for testing has been adapted principally from
+MIL-STD-498 (see Section :ref:`referenceddocs`). It contains the following
+information:
 
-   This paragraph shall summarize the purpose and contents of this document and
-   shall describe any security or privacy considerations associated with its
-   use.
++ Section :ref:`referenceddocs` lists related documents.
+
++ Section :ref:`testenvironment` specifies the test environment that will be
+  used in testing DIMS CSCIs. It includes a description of the hardware,
+  software and personnel resources needed for installation, testing and
+  control.
+
++ Section :ref:`testidentification` provides general information about
+  test levels and test classes, general test conditions, and planned
+  tests.
+
++ Section :ref:`requirementstraceability` describes traceability of tests back
+  to requirements.
+
++ Section :ref:`notes` provides an alphabetical listing of acronyms and
+  abbreviations used in this document.
 
 .. _relationshiptootherplans:
 

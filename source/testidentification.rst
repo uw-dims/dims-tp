@@ -1,4 +1,4 @@
-.. _testidentifiation:
+.. _testidentification:
 
 Test identification
 ===================

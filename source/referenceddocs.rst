@@ -10,3 +10,6 @@ Referenced documents
    source for all documents not available through normal Government stocking
    activities.
 
++  MIL-STD-498, Military Standard Software Development and Documentation,
+   AMSC No. N7069, Dec. 1994.
+

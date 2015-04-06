@@ -23,6 +23,20 @@ Software test environment
    environments, they may be discussed together. Duplicative information among
    test site descriptions may be reduced by referencing earlier descriptions.
 
+DIMS deployments will all be hosted at the same site, currently two server room
+racks at the University of Washington Tower ("UW Tower") and Benjamin Hall
+Research Building ("BRB").
+
+Each deployed system will be separated from the others and operate
+independantly (in terms of services and logical network topologies).
+Even if they are in the same rack and possibly sharing some fundamental
+resources (e.g., Network Attached Storage (NAS), or switched VLANs,
+they will each be deployed, configured, and will operate in such
+a manner as to be fully taken down without impacting the operation
+of the other environments.
+
+This will allow development, test and evaluation, and user acceptance
+test 
 
 .. _softwareitems:
 
