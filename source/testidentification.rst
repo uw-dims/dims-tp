@@ -279,18 +279,42 @@ properly configured DIMS shell environment for testing.
 User Interface Functional Tests
 """""""""""""""""""""""""""""""
 
-The purpose of this test group is to ensure the Client User Interface operates as required.
-This group will consist of a series of tests which exercise User Interface
-functions and are performed by a human tester. These tests will be entered and managed in
+The purpose of this test group is to validate the Client User Interface and
+ensure end-to-end Web Application functions meet requirements.
+This group will consist of a series of tests which exercise Web Application 
+functions via the User Interface and are performed by a human tester. 
+These tests will be entered and managed in
 JIRA. The test descriptions, steps, test data, expected results for each step,
 and test results will be reported in the Test Report.
 
    + Test levels: Integration, Component Interface, System
    + Test type or class: Expected value, simulated data, erroneous input, desk check
-   + Qualification method: Demonstration, inspection
+   + Qualification method: Test, Demonstration
    + Special requirements: Access to the DIMS JIRA tool
    + Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
+Client Interface Tests
+""""""""""""""""""""""
 
+These tests verify the Web Application Client HTTP/HTTPS and socket interfaces.
+They will be performed via automated test methods appropriate for Javascript
+client applications.
+
+   + Test levels: Integration
+   + Test type or class: Expected value, erroneous input
+   + Qualification method: Test
+   + Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
+
+Server Interface Tests
+""""""""""""""""""""""
+
+This group of tests will verify the server REST API, HTTP/HTTPS, Messaging, 
+and Socket interfaces. They will be performed via automated test methods appropriate
+for Node.js server applications.
+
+   + Test levels: Integration
+   + Test type or class: Expected value, erroneous input
+   + Qualification method: Test
+   + Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
 
