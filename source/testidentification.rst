@@ -258,5 +258,39 @@ Testing of the Web Application CSCI will take place at the following levels:
 
 ..
 
+Test Classes
+^^^^^^^^^^^^
+
+The following classes of tests will be peformed during formal testing of the
+Web Application CSCI:
+
+* Expected value testing
+* Simulated data
+* Erroneous input
+* Desk check testing
+
+General Test Conditions
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The following subparagraphs identify and describe the planned groups of tests.
+Test personnel should have access to the Firefox web browser, VPN access, a 
+properly configured DIMS shell environment for testing.
+
+User Interface Functional Tests
+"""""""""""""""""""""""""""""""
+
+The purpose of this test group is to ensure the Client User Interface operates as required.
+This group will consist of a series of tests which exercise User Interface
+functions and are performed by a human tester. These tests will be entered and managed in
+JIRA. The test descriptions, steps, test data, expected results for each step,
+and test results will be reported in the Test Report.
+
+   + Test levels: Integration, Component Interface, System
+   + Test type or class: Expected value, simulated data, erroneous input, desk check
+   + Qualification method: Demonstration, inspection
+   + Special requirements: Access to the DIMS JIRA tool
+   + Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
+
+
 
 
