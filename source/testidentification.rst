@@ -210,3 +210,48 @@ Planned tests
 
 ..
 
+DIMS Web Application CSCI - (Unique Identifier)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The DIMS Web Application, also referred to as the DIMS Dashboard or simply 
+"Web Application", consists of
+web application server ("Server") and client ("Client") components. The following sections 
+describe the scope of testing for the DIMS Web Application CSCI.
+
+Test Levels
+^^^^^^^^^^^
+
+Testing of the Web Application CSCI will take place at the following levels:
+
+* Unit tests - Unit tests will be written as appropriate for the Server 
+  and Client components of the CSCI. At a minimum, these tests will be run
+  by developers and must pass before any code pushes to the Web Application
+  repository. The continuous integration (CI) system will then run the tests 
+  when new code is pushed to the repository. A failing test run on
+  the CI server requires a fix by developers before additional code 
+  can be pushed. The CI server will maintain test run
+  results. 
+
+* Integration tests - These will test the Server and Client components as a group
+  and verify their interfaces. They will consist primarily of:
+
+  + Server API tests - These will test the Server APIs accessed by the Client
+  + Client functional tests - These will verify the Client user interface
+    operates as designed. These will be run manually by a tester.
+
+* Component interface tests - These tests will consist of a set of User tests,
+  performed manually by a tester against the Client user interface, which will
+  verify that data requested by the Client matches the expected output.
+
+* System tests - the Web Application will be tested as part of the system 
+  end-to-end testing.
+
+.. note::
+
+    Need more info on what our end-to-end testing will look like and how the
+    web application can participate in that. 
+
+..
+
+
+
