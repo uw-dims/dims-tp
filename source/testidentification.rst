@@ -210,3 +210,111 @@ Planned tests
 
 ..
 
+DIMS Web Application CSCI - (Unique Identifier)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The DIMS Web Application, also referred to as the DIMS Dashboard or simply 
+"Web Application", consists of
+web application server ("Server") and client ("Client") components. The following sections 
+describe the scope of testing for the DIMS Web Application CSCI.
+
+Test Levels
+^^^^^^^^^^^
+
+Testing of the Web Application CSCI will take place at the following levels:
+
+* Unit tests - Unit tests will be written as appropriate for the Server 
+  and Client components of the CSCI. At a minimum, these tests will be run
+  by developers and must pass before any code pushes to the Web Application
+  repository. The continuous integration (CI) system will then run the tests 
+  when new code is pushed to the repository. A failing test run on
+  the CI server requires a fix by developers before additional code 
+  can be pushed. The CI server will maintain test run
+  results. 
+
+  Since Unit tests are part of the development process and are
+  written and performed in a continuous fashion, they are not included in 
+  this document as planned tests. However, overall results as reported by
+  the CI server will be included in the Test Report.
+
+* Integration tests - These will test the Server and Client components as a group
+  and verify their interfaces. They will consist primarily of:
+
+  + Server API tests - These will test the Server APIs accessed by the Client
+  + Client functional tests - These will verify the Client user interface
+    operates as designed. These will be run manually by a tester.
+
+* Component interface tests - These tests will consist of a set of User tests,
+  performed manually by a tester against the Client user interface, which will
+  verify that data requested by the Client matches the expected output.
+
+* System tests - the Web Application will be tested as part of the system 
+  end-to-end testing.
+
+.. note::
+
+    Need more info on what our end-to-end testing will look like and how the
+    web application can participate in that. 
+
+..
+
+Test Classes
+^^^^^^^^^^^^
+
+The following classes of tests will be peformed during formal testing of the
+Web Application CSCI:
+
+* Expected value testing
+* Simulated data
+* Erroneous input
+* Desk check testing
+
+General Test Conditions
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The following subparagraphs identify and describe the planned groups of tests.
+Test personnel should have access to the Firefox web browser, VPN access, a 
+properly configured DIMS shell environment for testing.
+
+Web Application Functional Tests
+""""""""""""""""""""""""""""""""
+
+The purpose of this test group is to validate the Client User Interface and
+ensure end-to-end Web Application functions meet requirements.
+This group will consist of a series of tests which exercise Web Application 
+functions via the User Interface and are performed by a human tester. 
+These tests will be entered and managed in
+JIRA. The test descriptions, steps, test data, expected results for each step,
+and test results will be reported in the Test Report.
+
+   #. Test levels: Integration, Component Interface, System
+   #. Test type or class: Expected value, simulated data, erroneous input, desk check
+   #. Qualification method: Test, Demonstration
+   #. Special requirements: Access to the DIMS JIRA tool
+   #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
+
+Client Interface Tests
+""""""""""""""""""""""
+
+These tests verify the Web Application Client HTTP/HTTPS and socket interfaces.
+They will be performed via automated test methods appropriate for Javascript
+client applications.
+
+   #. Test levels: Integration
+   #. Test type or class: Expected value, erroneous input
+   #. Qualification method: Test
+   #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
+
+Server Interface Tests
+""""""""""""""""""""""
+
+This group of tests will verify the server REST API, HTTP/HTTPS, Messaging, 
+and Socket interfaces. They will be performed via automated test methods appropriate
+for Node.js server applications.
+
+   #. Test levels: Integration
+   #. Test type or class: Expected value, erroneous input
+   #. Qualification method: Test
+   #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
+
+
