@@ -232,6 +232,11 @@ Testing of the Web Application CSCI will take place at the following levels:
   can be pushed. The CI server will maintain test run
   results. 
 
+  Since Unit tests are part of the development process and are
+  written and performed in a continuous fashion, they are not included in 
+  this document as planned tests. However, overall results as reported by
+  the CI server will be included in the Test Report.
+
 * Integration tests - These will test the Server and Client components as a group
   and verify their interfaces. They will consist primarily of:
 
