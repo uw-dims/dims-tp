@@ -26,7 +26,7 @@ answers to questions such as "does the store contain an artifact named *X*?"
 Site
 ----
 
-::
+.. code-block:: bash
 
    $ mvn site
 
@@ -63,11 +63,12 @@ targets for testing.  The programs are
    this component shall be ``Tupelo-Query``.
    
 
-.. note::
+.. todo::
 
-Want to classify the DIMS STIX tools as Tupelo components?  If no,
-how/when are these tested?
+    Want to classify the DIMS STIX tools as Tupelo components?  If no,
+    how/when are these tested?
 
+..
 
 Unit testing
 ------------
@@ -77,10 +78,10 @@ are geared towards verifying the correctness of each Java class or set
 of tightly-coupled classes within a module.  No human interaction is
 required for unit testing.
 
-.. note::
+.. todo::
 
-Local test data for unit tests?  Can be large, several GB?  Separate
-git repo for test data?
+    Local test data for unit tests?  Can be large, several GB?  Separate git
+    repo for test data?
 
 ..
 
@@ -94,15 +95,13 @@ environment is essentially just
 2. the Maven project management tool, version 3.0.5 or higher
 
 
-
-::
+.. code-block:: bash
 
    $ cd /path/to/tupelo
-   $
    $ mvn clean
-   $
    $ mvn test -Ptester
 
+..
 
 Tupelo-Server CSCI
 ------------------
@@ -113,11 +112,11 @@ Test Levels
 
 Formal testing of the Tupelo-Server CSCI will be accomplished at the:
 
-* Unit test level 
++ Unit test level 
   
-* CSCI level
++ CSCI level
   
-* CSCI to CSCI level
++ CSCI to CSCI level
 
 Test Classes
 ~~~~~~~~~~~~
@@ -138,24 +137,34 @@ Server Test 2:
 In simplest form, use wget/curl to iterate through a few
 'informational urls', e.g. 
 
-server version string, 
++ server version string
 
-disk space left,
++ disk space left
 
-store uuid.
++ store uuid
 
-Can do these with just
+Can do these with just:
 
-$ wget http://localhost:8888/tupelo/version
+.. code-block:: bash
 
-etc.
+    $ wget http://localhost:8888/tupelo/version
 
+..
 
 The above steps build, package and locally install into the user's
-Maven repository (``~/.m2/repository) all of the Tupelo modules.
+Maven repository (``~/.m2/repository``) all of the Tupelo modules.
 
-of all the 
-   $ demo.tupelo -s http://192.168.1.50:8080/tupelo
+.. todo::
+
+    The following sentence doesn't seem to start? Missing something?
+
+..
+
+of all the
+
+.. code-block:: bash
+
+    $ demo.tupelo -s http://192.168.1.50:8080/tupelo
 
 ..
 
@@ -176,19 +185,13 @@ Performance testing
 -------------------
 
 
-* how long does a first acquire take?
-  
-* how long does a digest step take?
-  
-* how long does a subsequent acquire take?
-
-* how long does it take to produce the digest file of any acquired drive?
-* how long does each store tool take : digest, bodyfile, etc?
-
-  
-* how much store disk is taken up by each acquire?
-  
-* for search: how long to answer yes/no?  Need secs per GB/TB stored?
++ how long does a first acquire take?
++ how long does a digest step take?
++ how long does a subsequent acquire take?
++ how long does it take to produce the digest file of any acquired drive?
++ how long does each store tool take : digest, bodyfile, etc?
++ how much store disk is taken up by each acquire?
++ for search: how long to answer yes/no?  Need secs per GB/TB stored?
 
 .. eof
 
