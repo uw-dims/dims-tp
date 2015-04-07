@@ -3,25 +3,8 @@
 Software test environment
 =========================
 
-.. todo::
-
-   This section shall be divided into the following paragraphs to describe the
-   software test environment at each intended test site. Reference may be made
-   to the Software Development Plan (SDP) for resources that are described
-   there.
-
-(Name of test site(s)).
------------------------
-
-.. todo::
-
-   This paragraph shall identify one or more test sites to be used for the
-   testing, and shall be divided into the following subparagraphs to describe
-   the software test environment at the site(s). If all tests will be conducted
-   at a single site, this paragraph and its subparagraphs shall be presented
-   only once.  If multiple test sites use the same or similar software test
-   environments, they may be discussed together. Duplicative information among
-   test site descriptions may be reduced by referencing earlier descriptions.
+UW Tower and BHB server rooms
+-----------------------------
 
 DIMS deployments will all be hosted at the same site, currently two server room
 racks at the University of Washington Tower ("UW Tower") and Benjamin Hall
