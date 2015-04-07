@@ -3,23 +3,13 @@ Explicit statements of expected work
 4.	SOFTWARE TEST STRATEGY
 4.1	Overview
 
-Delivery of software for testing will be conducted in the following manner:
-
-*	Software for the project will be developed using the Agile Methodology and will therefore be 
-delivered incrementally, based on completed functionality for each Sprint.
-*	Each Sprint cycle is anticipated to be two to four (2-4) weeks.
-*	A final feature complete build will be delivered at the completion of development.  
-*	Testing efforts will be structured to test the delivered functionality of each Sprint's delivered 
-software module(s). 
-*	Feature complete builds will be tested as integrated modules.
-*	Iterations of testing will be conducted as builds are delivered to address bug fixes as well as 
-delivered features or functionality.
 
 4.2	Scope of Testing
 
-The following are features/functions that will be tested, but does not represent the order in which it will be 
-tested, as testing is based on each Sprint's delivered functionality.  The scope of this project's testing 
-includes the following:
+The following are features/functions that will be tested, but does not
+represent the order in which it will be tested, as testing is based on each
+Sprint's delivered functionality.  The scope of this project's testing includes
+the following:
 
 *	Integration of existing systems (PRISEM and OpsTrust) with DIMS
 *	Human-centered User Interface

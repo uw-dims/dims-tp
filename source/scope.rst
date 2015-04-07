@@ -3,12 +3,6 @@
 Scope
 =====
 
-.. todo::
-
-   This section shall be divided into the following paragraphs.
-
-..
-
 .. _identification:
 
 Identification
@@ -31,6 +25,21 @@ resource mapping.  It also identifies technical and schedule risks and
 mitigation plans.  This plan will be utilized by the project team to properly
 scope, manage, and comprehend test efforts.  This test plan is specific to
 software, as defined within the statement of work.
+
+This Test Plan describes the Formal Qualification Test (FQT) activities and the
+environment in which those activities will take place for the DIMS deployed
+system. DIMS is composed of the following Computer Software Configuration Items (CSCIs):
+
+.. todo::
+
+   Do we agree these are the fundamental CSCI components?
+
+..
+
+#. Backend data stores CSCI
+#. Web application user interface CSCI
+#. Tupelo service CSCI
+
 
 .. _systemoverview:
 
@@ -72,14 +81,7 @@ contribute to the data warehouse of information concerning threats, alerts,
 attacks and suspect or compromised user terminals within the infrastructure.
 Additionally, the integrated systems will be able to share and retrieve data,
 visually observe alerts through color coded visual indicators, while retaining
-the existing functionality of their current system
-
-
-.. todo::
-
-   The previous paragraph appears to trail off. Complete this.
-
-..
+the existing functionality of the current system.
 
 .. _swsystemteststrategy:
 
@@ -101,7 +103,25 @@ in which the stakeholders will, at determinate intervals, access the system and
 execute one or more user stories.  This environment, set up specifically for
 stakeholders, will enable them to interact with the system at their discretion
 and direct their feedback to the project team about the functionality delivered
-within their environment. 
+within their environment.
+
+Delivery of software for testing will be conducted in the following manner:
+
++ Software for the project will be developed using the Agile Methodology and
+  will therefore be delivered incrementally, based on completed functionality
+  for each Sprint.
+
++ Each Sprint cycle is anticipated to be two to four (2-4) weeks.
+
++ A final feature complete build will be delivered at the completion of development.
+
++ Testing efforts will be structured to test the delivered functionality of
+  each Sprint's delivered software module(s).
+
++ Feature complete builds will be tested as integrated modules.
+
++ Iterations of testing will be conducted as builds are delivered to address
+  bug fixes as well as delivered features or functionality.
 
 .. _documentoverview:
 
