@@ -37,9 +37,21 @@ system. DIMS is composed of the following Computer Software Configuration Items 
 ..
 
 #. Backend data stores CSCI
-#. Web application user interface CSCI
+#. Dashboard web application CSCI
 #. Tupelo service CSCI
 
+.. todo::
+
+   Work this in:
+
+   Reference 1 establishes the DP POC software requirements. Reference 2
+   documents the design of the CSCIs that comprise the software for the DP POC.
+   Unit testing and integration testing will be performed during development on
+   site at Johns Hopkins University Applied Physics Lab (JHU/APL) as defined in
+   Reference 2. This document addresses the FQT activities that take place upon
+   delivery of the software.
+
+..
 
 .. _systemoverview:
 
