@@ -54,6 +54,10 @@ DIMS components will be tested at four distinct levels.
    differences between system tests, or to identify specific components that
    may have failed somewhere within the larger complex system.
 
+The first two levels of tests are performed on a continuous basis during
+development. The final two levels pertain to the final
+qualification testing (FQT) described in this document.
+
 .. _testclasses:
 
 Test classes
@@ -190,7 +194,6 @@ The following subparagraphs identify and describe the planned groups of tests.
 
 ..
 
-
 .. _dwacsci:
 
 Dashboard Web Application CSCI - (DWA)
@@ -207,60 +210,13 @@ Test Levels
 ^^^^^^^^^^^
 
 General testing of the Dashboard Web Application CSCI will take place at the 
-levels described in :ref:`testlevels`. The following paragraphs describe the
-development and FQT test levels as they apply to the Dashboard Web Application.
+levels described in :ref:`testlevels`. Unit and integration levels apply to
+development, and the remaining levels apply to FQT.
 
-.. _dwaunit:
-
-Unit tests
-""""""""""
-
-Unit tests are performed during development and are written for the DWA Server
-and DWA Client components of the CSCI. At a minimum, these tests are run
-by developers and must pass before any code pushes to the Dashboard Web Application
-repository. The continuous integration (CI) system will then run the tests
-when new code is pushed to the repository. A failing test run on
-the CI server requires a fix by developers before additional code
-can be pushed. The CI server will maintain test run
-results.
-
-.. _dwaintegration:
-
-Integration tests
-"""""""""""""""""
-
-Integration tests, performed during development, detect interface defects
-within the Dashboard Web Application. DWA Client tests verify the DWA Client 
-HTTP/HTTPS and socket interfaces. DWA Server tests verify the
-Dashboard Web Application Server REST API, HTTP/HTTPS, Messaging,
-and Socket interfaces. 
-
-These tests are written and performed using automated test methods 
-appropriate for Javascript client and server (Node.js) applications. 
-The tests are run by the CI server when code is pushed
-to the Dashboard Web Application repository to ensure new features do not
-cause regression problems within the web application. The CI server will
-maintain test run results.
-
-.. _dwacomponent:
-
-Component interface tests
-"""""""""""""""""""""""""
-
-Component inteface tests for the Dashboard Web Application will test the
-DWA Client User Interface (UI). They are described in this document as part
-of the FQT suite of tests.
-
-.. _dwasystem:
-
-System tests
-""""""""""""
-
-Test of the Dashboard Web Application at the system level will include
-(1) End-to-end acceptance testing, performed by testers using the DWA Client UI, 
-and (2) Automated tests to verify operation and availability of the CSCI at 
-system startup and at defined intervals. They are described in this 
-document as part of the FQT suite of tests.
+* Unit tests
+* Integration tests
+* Component interface tests
+* System tests
 
 .. _dwaclasses:
 
