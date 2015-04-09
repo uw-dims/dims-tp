@@ -257,8 +257,8 @@ System tests
 """"""""""""
 
 Test of the Dashboard Web Application at the system level will include
-(1) End-to-end testing, performed by testers using the DWA Client UI, and
-(2) Automated tests to verify availability of the CSCI at full 
+(1) End-to-end acceptance testing, performed by testers using the DWA Client UI, 
+and (2) Automated tests to verify operation and availability of the CSCI at 
 system startup and at defined intervals. They are described in this 
 document as part of the FQT suite of tests.
 
@@ -289,29 +289,51 @@ properly configured DIMS shell environment for testing.
 User Interface Tests
 """"""""""""""""""""
 
-The purpose of this test group is to validate the Client User Interface and
-ensure end-to-end Web Application functions meet requirements.
-This group will consist of a series of tests which exercise Web Application
-functions via the User Interface and are performed by a human tester.
-These tests will be entered and managed in
-JIRA. The test descriptions, steps, test data, expected results for each step,
-and test results will be reported in the Test Report.
+The purpose of this collection is to validate the functionality of  
+Dashboard Web Application User Interface (UI) elements. 
+UI tests will be entered, managed, executed, and reported via
+JIRA. The test descriptions, steps, 
+test data, expected results for each step,
+and actual results will be included in the Test Report.
 
    #. Test levels: Component interface
    #. Test type or class: Expected value, simulated data, erroneous input, desk check
-   #. Qualification method: Test, Demonstration
+   #. Qualification method: Test
    #. Special requirements: Access to the DIMS JIRA tool
    #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
-.. _dwafunctional:
+.. _dwaacceptance:
 
-Functional Tests
+Acceptance Tests
 """"""""""""""""
+
+This collection of tests are run by a Tester via the User Interface to
+exercise the Dashboard Web Application and verify its functionality satisfies
+requirements in user stories. Acceptance tests will be entered, managed, executed, 
+and reported via JIRA. The test descriptions, steps, 
+test data, expected results for each step,
+and actual results will be included in the Test Report.
+
+    #. Test levels: System
+    #. Test type or class: Expected value, simulated data, erroneous input, desk check
+    #. Qualification method: Test
+    #. Special requirements: Access to the DIMS JIRA tool
+    #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail) 
 
 .. _dwaoperational:
 
 Operational Tests
 """""""""""""""""
+
+Tests in the Operational collection are automated tests that run when the CSCI is
+started and at proscribed intervals during operation. These tests will report 
+results via a log fanout and are used to verify system operation and availability.
+
+    #. Test levels: System
+    #. Test type or class: Timing, desk check
+    #. Qualification method: Test
+    #. Type of data to be recorded: Component ID, Wall clock time, other data TBD. 
+
 
 .. _diutcsci:
 
