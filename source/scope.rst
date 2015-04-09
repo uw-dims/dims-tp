@@ -37,7 +37,7 @@ CSCI capability requirements
 
 DIMS is funded by the Department of Homeland Security under contract HSHQDC-
 13-C-B0013. For more information, see the document, "System Requirements and
-Concept of Operations for From Local to Gobal Awareness: A Distributed Incident
+Concept of Operations for From Local to Global Awareness: A Distributed Incident
 Management System (DIMS)" referenced in Section :ref:`referenceddocs`.
 
 The DIMS system is divided into the following high-level CSCI sets,
