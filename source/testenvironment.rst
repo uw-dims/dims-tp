@@ -39,6 +39,28 @@ Software items
     supplied by the site, and identify any classified processing or other
     security or privacy issues associated with the software items.
 
+.. _swtable:
+
+.. table:: Software Table
+
+    +------------------------+------------------------------------------------------------+
+    | Software item          | Purpose                                                    |
+    +========================+============================================================+
+    | `Jira`_                | Ticketing, task tracking, etc.                             |
+    +------------------------+------------------------------------------------------------+
+    | `Zephyr for Jira`_     | Test management plugin for `Jira`_                         |
+    +------------------------+------------------------------------------------------------+
+    | `Robot Framework`_     | Open source Acceptance Test-Driven Development (ATTD) tool |
+    +------------------------+------------------------------------------------------------+
+    | Custom DIMS scripts    | Serve specific custom test functions as needed.            |
+    +------------------------+------------------------------------------------------------+
+    | Other???               | ...                                                        |
+    +------------------------+------------------------------------------------------------+
+
+..
+
+.. _Robot Framework: http://robotframework.org/
+
 .. _hardwarefirmwareitems:
 
 Hardware and firmware items
@@ -56,6 +78,28 @@ Hardware and firmware items
    needed, identify those that are expected to be supplied by the site, and
    identify any classified processing or other security or privacy issues
    associated with the items.
+
+.. _hwtable:
+
+.. table:: Hardware Table
+
+    +------------------------+----------------------------------+
+    | Hardware item          | Purpose                          |
+    +========================+==================================+
+    | Dell PowerEdge ???     | column 2                         |
+    +------------------------+----------------------------------+
+    | Switch...              | ...                              |
+    +------------------------+----------------------------------+
+    | Blah, blah...          | ...                              |
+    +------------------------+----------------------------------+
+    | Blah, blah...          | ...                              |
+    +------------------------+----------------------------------+
+    | Blah, blah...          | ...                              |
+    +------------------------+----------------------------------+
+    | Blah, blah...          | ...                              |
+    +------------------------+----------------------------------+
+
+..
 
 .. _othermaterials:
 
@@ -80,11 +124,20 @@ Other materials
 Proprietary nature, acquirer's rights, and licensing
 ----------------------------------------------------
 
-.. todo::
+Some tests defined and anticipated under this plan involve use of
+a licensed `Jira`_ ticketing system using the `Zephyr for Jira`_
+plugin. These are primarily development-related tests that fall under
+the levels `Unit`, `Integration`, and/or `Component Interface` test
+levels, of type `Expected Value` and/or `Desk check` as defined
+in Section :ref:`testlevels` and :ref:`testclasses`, respectively.
 
-    This paragraph shall identify the proprietary nature, acquirer's rights,
-    and licensing issues associated with each element of the software test
-    environment.
+.. _Jira: https://www.atlassian.com/software/jira/
+.. _Zephyr for Jira: https://marketplace.atlassian.com/plugins/com.thed.zephyr.je
+
+The remainder of the tests will use open source products either acquired from
+their original source, or produced by the DIMS team and delivered with the
+final system. (See Section :ref:`license` for the license under which DIMS
+software is being released.)
 
 .. _controls:
 
