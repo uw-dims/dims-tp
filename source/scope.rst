@@ -30,15 +30,28 @@ This Test Plan describes the Formal Qualification Test (FQT) activities and the
 environment in which those activities will take place for the DIMS deployed
 system. DIMS is composed of the following Computer Software Configuration Items (CSCIs):
 
-.. todo::
+.. _capabilityrequirements:
 
-   Do we agree these are the fundamental CSCI components?
+CSCI capability requirements
+----------------------------
 
-..
+DIMS is funded by the Department of Homeland Security under contract HSHQDC-
+13-C-B0013. For more information, see the document, "System Requirements and
+Concept of Operations for From Local to Gobal Awareness: A Distributed Incident
+Management System (DIMS)" referenced in Section :ref:`referenceddocs`.
 
-#. Backend data stores CSCI
-#. Dashboard web application CSCI
-#. Tupelo service CSCI
+The DIMS system is divided into the following high-level CSCI sets,
+per the acquisition contract.
+
+================================ ========= =============
+CSCI                             Label     Contract Item
+================================ ========= =============
+Backend data stores              BDS       C.3.1.1
+Dashboard web application        DWA       C.3.1.1
+Data Integration and User Tools  DIUT      C.3.1.2
+Vertical/Lateral Info. Sharing   VLIS      C.3.1.3
+================================ ========= =============
+
 
 .. todo::
 
@@ -46,10 +59,9 @@ system. DIMS is composed of the following Computer Software Configuration Items 
 
    Reference 1 establishes the DP POC software requirements. Reference 2
    documents the design of the CSCIs that comprise the software for the DP POC.
-   Unit testing and integration testing will be performed during development on
-   site at Johns Hopkins University Applied Physics Lab (JHU/APL) as defined in
-   Reference 2. This document addresses the FQT activities that take place upon
-   delivery of the software.
+   Unit testing and integration testing will be performed during development at
+   $SITE as defined in Reference 2. This document addresses the FQT activities
+   that take place upon delivery of the software.
 
 ..
 
@@ -57,11 +69,6 @@ system. DIMS is composed of the following Computer Software Configuration Items 
 
 System overview
 ---------------
-
-DIMS is funded by the Department of Homeland Security under contract HSHQDC-
-13-C-B0013. For more information, see the document, "System Requirements and
-Concept of Operations for From Local to Gobal Awareness: A Distributed Incident
-Management System (DIMS)" referenced in Section :ref:`referenceddocs`.
 
 The primary mission objectives for the DIMS system are operational in nature,
 focused on facilitating the exchange of operational intelligence and applying
@@ -172,4 +179,6 @@ Relationship to other plans
 
     This paragraph shall describe the relationship, if any, of the STP to
     related project management plans.
+
+..
 
