@@ -107,7 +107,7 @@ the existing functionality of the current system.
 Software System Test Strategy (General)
 ---------------------------------------
 
-The software system test strategy we will employ is compromised of two
+The software system test strategy we will employ is compromises two
 high-level sets of tests.  The first set of test will be developed as the
 system is being designed using the Agile coding methodology.  Development and
 pre-release testing will be performed during "sprints" (cycles of development

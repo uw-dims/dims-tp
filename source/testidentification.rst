@@ -196,60 +196,79 @@ The following subparagraphs identify and describe the planned groups of tests.
 Dashboard Web Application CSCI - (DWA)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The DIMS Web Application, also referred to as the DIMS Dashboard or simply
-"Web Application", consists of
-web application server ("Server") and client ("Client") components. The following sections
-describe the scope of testing for the DIMS Web Application CSCI.
+The Dashboard Web Application, also referred to as the DIMS Dashboard, 
+consists of web application server ("DWA Server") and 
+client ("DWA Client") components. The following sections
+describe the scope of testing for the Dashboard Web Application CSCI.
 
 .. _dwalevels:
 
 Test Levels
 ^^^^^^^^^^^
 
-Testing of the Web Application CSCI will take place at the following levels:
+General testing of the Dashboard Web Application CSCI will take place at the 
+levels described in :ref:`testlevels`. The following paragraphs describe the
+development and FQT test levels as they apply to the Dashboard Web Application.
 
-* Unit tests - Unit tests will be written as appropriate for the Server
-  and Client components of the CSCI. At a minimum, these tests will be run
-  by developers and must pass before any code pushes to the Web Application
-  repository. The continuous integration (CI) system will then run the tests
-  when new code is pushed to the repository. A failing test run on
-  the CI server requires a fix by developers before additional code
-  can be pushed. The CI server will maintain test run
-  results.
+.. _dwaunit:
 
-  Since Unit tests are part of the development process and are
-  written and performed in a continuous fashion, they are not included in
-  this document as planned tests. However, overall results as reported by
-  the CI server will be included in the Test Report.
+Unit tests
+""""""""""
 
-* Integration tests - These will test the Server and Client components as a group
-  and verify their interfaces. They will consist primarily of:
+Unit tests are performed during development and are written for the DWA Server
+and DWA Client components of the CSCI. At a minimum, these tests are run
+by developers and must pass before any code pushes to the Dashboard Web Application
+repository. The continuous integration (CI) system will then run the tests
+when new code is pushed to the repository. A failing test run on
+the CI server requires a fix by developers before additional code
+can be pushed. The CI server will maintain test run
+results.
 
-  + Server API tests - These will test the Server APIs accessed by the Client
-  + Client functional tests - These will verify the Client user interface
-    operates as designed. These will be run manually by a tester.
+.. _dwaintegration:
 
-* Component interface tests - These tests will consist of a set of User tests,
-  performed manually by a tester against the Client user interface, which will
-  verify that data requested by the Client matches the expected output.
+Integration tests
+"""""""""""""""""
 
-* System tests - the Web Application will be tested as part of the system
-  end-to-end testing.
+Integration tests, performed during development, detect interface defects
+within the Dashboard Web Application. DWA Client tests verify the DWA Client 
+HTTP/HTTPS and socket interfaces. DWA Server tests verify the
+Dashboard Web Application Server REST API, HTTP/HTTPS, Messaging,
+and Socket interfaces. 
 
-.. note::
+These tests are written and performed using automated test methods 
+appropriate for Javascript client and server (Node.js) applications. 
+The tests are run by the CI server when code is pushed
+to the Dashboard Web Application repository to ensure new features do not
+cause regression problems within the web application. The CI server will
+maintain test run results.
 
-    Need more info on what our end-to-end testing will look like and how the
-    web application can participate in that.
+.. _dwacomponent:
 
-..
+Component interface tests
+"""""""""""""""""""""""""
+
+Component inteface tests for the Dashboard Web Application will test the
+DWA Client User Interface (UI). They are described in this document as part
+of the FQT suite of tests.
+
+.. _dwasystem:
+
+System tests
+""""""""""""
+
+Test of the Dashboard Web Application at the system level will include
+(1) End-to-end testing, performed by testers using the DWA Client UI, and
+(2) Automated tests to verify availability of the CSCI at full 
+system startup and at defined intervals. They are described in this 
+document as part of the FQT suite of tests.
 
 .. _dwaclasses:
 
 Test Classes
 ^^^^^^^^^^^^
 
-The following classes of tests will be peformed during formal testing of the
-Web Application CSCI:
+The following classes of tests, described in :ref:`testclasses` will be 
+peformed during formal qualification testing of the Dashboard Web Application CSCI:
 
 * Expected value testing
 * Simulated data
@@ -261,12 +280,14 @@ Web Application CSCI:
 General Test Conditions
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The following subparagraphs identify and describe the planned groups of tests.
+The following subparagraphs identify and describe the planned collections of FQT tests.
 Test personnel should have access to the Firefox web browser, VPN access, a
 properly configured DIMS shell environment for testing.
 
-Web Application Functional Tests
-""""""""""""""""""""""""""""""""
+.. _dwauserinterface:
+
+User Interface Tests
+""""""""""""""""""""
 
 The purpose of this test group is to validate the Client User Interface and
 ensure end-to-end Web Application functions meet requirements.
@@ -276,35 +297,21 @@ These tests will be entered and managed in
 JIRA. The test descriptions, steps, test data, expected results for each step,
 and test results will be reported in the Test Report.
 
-   #. Test levels: Integration, Component Interface, System
+   #. Test levels: Component interface
    #. Test type or class: Expected value, simulated data, erroneous input, desk check
    #. Qualification method: Test, Demonstration
    #. Special requirements: Access to the DIMS JIRA tool
    #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
-Client Interface Tests
-""""""""""""""""""""""
+.. _dwafunctional:
 
-These tests verify the Web Application Client HTTP/HTTPS and socket interfaces.
-They will be performed via automated test methods appropriate for Javascript
-client applications.
+Functional Tests
+""""""""""""""""
 
-   #. Test levels: Integration
-   #. Test type or class: Expected value, erroneous input
-   #. Qualification method: Test
-   #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
+.. _dwaoperational:
 
-Server Interface Tests
-""""""""""""""""""""""
-
-This group of tests will verify the server REST API, HTTP/HTTPS, Messaging,
-and Socket interfaces. They will be performed via automated test methods appropriate
-for Node.js server applications.
-
-   #. Test levels: Integration
-   #. Test type or class: Expected value, erroneous input
-   #. Qualification method: Test
-   #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
+Operational Tests
+"""""""""""""""""
 
 .. _diutcsci:
 
