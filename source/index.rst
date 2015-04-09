@@ -12,7 +12,6 @@ DIMS Test Plan
    referenceddocs
    testenvironment
    testidentification
-   tupelo-testing
    schedules
    requirementstraceability
    notes
@@ -22,7 +21,12 @@ DIMS Test Plan
 Contact
 -------
 
-.. sectionauthor:: Dave Dittrich (@davedittrich) <dittrich @ u.washington.edu>
+.. sectionauthor::
+    Dave Dittrich <dittrich @ u.washington.edu>,
+    Stuart Maclean <stuart @ apl.washington.edu>,
+    Linda Parsons <linda.parsons @ nextcentury.com>
+
+..
 
 License
 -------

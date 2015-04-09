@@ -53,7 +53,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'DIMS Test Plan'
-copyright = u'2014, 2015 David Dittrich'
+copyright = u'2014, 2015 University of Washington'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -214,7 +214,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   ('index', 'DIMSTestPlan.tex', u'DIMS Test Plan Documentation',
-   u'David Dittrich', 'manual'),
+   u'David Dittrich, Stuart Maclean, Linda Parsons', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -244,7 +244,7 @@ latex_logo = 'UW-logo.png'
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'dimstestplan', u'DIMS Test Plan Documentation',
-     [u'David Dittrich'], 1)
+     [u'David Dittrich, Stuart Maclean, Linda Parsons'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -258,7 +258,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'DIMSTestPlan', u'DIMS Test Plan Documentation',
-   u'David Dittrich', 'DIMSTestPlan', 'One line description of project.',
+   u'David Dittrich, Stuart Maclean, Linda Parsons', 'DIMSTestPlan', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -279,9 +279,9 @@ texinfo_documents = [
 
 # Bibliographic Dublin Core info.
 epub_title = u'DIMS Test Plan'
-epub_author = u'David Dittrich'
+epub_author = u'David Dittrich, Stuart Maclean, Linda Parsons'
 epub_publisher = u'David Dittrich'
-epub_copyright = u'2014, 2015 David Dittrich'
+epub_copyright = u'2014, 2015 University of Washington'
 
 # The basename for the epub file. It defaults to the project name.
 #epub_basename = u'DIMS Test Plan'
