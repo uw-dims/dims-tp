@@ -9,7 +9,7 @@ Test identification
     describe each test to which this STP applies.
 
 ..
-    
+
 .. _generalinfo:
 
 General information
@@ -21,7 +21,7 @@ General information
     information applicable to the overall testing to be performed.
 
 ..
-    
+
 .. _testlevels:
 
 Test levels
@@ -138,28 +138,37 @@ Planned tests
    This paragraph shall be divided into the following subparagraphs to describe
    the total scope of the planned testing.
 
-.. _itemstobetested_1:
+..
 
-(Item(s) to be tested)
-~~~~~~~~~~~~~~~~~~~~~~
+.. _bdscsci:
+
+Backend Data Stores CSCI - (BDS)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following sections describe the scope of formal testing for the Back End
+Data Stores (BDS) CSCI.
+
+
+.. _bdslevels:
+
+Test Levels
+^^^^^^^^^^^
+
+.. _bdsclasses:
+
+Test Classes
+^^^^^^^^^^^^
+
+.. _bdsconditions:
+
+General Test Conditions
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The following subparagraphs identify and describe the planned groups of tests.
 
 .. todo::
 
-    This paragraph shall identify a CSCI, subsystem, system, or other entity by
-    name and project unique identifier, and shall be divided into the following
-    subparagraphs to describe the testing planned for the item(s). (Note: the
-    "tests" in this plan are collections of test cases. There is no intent to
-    describe each test case in this document.)
-
-
-.. _projectid_1:
-
-(Project-unique identifier of a test)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. todo::
-
-   This paragraph shall identify a test by project unique identifier and shall
+   These paragraphs shall identify a test by project unique identifier and shall
    provide the information specified below for the test. Reference may be made
    as needed to the general information in 4.1.
 
@@ -181,59 +190,35 @@ Planned tests
 
 ..
 
-.. _projectid_2:
 
-(Project-unique identifier of a test)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. _dwacsci:
 
-.. todo::
+Dashboard Web Application CSCI - (DWA)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   This paragraph shall identify a test by project unique identifier and shall
-   provide the information specified below for the test. Reference may be made
-   as needed to the general information in 4.1.
-
-   + Test objective
-   + Test level
-   + Test type or class
-   + Qualification method(s) as specified in the requirements specification
-   + Identifier of the CSCI requirements and, if applicable, software system
-     requirements addressed by this test. (Alternatively, this information may be
-     provided in Section 6.)
-   + Special requirements (for example, 48 hours of continuous facility time, weapon
-     simulation, extent of test, use of a special input or database)
-   + Type of data to be recorded
-   + Type of data recording/reduction/analysis to be employed
-   + Assumptions and constraints, such as anticipated limitations on the test
-     due to system or test conditions--timing, interfaces, equipment,
-     personnel, database, etc.  Safety, security, and privacy considerations
-     associated with the test
-
-..
-
-DIMS Web Application CSCI - (Unique Identifier)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The DIMS Web Application, also referred to as the DIMS Dashboard or simply 
+The DIMS Web Application, also referred to as the DIMS Dashboard or simply
 "Web Application", consists of
-web application server ("Server") and client ("Client") components. The following sections 
+web application server ("Server") and client ("Client") components. The following sections
 describe the scope of testing for the DIMS Web Application CSCI.
+
+.. _dwalevels:
 
 Test Levels
 ^^^^^^^^^^^
 
 Testing of the Web Application CSCI will take place at the following levels:
 
-* Unit tests - Unit tests will be written as appropriate for the Server 
+* Unit tests - Unit tests will be written as appropriate for the Server
   and Client components of the CSCI. At a minimum, these tests will be run
   by developers and must pass before any code pushes to the Web Application
-  repository. The continuous integration (CI) system will then run the tests 
+  repository. The continuous integration (CI) system will then run the tests
   when new code is pushed to the repository. A failing test run on
-  the CI server requires a fix by developers before additional code 
+  the CI server requires a fix by developers before additional code
   can be pushed. The CI server will maintain test run
-  results. 
+  results.
 
   Since Unit tests are part of the development process and are
-  written and performed in a continuous fashion, they are not included in 
+  written and performed in a continuous fashion, they are not included in
   this document as planned tests. However, overall results as reported by
   the CI server will be included in the Test Report.
 
@@ -248,15 +233,17 @@ Testing of the Web Application CSCI will take place at the following levels:
   performed manually by a tester against the Client user interface, which will
   verify that data requested by the Client matches the expected output.
 
-* System tests - the Web Application will be tested as part of the system 
+* System tests - the Web Application will be tested as part of the system
   end-to-end testing.
 
 .. note::
 
     Need more info on what our end-to-end testing will look like and how the
-    web application can participate in that. 
+    web application can participate in that.
 
 ..
+
+.. _dwaclasses:
 
 Test Classes
 ^^^^^^^^^^^^
@@ -269,11 +256,13 @@ Web Application CSCI:
 * Erroneous input
 * Desk check testing
 
+.. _dwaconditions:
+
 General Test Conditions
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 The following subparagraphs identify and describe the planned groups of tests.
-Test personnel should have access to the Firefox web browser, VPN access, a 
+Test personnel should have access to the Firefox web browser, VPN access, a
 properly configured DIMS shell environment for testing.
 
 Web Application Functional Tests
@@ -281,8 +270,8 @@ Web Application Functional Tests
 
 The purpose of this test group is to validate the Client User Interface and
 ensure end-to-end Web Application functions meet requirements.
-This group will consist of a series of tests which exercise Web Application 
-functions via the User Interface and are performed by a human tester. 
+This group will consist of a series of tests which exercise Web Application
+functions via the User Interface and are performed by a human tester.
 These tests will be entered and managed in
 JIRA. The test descriptions, steps, test data, expected results for each step,
 and test results will be reported in the Test Report.
@@ -308,7 +297,7 @@ client applications.
 Server Interface Tests
 """"""""""""""""""""""
 
-This group of tests will verify the server REST API, HTTP/HTTPS, Messaging, 
+This group of tests will verify the server REST API, HTTP/HTTPS, Messaging,
 and Socket interfaces. They will be performed via automated test methods appropriate
 for Node.js server applications.
 
@@ -316,5 +305,102 @@ for Node.js server applications.
    #. Test type or class: Expected value, erroneous input
    #. Qualification method: Test
    #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
+
+.. _diutcsci:
+
+Data Integration and User Tools CSCI - (DIUT)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following sections describe the scope of formal testing for the Data
+Integration and User Tools (DIUT) CSCI.
+
+.. _diutlevels:
+
+Test Levels
+^^^^^^^^^^^
+
+.. _diutclasses:
+
+Test Classes
+^^^^^^^^^^^^
+
+.. _diutconditions:
+
+General Test Conditions
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The following subparagraphs identify and describe the planned groups of tests.
+
+.. todo::
+
+   These paragraphs shall identify a test by project unique identifier and shall
+   provide the information specified below for the test. Reference may be made
+   as needed to the general information in 4.1.
+
+   + Test objective
+   + Test level
+   + Test type or class
+   + Qualification method(s) as specified in the requirements specification
+   + Identifier of the CSCI requirements and, if applicable, software system
+     requirements addressed by this test. (Alternatively, this information may be
+     provided in Section 6.)
+   + Special requirements (for example, 48 hours of continuous facility time, weapon
+     simulation, extent of test, use of a special input or database)
+   + Type of data to be recorded
+   + Type of data recording/reduction/analysis to be employed
+   + Assumptions and constraints, such as anticipated limitations on the test
+     due to system or test conditions--timing, interfaces, equipment,
+     personnel, database, etc.  Safety, security, and privacy considerations
+     associated with the test
+
+..
+
+.. _vliscsci:
+
+Vertical/Lateral Information Sharing CSCI - (VLIS)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following sections describe the scope of formal testing for the Vertical
+and Lateral Information Sharing (VLIS) CSCI.
+
+.. _vlislevels:
+
+Test Levels
+^^^^^^^^^^^
+
+.. _vlisclasses:
+
+Test Classes
+^^^^^^^^^^^^
+
+.. _vlisconditions:
+
+General Test Conditions
+^^^^^^^^^^^^^^^^^^^^^^^
+The following subparagraphs identify and describe the planned groups of tests.
+
+.. todo::
+
+   These paragraphs shall identify a test by project unique identifier and shall
+   provide the information specified below for the test. Reference may be made
+   as needed to the general information in 4.1.
+
+   + Test objective
+   + Test level
+   + Test type or class
+   + Qualification method(s) as specified in the requirements specification
+   + Identifier of the CSCI requirements and, if applicable, software system
+     requirements addressed by this test. (Alternatively, this information may be
+     provided in Section 6.)
+   + Special requirements (for example, 48 hours of continuous facility time, weapon
+     simulation, extent of test, use of a special input or database)
+   + Type of data to be recorded
+   + Type of data recording/reduction/analysis to be employed
+   + Assumptions and constraints, such as anticipated limitations on the test
+     due to system or test conditions--timing, interfaces, equipment,
+     personnel, database, etc.  Safety, security, and privacy considerations
+     associated with the test
+
+..
 
 
