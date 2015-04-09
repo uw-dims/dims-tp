@@ -314,6 +314,19 @@ Data Integration and User Tools CSCI - (DIUT)
 The following sections describe the scope of formal testing for the Data
 Integration and User Tools (DIUT) CSCI.
 
+.. todo::
+
+    .. warning::
+
+       The :ref:`tupelo-testing` section needs to be merged into the DIUT CSCI
+       component, restructured to fit consistently with the other related
+       sub-sections. Look at :ref:`dwacsci` and the JHU ``dppoc_stp.pdf`` file
+       for examples of the level of detail desired.
+
+    ..
+
+..
+
 .. _diutlevels:
 
 Test Levels
