@@ -149,7 +149,7 @@ Planned tests
 Backend Data Stores CSCI - (BDS)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following sections describe the scope of formal testing for the Back End
+The following sections describe the scope of formal testing for the Backend
 Data Stores (BDS) CSCI.
 
 
