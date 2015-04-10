@@ -3,24 +3,13 @@
 Test identification
 ===================
 
-.. todo::
-
-    This section shall be divided into the following paragraphs to identify and
-    describe each test to which this STP applies.
-
-..
-
 .. _generalinfo:
 
 General information
 -------------------
 
-.. todo::
-
-    This paragraph shall be divided into sub-paragraphs to present general
-    information applicable to the overall testing to be performed.
-
-..
+Tests described in this section trace back to the DIMS System Requirements document
+Section :ref:`dimssr:requirements`.
 
 .. _testlevels:
 
@@ -350,7 +339,7 @@ General Test Conditions
 The following sub-paragraphs identify and describe the planned groups
 of tests for the DIUT CSCI.
 
-.. _dwauserinterface:
+.. _duituserinterface:
 
 Tupelo Whole Disk Initial Acquisition Test
 """"""""""""""""""""""""""""""""""""""""""
