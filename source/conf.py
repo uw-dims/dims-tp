@@ -344,6 +344,17 @@ epub_exclude_files = ['search.html']
 # If false, no index is generated.
 #epub_use_index = True
 
+intersphinx_cache_limit = 0   # days to keep the cached inventories (0 == forever)
+#intersphinx_mapping = {
+#        'dimssr': ('https://u12-dev-svr-1.prisem.washington.edu:8443/docs/develop/dims-sr',
+#                    ('dims-sr/objects.inv', None)), # "dims-sr" is symbolic link in source/ to dims-sr/build/html
+#        'dimsocd': ('https://u12-dev-svr-1.prisem.washington.edu:8443/docs/develop/dims-ocd',
+#                    ('dims-ocd/objects.inv', None))  # "dims-ocd" is symbolic link in source/ to dims-ocd/build/html
+#}
+intersphinx_mapping = {
+        'dimssr': ('../../dims-sr/build/html', # "dims-sr" is symbolic link in source/ to dims-sr/build/html
+            ('http://u12-dev-svr-1.prisem.washington.edu:8080/docs/develop/html/dims-sr/objects.inv', None)),
+        'dimsocd': ('../../dims-ocd/build/html', # "dims-ocd" is symbolic link in source/ to dims-ocd/build/html
+            ('http://u12-dev-svr-1.prisem.washington.edu:8080/docs/develop/html/dims-ocd/objects.inv', None))
+}
 
-# Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'http://docs.python.org/': None}
