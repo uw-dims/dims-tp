@@ -317,17 +317,91 @@ Integration and User Tools (DIUT) CSCI.
 Test Levels
 ^^^^^^^^^^^
 
+General testing of the Data Integration and User Tools CSCI will take
+place at the levels described in :ref:`testlevels`. Unit and
+integration levels apply to development, and the remaining levels
+apply to FQT.
+
+* Unit tests
+* Integration tests
+* Component interface tests
+* System tests
+
 .. _diutclasses:
 
 Test Classes
 ^^^^^^^^^^^^
+
+The following classes of tests, described in :ref:`testclasses` will be 
+performed during formal qualification testing of the Data Integration
+and User Tools CSCI:
+
+* Expected value testing
+* Simulated network failures testing
+* Stress testing
+* Timing testing
+
 
 .. _diutconditions:
 
 General Test Conditions
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The following sub-paragraphs identify and describe the planned groups of tests.
+The following sub-paragraphs identify and describe the planned groups
+of tests for the DIUT CSCI.
+
+.. _dwauserinterface:
+
+Tupelo Whole Disk Initial Acquisition Test
+""""""""""""""""""""""""""""""""""""""""""
+
+This test relates to Tupelo, a whole disk acquisition and search tool
+which is one component of the DIUT. The purpose of this test is to
+ensure that the entire contents of a test disk of arbitrary size can
+be uploaded to a Tupelo store component over a network.
+
+
+
+
+Tupelo Whole Disk Subsequent Acquisition Test
+"""""""""""""""""""""""""""""""""""""""""""""
+
+This test also relates to Tupelo. The purpose of this test is to
+ensure that the entire contents of a test disk of arbitrary size can
+be uploaded to a Tupelo store component over a network.  That disk was
+previously uploaded to the same store.  The upload time and filesystem
+usage at the store site should be less than for an initial upload.
+
+
+
+Tupelo Store Tools Test
+"""""""""""""""""""""""
+
+This test also relates to Tupelo. The purpose of this test is to
+ensure that Tupelo store-processing tools can create so-called
+'products' from previously uploaded disk images.  These products are
+then to be stored in the same store as the images.
+
+
+
+Tupelo Search Test
+""""""""""""""""""
+
+This test also relates to Tupelo. The purpose of this test is to
+ensure that a search request coming into a Tupelo store, via
+e.g. AMQP, results in the correct response.  If the search input
+identifies an artifact which should be found in the store, a positive
+result must be communicated to the search invoker.  Similarly for a
+query which should be not located.  The objective is to thus avoid
+false positives and false negatives.
+
+Tupelo Sizing Test
+""""""""""""""""""
+
+This test also relates to Tupelo. The purpose of this test is to
+stress the Tupelo software by inputting a large disk image, on the
+order of 1 or even 2TB.
+
 
 .. todo::
 
