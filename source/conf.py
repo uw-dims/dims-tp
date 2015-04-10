@@ -346,9 +346,9 @@ epub_exclude_files = ['search.html']
 
 intersphinx_cache_limit = 0   # days to keep the cached inventories (0 == forever)
 intersphinx_mapping = {
-        'dimssr': ('http://u12-dev-svr-1.prisem.washington.edu:8080/docs/develop/dims-sr',
+        'dimssr': ('http://u12-dev-svr-1.prisem.washington.edu:8080/docs/develop/html/dims-sr',
                     ('dims-sr/objects.inv', None)), # "dims-sr" is symbolic link in source/ to dims-sr/build/html
-        'dimsocd': ('http://u12-dev-svr-1.prisem.washington.edu:8080/docs/develop/dims-ocd',
+        'dimsocd': ('http://u12-dev-svr-1.prisem.washington.edu:8080/docs/develop/html/dims-ocd',
                     ('dims-ocd/objects.inv', None))  # "dims-ocd" is symbolic link in source/ to dims-ocd/build/html
 }
 #intersphinx_mapping = {
