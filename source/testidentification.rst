@@ -349,8 +349,15 @@ which is one component of the DIUT. The purpose of this test is to
 ensure that the entire contents of a test disk of arbitrary size can
 be uploaded to a Tupelo store component over a network.
 
+1. Test Levels: integration, system
+      
+2. Test classes: expected value, timing, stress
+   
+3. Qualification Method: Demonstration, inspection
+   
+4. Contract Reference: C3.1.2.c.3
 
-
+5. Type of Data Recorded: Copy of test disk content stored in Tupelo store.
 
 Tupelo Whole Disk Subsequent Acquisition Test
 """""""""""""""""""""""""""""""""""""""""""""
@@ -361,6 +368,16 @@ be uploaded to a Tupelo store component over a network.  That disk was
 previously uploaded to the same store.  The upload time and filesystem
 usage at the store site should be less than for an initial upload.
 
+1. Test Levels: integration, system
+      
+2. Test classes: expected value, timing
+   
+3. Qualification Method: Demonstration, inspection
+   
+4. Contract Reference: C3.1.2.c.3
+
+5. Type of Data Recorded: Test log showing smaller stored disk and
+   reduced elapsed time for disk acquisition.
 
 
 Tupelo Store Tools Test
@@ -371,18 +388,40 @@ ensure that Tupelo store-processing tools can create so-called
 'products' from previously uploaded disk images.  These products are
 then to be stored in the same store as the images.
 
+1. Test Levels: integration, system
+      
+2. Test classes: expected value, timing
+   
+3. Qualification Method: Demonstration, inspection
+   
+4. Contract Reference: C3.1.2.c.3
+
+5. Type of Data Recorded: Products of store tools to exist as
+   supplementary files in Tupelo store.
 
 
-Tupelo Search Test
-""""""""""""""""""
+Tupelo Artifact Search Test
+"""""""""""""""""""""""""""
 
 This test also relates to Tupelo. The purpose of this test is to
-ensure that a search request coming into a Tupelo store, via
-e.g. AMQP, results in the correct response.  If the search input
-identifies an artifact which should be found in the store, a positive
-result must be communicated to the search invoker.  Similarly for a
-query which should be not located.  The objective is to thus avoid
-false positives and false negatives.
+ensure that a search request sent to a Tupelo store, via e.g. AMQP,
+results in the correct response.  If the search input identifies an
+artifact which should be found in the store, a positive result must be
+communicated to the search invoker.  Similarly for a query which
+should be not located.  The objective is to avoid false positives
+and false negatives.
+
+1. Test Levels: integration, system
+      
+2. Test classes: expected value, timing
+   
+3. Qualification Method: Demonstration, inspection
+   
+4. Contract Reference: C3.1.2.c.3
+
+5. Type of Data Recorded: Log files generated when making test queries
+   of the existence of various files to a Tupelo store.
+
 
 Tupelo Sizing Test
 """"""""""""""""""
@@ -391,6 +430,78 @@ This test also relates to Tupelo. The purpose of this test is to
 stress the Tupelo software by inputting a large disk image, on the
 order of 1 or even 2TB.
 
+1. Test Levels: integration, system
+      
+2. Test classes: stress, timing
+   
+3. Qualification Method: Demonstration, inspection
+   
+4. Contract Reference: C3.1.2.c.3
+
+5. Type of Data Recorded: Copy of test disk content stored in Tupelo store.
+
+
+Tupelo Network Failure Test
+"""""""""""""""""""""""""""
+
+This test also relates to Tupelo. The purpose of this test is to
+assert the correctness of the Tupelo store when a disk upload is
+interrupted by both a client failure and a network failure.
+
+1. Test Levels: integration, system
+      
+2. Test classes: expected state
+   
+3. Qualification Method: Demonstration, inspection
+   
+4. Contract Reference: C3.1.2.c.3
+
+5. Type of Data Recorded: Summary of Tupelo store contents before and
+   after a whole disk upload operation interrupted by a client or
+   network failure.
+
+Tupelo Boot Media Test 1
+""""""""""""""""""""""""
+
+This test also relates to Tupelo. The purpose of this test is to check
+that a computer can be booted from a CD/USB containing a Linux Live CD
+with integrated Tupelo software, and that the local hard drive(s) of
+that computer can be uploaded to a remote Tupelo store over the network.
+
+1. Test Levels: integration, system
+
+2. Test classes: expected state
+   
+3. Qualification Method: Demonstration, inspection
+   
+4. Contract Reference: C3.1.2.c.3
+
+5. Type of Data Recorded: Observed behavior during demonstration.
+
+6. Special Requirements: Tupelo Boot CD
+
+Tupelo Boot Media Test 2
+""""""""""""""""""""""""
+
+This test also relates to Tupelo. The purpose of this test is to check
+that a computer can be booted from a CD/USB containing a Linux Live CD
+with integrated Tupelo software, and that the local hard drive(s) of
+that computer can be uploaded to a Tupelo store located on a locally
+attached external hard drive.
+
+1. Test Levels: integration, system
+      
+2. Test classes: expected state
+   
+3. Qualification Method: Demonstration, inspection
+   
+4. Contract Reference: C3.1.2.c.3
+
+5. Type of Data Recorded: Disk contents of computer's own hard drive
+   and external hard drive.
+
+6. Special Requirements: Tupelo Boot CD and External Hard Drive and
+   Cabling
 
 .. todo::
 
