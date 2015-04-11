@@ -1,8 +1,10 @@
 .. DIMS Test Plan documentation master file.
 
-==============
-DIMS Test Plan
-==============
+.. _dimstestplan:
+
+==========================
+DIMS Test Plan v |version|
+==========================
 
 .. toctree::
    :numbered:
