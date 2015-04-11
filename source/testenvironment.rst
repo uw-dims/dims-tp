@@ -149,15 +149,27 @@ Installation, testing, and control
     This paragraph shall identify the developer's plans for performing each of
     the following, possibly in conjunction with personnel at the test site(s):
 
-    Acquiring or developing each element of the software test environment
-    Installing and testing each item of the software test environment prior to
-    its use Controlling and maintaining each item of the software test
-    environment 3.x.6   Participating organizations.
+    + Acquiring or developing each element of the software test environment
+
+    + Installing and testing each item of the software test environment prior
+      to its use
+
+    + Controlling and maintaining each item of the software test environment
+
+..
+
+.. _participatingorgs:
+
+Participating organizations
+---------------------------
+
+.. todo::
 
     This paragraph shall identify the organizations that will participate in
     the testing at the test sites(s) and the roles and responsibilities of
     each.
 
+..
 
 .. _personnel:
 
