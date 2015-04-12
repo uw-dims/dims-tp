@@ -3,16 +3,6 @@
 Referenced documents
 ====================
 
-.. todo::
-
-   .. warning::
-
-       Add version numbers and dates...
-
-   ..
-
-..
-
 #. :ref:`dimssr:dimssystemrequirements`
 
 #. :ref:`dimsocd:dimsoperationalconceptdescription`
