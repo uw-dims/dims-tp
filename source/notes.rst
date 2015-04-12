@@ -3,13 +3,15 @@
 Notes
 =====
 
-.. note:: TBD
+This document is structured on `MIL-STD-498`_, described at `A forgotten military
+standard that saves weeks of work (by providing free project management
+templates)`_, by Kristof Kovacs. Specifically, this document is modelled on
+`STP.html`_.
 
-   This section shall contain any general information that aids in
-   understanding this document (e.g., background information, glossary,
-   rationale). This section shall include an alphabetical listing of all
-   acronyms, abbreviations, and their meanings as used in this document and a
-   list of any terms and definitions needed to understand this document.
+.. _MIL-STD-498: http://en.wikipedia.org/wiki/MIL-STD-498
+.. _A forgotten military standard that saves weeks of work (by providing free project management templates): http://kkovacs.eu/free-project-management-template-mil-std-498
+.. _STP.html: http://kkovacs.eu/stuff/MIL-STD-498-templates-html/STP.html
+
 
 .. _glossary:
 
