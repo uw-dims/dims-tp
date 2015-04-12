@@ -3,7 +3,7 @@
 .. _dimstestplan:
 
 ==========================
-DIMS Test Plan v |version|
+DIMS Test Plan v |release|
 ==========================
 
 .. toctree::

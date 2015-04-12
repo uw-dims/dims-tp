@@ -8,7 +8,7 @@ Scope
 Identification
 --------------
 
-This Software System Test Plan (version |version|) documents the objectives,
+This Software System Test Plan (release |release|) documents the objectives,
 approach, and scope/limitations of the testing and evaluation of the
 Distributed Incident Management System (DIMS).  It describes the logistics for
 executing the plan, including test environment needs, high level schedule, and
