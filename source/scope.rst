@@ -27,9 +27,7 @@ CSCI capability requirements
 ----------------------------
 
 DIMS is funded by the Department of Homeland Security under contract HSHQDC-
-13-C-B0013. For more information, see the document, "System Requirements and
-Concept of Operations for From Local to Global Awareness: A Distributed Incident
-Management System (DIMS)" referenced in Section :ref:`referenceddocs`.
+13-C-B0013.
 
 The DIMS system is divided into the following high-level CSCI sets,
 per the acquisition contract.
@@ -43,18 +41,13 @@ Data Integration and User Tools  DIUT      C.3.1.2
 Vertical/Lateral Info. Sharing   VLIS      C.3.1.3
 ================================ ========= =============
 
-
-.. todo::
-
-   Work this in:
-
-   Reference 1 establishes the DP POC software requirements. Reference 2
-   documents the design of the CSCIs that comprise the software for the DP POC.
-   Unit testing and integration testing will be performed during development at
-   $SITE as defined in Reference 2. This document addresses the FQT activities
-   that take place upon delivery of the software.
-
-..
+Reference :ref:`dimssr:dimssystemrequirements` establishes the
+DIMS software requirements. Reference :ref:`dimsocd:dimsoperationalconceptdescription`
+describes the operational concept (and open source design concept) for DIMS.
+Reference :ref:`dimsad:dimsarchitecturedesign` sets forward the architectural
+design.  Unit testing and integration testing will be performed during development at
+the University of Washington. This document primarily addresses the FQT activities
+that take place when deploying the DIMS software.
 
 .. _systemoverview:
 
@@ -160,16 +153,4 @@ information:
 
 + Section :ref:`notes` provides an alphabetical listing of acronyms and
   abbreviations used in this document.
-
-.. _relationshiptootherplans:
-
-Relationship to other plans
----------------------------
-
-.. todo::
-
-    This paragraph shall describe the relationship, if any, of the STP to
-    related project management plans.
-
-..
 
