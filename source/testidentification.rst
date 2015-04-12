@@ -93,45 +93,33 @@ General test conditions
 
 ..
 
-.. testprogression:
-
-Test progression
-~~~~~~~~~~~~~~~~
-
-.. todo::
-
-   In cases of progressive or cumulative tests, this paragraph shall explain
-   the planned sequence or progression of tests.
-
-..
-
 .. _recordinganalysis:
 
 Data recording, reduction, and analysis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. todo::
+Test results from each test will be stored and indexed so as to be retrievable
+and post-processed for two primary reasons:
 
-   This paragraph shall identify and describe the data recording, reduction,
-   and analysis procedures to be used during and after the tests identified in
-   this STP. These procedures shall include, as applicable, manual, automatic,
-   and semi-automatic techniques for recording test results, manipulating the
-   raw results into a form suitable for evaluation, and retaining the results
-   of data reduction and analysis.
+#. To be able to compare `TestA` to `TestB` and determine the difference in
+   results (e.g., to identify regression errors, site-specific differences that
+   were not anticipated during development, or uncover latent bugs related to
+   services that are not managed properly and may not come up after a
+   crash or other failure condition.
+   
+#. To be able to produce reStructuredText format files that can be inserted
+   into a directory hierarchy for the Test Report document that can then
+   be rendered using Sphinx to produce a deliverable HTML and/or PDF version.
 
-..
+This will allow developers to test code releases before they are pushed to
+"production" deployments, and for involved stakeholders doing independent field
+testing to generate test reports that can be sent back to the DIMS development
+team for debugging and code fixes.
 
 .. _plannedtests:
 
 Planned tests
 -------------
-
-.. todo::
-
-   This paragraph shall be divided into the following sub-paragraphs to describe
-   the total scope of the planned testing.
-
-..
 
 .. _bdscsci:
 
@@ -287,19 +275,6 @@ Data Integration and User Tools CSCI - (DIUT)
 
 The following sections describe the scope of formal testing for the Data
 Integration and User Tools (DIUT) CSCI.
-
-.. todo::
-
-    .. warning::
-
-       The :ref:`tupelo-testing` section needs to be merged into the DIUT CSCI
-       component, restructured to fit consistently with the other related
-       sub-sections. Look at :ref:`dwacsci` and the JHU ``dppoc_stp.pdf`` file
-       for examples of the level of detail desired.
-
-    ..
-
-..
 
 .. _diutlevels:
 
