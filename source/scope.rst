@@ -8,15 +8,6 @@ Scope
 Identification
 --------------
 
-.. todo::
-
-   This paragraph shall contain a full identification of the system and the
-   software to which this document applies, including, as applicable,
-   identification number(s), title(s), abbreviation(s), version number(s), and
-   release number(s).
-
-..
-
 This Software System Test Plan (version |version|) documents the objectives,
 approach, and scope/limitations of the testing and evaluation of the
 Distributed Incident Management System (DIMS).  It describes the logistics for
