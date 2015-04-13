@@ -118,19 +118,37 @@ software is being released.)
 Installation, testing, and control
 ----------------------------------
 
-.. todo::
+Deployment tests will start with a bare-metal server with a network
+connection capable of routing to the internet. From there, the following
+general high-level steps will be performed:
 
-    This paragraph shall identify the developer's plans for performing each of
-    the following, possibly in conjunction with personnel at the test site(s):
+#. Operating system installation to the bare-metal server will be
+   performed according to steps outlined in documentation. (This may
+   be done using DHCP dynamically assigned addresses so as to minimize
+   the number of manual steps required to install the base operating
+   system.)
 
-    + Acquiring or developing each element of the software test environment
+#. Network level configuration of the operating system will be performed
+   by manually entering the required attributes (e.g., the way `Security
+   Onion Setup Phase 1`_ is performed) into a software configuration database
+   and/or configuration file.
 
-    + Installing and testing each item of the software test environment prior
-      to its use
+#. The software configuration database and/or configuration file will be
+   applied to the system, configuring all DIMS components for initial
+   use.
 
-    + Controlling and maintaining each item of the software test environment
+#. Further manual steps will be necessary to provision initial user
+   accounts in the portal and/or other DIMS system administration
+   components.
 
-..
+#. The system will be put into a "test" mode to perform system
+   tests to validate that all DIMS components are up and running
+   and the system is functional. Initial data input tests may
+   be performed at this point to validate that input and output
+   functions are working.
+
+
+.. _Security Onion Setup Phase 1: https://youtu.be/D6IibAfPPD4
 
 .. _participatingorgs:
 
