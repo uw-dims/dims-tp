@@ -26,22 +26,9 @@ test
 Software items
 --------------
 
-.. todo::
-
-    This paragraph shall identify by name, number, and version, as applicable,
-    the software items (e.g., operating systems, compilers, communications
-    software, related applications software, databases, input files, code
-    auditors, dynamic path analyzers, test drivers, preprocessors, test data
-    generators, test control software, other special test software, post
-    processors) necessary to perform the planned testing activities at the test
-    site(s). This paragraph shall describe the purpose of each item, describe
-    its media (tape, disk, etc.), identify those that are expected to be
-    supplied by the site, and identify any classified processing or other
-    security or privacy issues associated with the software items.
-
 .. _swtable:
 
-.. table:: Software Table
+.. table:: Software Items Table
 
     +------------------------+------------------------------------------------------------+
     | Software item          | Purpose                                                    |
@@ -53,8 +40,6 @@ Software items
     | `Robot Framework`_     | Open source Acceptance Test-Driven Development (ATTD) tool |
     +------------------------+------------------------------------------------------------+
     | Custom DIMS scripts    | Serve specific custom test functions as needed.            |
-    +------------------------+------------------------------------------------------------+
-    | Other???               | ...                                                        |
     +------------------------+------------------------------------------------------------+
 
 ..
@@ -81,43 +66,32 @@ Hardware and firmware items
 
 .. _hwtable:
 
-.. table:: Hardware Table
+.. table:: Hardware Items Tables
 
-    +------------------------+----------------------------------+
-    | Hardware item          | Purpose                          |
-    +========================+==================================+
-    | Dell PowerEdge ???     | column 2                         |
-    +------------------------+----------------------------------+
-    | Switch...              | ...                              |
-    +------------------------+----------------------------------+
-    | Blah, blah...          | ...                              |
-    +------------------------+----------------------------------+
-    | Blah, blah...          | ...                              |
-    +------------------------+----------------------------------+
-    | Blah, blah...          | ...                              |
-    +------------------------+----------------------------------+
-    | Blah, blah...          | ...                              |
-    +------------------------+----------------------------------+
+   +-----------------------------------------------+--------------------------------+
+   |             Hardware Item                     |             Purpose            |
+   +===============================================+================================+
+   | - Dell PowerEdge R715 server                  | Server capable of running all  |
+   | - 128GB RAM                                   | DIMS components in containers  |
+   | - 2x12-Core 1.8GHz AMD Opteron processors     |                                |
+   | - 12 x 1TB drives in RAID 5 array             |                                |
+   +-----------------------------------------------+--------------------------------+
+   | - Dell PowerEdge R720 server                  | Server capable of running all  |
+   | - 128GB RAM                                   | DIMS components in containers  |
+   | - 4x12-Core 2.40Ghz Intel Xeon E5-2695 v2     |                                |
+   | - 6 x 4TB drives in RAID 5 array              |                                |
+   +-----------------------------------------------+--------------------------------+
+   | - Dell PowerEdge R510 server                  | Compute cluster capable server |
+   | - 2 x 1TB drives                              |                                |
+   +-----------------------------------------------+--------------------------------+
 
 ..
 
-.. _othermaterials:
-
-Other materials
----------------
-
 .. todo::
 
-    This paragraph shall identify and describe any other materials needed for
-    the testing at the test site(s). These materials may include manuals,
-    software listings, media containing the software to be tested, media
-    containing data to be used in the tests, sample listings of outputs, and
-    other forms or instructions. This paragraph shall identify those items that
-    are to be delivered to the site and those that are expected to be supplied
-    by the site.  The description shall include the type, layout, and quantity
-    of the materials, as applicable. This paragraph shall identify any
-    classified processing or other security or privacy issues associated with
-    the items.
+   Get RAM and CPU configruation for Seamus (R510 server).
+
+..
 
 .. _rightsandlicenses:
 
