@@ -11,6 +11,28 @@ General information
 Tests described in this section trace back to the DIMS System Requirements document
 Section :ref:`dimssr:requirements`.
 
+.. todo::
+
+    .. note::
+
+        For sections that provide traceback to requirements, use intersphinx
+        linking to reference the requirements and/or user stories from the
+        appropriate sub-section(s) of :ref:`dimssr:requirements`, like this:
+
+        .. code-block:: yaml
+
+            #. SR reference: :ref:`dimssr:attributestorage`, :ref:`dimssr:bdsuserstory1`
+
+        ..
+
+        Which renders like this:
+
+        #. SR reference: :ref:`dimssr:attributestorage`, :ref:`dimssr:bdsuserstory1`
+
+   ..
+
+..
+
 .. _testlevels:
 
 Test levels
@@ -229,11 +251,14 @@ JIRA. The test descriptions, steps,
 test data, expected results for each step,
 and actual results will be included in the Test Report.
 
-   #. Test levels: Component interface
-   #. Test type or class: Expected value, simulated data, erroneous input, desk check
-   #. Qualification method: Test
-   #. Special requirements: Access to the DIMS JIRA tool
-   #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
+.. todo:: Fill in SR reference (then remove this todo)
+
+    #. Test levels: Component interface
+    #. Test type or class: Expected value, simulated data, erroneous input, desk check
+    #. Qualification method: Test
+    #. SR reference: 
+    #. Special requirements: Access to the DIMS JIRA tool
+    #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
 .. _dwaacceptance:
 
@@ -247,9 +272,12 @@ and reported via JIRA. The test descriptions, steps,
 test data, expected results for each step,
 and actual results will be included in the Test Report.
 
+.. todo:: Fill in SR reference (then remove this todo)
+
     #. Test levels: System
     #. Test type or class: Expected value, simulated data, erroneous input, desk check
     #. Qualification method: Test
+    #. SR reference: 
     #. Special requirements: Access to the DIMS JIRA tool
     #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail) 
 
@@ -262,10 +290,13 @@ Tests in the Operational collection are automated tests that run when the CSCI i
 started and at proscribed intervals during operation. These tests will report 
 results via a log fanout and are used to verify system operation and availability.
 
-    #. Test levels: System
-    #. Test type or class: Timing, desk check
-    #. Qualification method: Test
-    #. Type of data to be recorded: Component ID, Wall clock time, other data TBD. 
+.. todo:: Fill in SR reference (then remove this todo)
+
+#. Test levels: System
+#. Test type or class: Timing, desk check
+#. Qualification method: Test
+#. SR reference: 
+#. Type of data to be recorded: Component ID, Wall clock time, other data TBD. 
 
 
 .. _diutcsci:
@@ -324,15 +355,13 @@ which is one component of the DIUT. The purpose of this test is to
 ensure that the entire contents of a test disk of arbitrary size can
 be uploaded to a Tupelo store component over a network.
 
-1. Test Levels: integration, system
-      
-2. Test classes: expected value, timing, stress
-   
-3. Qualification Method: Demonstration, inspection
-   
-4. Contract Reference: C3.1.2.c.3
+.. todo:: Fill in SR reference (then remove this todo)
 
-5. Type of Data Recorded: Copy of test disk content stored in Tupelo store.
+#. Test Levels: integration, system
+#. Test classes: expected value, timing, stress
+#. Qualification Method: Demonstration, inspection
+#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. Type of Data Recorded: Copy of test disk content stored in Tupelo store.
 
 Tupelo Whole Disk Subsequent Acquisition Test
 """""""""""""""""""""""""""""""""""""""""""""
@@ -343,15 +372,13 @@ be uploaded to a Tupelo store component over a network.  That disk was
 previously uploaded to the same store.  The upload time and filesystem
 usage at the store site should be less than for an initial upload.
 
-1. Test Levels: integration, system
-      
-2. Test classes: expected value, timing
-   
-3. Qualification Method: Demonstration, inspection
-   
-4. Contract Reference: C3.1.2.c.3
+.. todo:: Fill in SR reference (then remove this todo)
 
-5. Type of Data Recorded: Test log showing smaller stored disk and
+#. Test Levels: integration, system
+#. Test classes: expected value, timing
+#. Qualification Method: Demonstration, inspection
+#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. Type of Data Recorded: Test log showing smaller stored disk and
    reduced elapsed time for disk acquisition.
 
 
@@ -363,15 +390,13 @@ ensure that Tupelo store-processing tools can create so-called
 'products' from previously uploaded disk images.  These products are
 then to be stored in the same store as the images.
 
-1. Test Levels: integration, system
-      
-2. Test classes: expected value, timing
-   
-3. Qualification Method: Demonstration, inspection
-   
-4. Contract Reference: C3.1.2.c.3
+.. todo:: Fill in SR reference (then remove this todo)
 
-5. Type of Data Recorded: Products of store tools to exist as
+#. Test Levels: integration, system
+#. Test classes: expected value, timing
+#. Qualification Method: Demonstration, inspection
+#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. Type of Data Recorded: Products of store tools to exist as
    supplementary files in Tupelo store.
 
 
@@ -386,15 +411,13 @@ communicated to the search invoker.  Similarly for a query which
 should be not located.  The objective is to avoid false positives
 and false negatives.
 
-1. Test Levels: integration, system
-      
-2. Test classes: expected value, timing
-   
-3. Qualification Method: Demonstration, inspection
-   
-4. Contract Reference: C3.1.2.c.3
+.. todo:: Fill in SR reference (then remove this todo)
 
-5. Type of Data Recorded: Log files generated when making test queries
+#. Test Levels: integration, system
+#. Test classes: expected value, timing
+#. Qualification Method: Demonstration, inspection
+#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. Type of Data Recorded: Log files generated when making test queries
    of the existence of various files to a Tupelo store.
 
 
@@ -405,15 +428,13 @@ This test also relates to Tupelo. The purpose of this test is to
 stress the Tupelo software by inputting a large disk image, on the
 order of 1 or even 2TB.
 
-1. Test Levels: integration, system
-      
-2. Test classes: stress, timing
-   
-3. Qualification Method: Demonstration, inspection
-   
-4. Contract Reference: C3.1.2.c.3
+.. todo:: Fill in SR reference (then remove this todo)
 
-5. Type of Data Recorded: Copy of test disk content stored in Tupelo store.
+#. Test Levels: integration, system
+#. Test classes: stress, timing
+#. Qualification Method: Demonstration, inspection
+#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. Type of Data Recorded: Copy of test disk content stored in Tupelo store.
 
 
 Tupelo Network Failure Test
@@ -423,15 +444,13 @@ This test also relates to Tupelo. The purpose of this test is to
 assert the correctness of the Tupelo store when a disk upload is
 interrupted by both a client failure and a network failure.
 
-1. Test Levels: integration, system
-      
-2. Test classes: expected state
-   
-3. Qualification Method: Demonstration, inspection
-   
-4. Contract Reference: C3.1.2.c.3
+.. todo:: Fill in SR reference (then remove this todo)
 
-5. Type of Data Recorded: Summary of Tupelo store contents before and
+#. Test Levels: integration, system
+#. Test classes: expected state
+#. Qualification Method: Demonstration, inspection
+#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. Type of Data Recorded: Summary of Tupelo store contents before and
    after a whole disk upload operation interrupted by a client or
    network failure.
 
@@ -443,17 +462,14 @@ that a computer can be booted from a CD/USB containing a Linux Live CD
 with integrated Tupelo software, and that the local hard drive(s) of
 that computer can be uploaded to a remote Tupelo store over the network.
 
-1. Test Levels: integration, system
+.. todo:: Fill in SR reference (then remove this todo)
 
-2. Test classes: expected state
-   
-3. Qualification Method: Demonstration, inspection
-   
-4. Contract Reference: C3.1.2.c.3
-
-5. Type of Data Recorded: Observed behavior during demonstration.
-
-6. Special Requirements: Tupelo Boot CD
+#. Test Levels: integration, system
+#. Test classes: expected state
+#. Qualification Method: Demonstration, inspection
+#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. Type of Data Recorded: Observed behavior during demonstration.
+#. Special Requirements: Tupelo Boot CD
 
 Tupelo Boot Media Test 2
 """"""""""""""""""""""""
@@ -464,18 +480,15 @@ with integrated Tupelo software, and that the local hard drive(s) of
 that computer can be uploaded to a Tupelo store located on a locally
 attached external hard drive.
 
-1. Test Levels: integration, system
-      
-2. Test classes: expected state
-   
-3. Qualification Method: Demonstration, inspection
-   
-4. Contract Reference: C3.1.2.c.3
+.. todo:: Fill in SR reference (then remove this todo)
 
-5. Type of Data Recorded: Disk contents of computer's own hard drive
+#. Test Levels: integration, system
+#. Test classes: expected state
+#. Qualification Method: Demonstration, inspection
+#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. Type of Data Recorded: Disk contents of computer's own hard drive
    and external hard drive.
-
-6. Special Requirements: Tupelo Boot CD and External Hard Drive and
+#. Special Requirements: Tupelo Boot CD and External Hard Drive and
    Cabling
 
 .. todo::
