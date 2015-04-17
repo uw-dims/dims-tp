@@ -268,9 +268,8 @@ Acceptance Tests
 This collection of tests are run by a Tester via the User Interface to
 exercise the Dashboard Web Application and verify its functionality satisfies
 requirements in user stories. Acceptance tests will be entered, managed, executed, 
-and reported via JIRA. The test descriptions, steps, 
-test data, expected results for each step,
-and actual results will be included in the Test Report.
+and reported via JIRA. The test descriptions, steps, test data, expected results 
+for each step, and actual results will be included in the Test Report.
 
 .. todo:: Fill in SR reference (then remove this todo)
 
