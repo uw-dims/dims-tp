@@ -251,8 +251,6 @@ JIRA. The test descriptions, steps,
 test data, expected results for each step,
 and actual results will be included in the Test Report.
 
-.. todo:: Fill in SR reference (then remove this todo)
-
     #. Test levels: Component interface
     #. Test type or class: Expected value, simulated data, erroneous input, desk check
     #. Qualification method: Test
@@ -271,8 +269,6 @@ requirements in user stories. Acceptance tests will be entered, managed, execute
 and reported via JIRA. The test descriptions, steps, test data, expected results 
 for each step, and actual results will be included in the Test Report.
 
-.. todo:: Fill in SR reference (then remove this todo)
-
     #. Test levels: System
     #. Test type or class: Expected value, simulated data, erroneous input, desk check
     #. Qualification method: Test
@@ -290,8 +286,6 @@ Operational Tests
 Tests in the Operational collection are automated tests that run when the CSCI is
 started and at proscribed intervals during operation. These tests will report 
 results via a log fanout and are used to verify system operation and availability.
-
-.. todo:: Fill in SR reference (then remove this todo)
 
 #. Test levels: System
 #. Test type or class: Timing, desk check
