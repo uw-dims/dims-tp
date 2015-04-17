@@ -256,7 +256,7 @@ and actual results will be included in the Test Report.
     #. Test levels: Component interface
     #. Test type or class: Expected value, simulated data, erroneous input, desk check
     #. Qualification method: Test
-    #. SR reference: 
+    #. SR reference: :ref:`dimssr:dwauserstory7`
     #. Special requirements: Access to the DIMS JIRA tool
     #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
@@ -277,7 +277,9 @@ and actual results will be included in the Test Report.
     #. Test levels: System
     #. Test type or class: Expected value, simulated data, erroneous input, desk check
     #. Qualification method: Test
-    #. SR reference: 
+    #. SR reference: :ref:`dimssr:dwauserstory1`, :ref:`dimssr:dwauserstory2`, 
+       :ref:`dimssr:dwauserstory3`, :ref:`dimssr:dwauserstory4`, :ref:`dimssr:dwauserstory5`,
+       :ref:`dimssr:dwauserstory6`
     #. Special requirements: Access to the DIMS JIRA tool
     #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail) 
 
@@ -295,7 +297,7 @@ results via a log fanout and are used to verify system operation and availabilit
 #. Test levels: System
 #. Test type or class: Timing, desk check
 #. Qualification method: Test
-#. SR reference: 
+#. SR reference: :ref:`dimssr:dwauserstory8`
 #. Type of data to be recorded: Component ID, Wall clock time, other data TBD. 
 
 
