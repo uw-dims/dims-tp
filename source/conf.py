@@ -346,23 +346,10 @@ epub_exclude_files = ['search.html']
 
 intersphinx_cache_limit = -1   # days to keep the cached inventories (0 == forever)
 intersphinx_mapping = {
-        'dimssr': ('http://u12-dev-svr-1.prisem.washington.edu:8080/docs/develop/html/dims-sr',
-                    ('../../dims-sr/build/html/objects.inv',None)),
-        'dimsad': ('http://u12-dev-svr-1.prisem.washington.edu:8080/docs/develop/html/dims-ad',
-                    ('../../dims-ad/build/html/objects.inv',None)),
-        'dimsocd': ('http://u12-dev-svr-1.prisem.washington.edu:8080/docs/develop/html/dims-ocd',
-                    ('../../dims-ocd/build/html/objects.inv',None))
+        'dimsocd': ("%s/dims/docs/dims-ocd" % os.environ['HOME'],
+                    ('http://u12-dev-svr-1.prisem.washington.edu:8080/docs/develop/html/dims-ocd/objects.inv', None)),
+        'dimsad': ("%s/dims/docs/dims-ad" % os.environ['HOME'],
+                    ('http://u12-dev-svr-1.prisem.washington.edu:8080/docs/develop/html/dims-ad/objects.inv', None)),
+        'dimssr': ("%s/dims/docs/dims-sr" % os.environ['HOME'],
+                    ('http://u12-dev-svr-1.prisem.washington.edu:8080/docs/develop/html/dims-sr/objects.inv', None))
 }
-#intersphinx_mapping = {
-#        'dimssr': ('http://u12-dev-svr-1.prisem.washington.edu:8080/docs/develop/html/dims-sr',
-#                    ('dims-sr', 'objects.inv')), # "dims-sr" is symbolic link in source/ to dims-sr/build/html
-#        'dimsocd': ('http://u12-dev-svr-1.prisem.washington.edu:8080/docs/develop/html/dims-ocd',
-#                    ('dims-ocd', 'objects.inv'))  # "dims-ocd" is symbolic link in source/ to dims-ocd/build/html
-#}
-#intersphinx_mapping = {
-#        'dimssr': ('../../dims-sr/build/html', # "dims-sr" is symbolic link in source/ to dims-sr/build/html
-#            ('http://u12-dev-svr-1.prisem.washington.edu:8080/docs/develop/html/dims-sr/objects.inv', None)),
-#        'dimsocd': ('../../dims-ocd/build/html', # "dims-ocd" is symbolic link in source/ to dims-ocd/build/html
-#            ('http://u12-dev-svr-1.prisem.washington.edu:8080/docs/develop/html/dims-ocd/objects.inv', None))
-#}
-
