@@ -509,10 +509,25 @@ and Lateral Information Sharing (VLIS) CSCI.
 Test Levels
 ^^^^^^^^^^^
 
+General testing of the Vertical and Lateral Information Sharing CSCI will take
+place at the levels described in :ref:`testlevels`. Unit and
+integration levels apply to development, and the remaining levels
+apply to FQT.
+
+* Unit tests
+* Component interface tests
+* System tests
+
 .. _vlisclasses:
 
 Test Classes
 ^^^^^^^^^^^^
+
+The following classes of tests, described in :ref:`testclasses` will be 
+performed during formal qualification testing of the Vertical and
+Lateral Information Sharing CSCI:
+
+* Expected value testing
 
 .. _vlisconditions:
 
@@ -520,27 +535,42 @@ General Test Conditions
 ^^^^^^^^^^^^^^^^^^^^^^^
 The following sub-paragraphs identify and describe the planned groups of tests.
 
-.. todo::
+Ingest of Indicators of Compromise via STIX Documents
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-   These paragraphs shall identify a test by project unique identifier and shall
-   provide the information specified below for the test. Reference may be made
-   as needed to the general information in 4.1.
+This test relates to stix-java and Tupelo.  stix-java is a
+DIMS-sourced Java library for manipulation of Mitre's STIX document
+format.  STIX documents containing indicators-of-compromise (IOCs) in
+the form of file hashes and file names shall be parsed.  The hashes
+and names shall be submitted to the DIMS Tupelo component, and all the
+stored disks searched for the IOCs.  Hit or miss results are then
+collected.
 
-   + Test objective
-   + Test level
-   + Test type or class
-   + Qualification method(s) as specified in the requirements specification
-   + Identifier of the CSCI requirements and, if applicable, software system
-     requirements addressed by this test. (Alternatively, this information may be
-     provided in Section 6.)
-   + Special requirements (for example, 48 hours of continuous facility time, weapon
-     simulation, extent of test, use of a special input or database)
-   + Type of data to be recorded
-   + Type of data recording/reduction/analysis to be employed
-   + Assumptions and constraints, such as anticipated limitations on the test
-     due to system or test conditions--timing, interfaces, equipment,
-     personnel, database, etc.  Safety, security, and privacy considerations
-     associated with the test
+
+#. Test Levels: component interface, system
+#. Test classes: expected value
+#. Qualification Method: Demonstration, inspection
+#. SR reference: :ref:`dimssr:structuredinput`
+#. Type of Data Recorded: Copy of search results, copy of input STIX
+   documents, summary of Tupelo store state.
+
+..
+Authoring of Indicators of Compromise via STIX Documents
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+This test relates to stix-java.  stix-java is a DIMS-sourced Java
+library for manipulation of Mitre's STIX document format.  STIX
+documents containing indicators-of-compromise (IOCs) in the form of
+file hashes and file names shall be created.  The hashes and names
+shall be auto-generated from output of CIF feeds, from Ops-Trust email
+attachments and from Tupelo whole disk analysis results.
+
+#. Test Levels: component interface, system
+#. Test classes: expected value
+#. Qualification Method: Demonstration, inspection
+#. SR reference: :ref:`dimssr:structuredinput`
+#. Type of Data Recorded: Copy of created STIX
+   documents, summary of Tupelo store state, CIF feed results
 
 ..
 
