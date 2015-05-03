@@ -350,12 +350,10 @@ which is one component of the DIUT. The purpose of this test is to
 ensure that the entire contents of a test disk of arbitrary size can
 be uploaded to a Tupelo store component over a network.
 
-.. todo:: Fill in SR reference (then remove this todo)
-
 #. Test Levels: integration, system
 #. Test classes: expected value, timing, stress
 #. Qualification Method: Demonstration, inspection
-#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. SR reference: :ref:`dimssr:diutuserstory6`
 #. Type of Data Recorded: Copy of test disk content stored in Tupelo store.
 
 Tupelo Whole Disk Subsequent Acquisition Test
@@ -367,12 +365,10 @@ be uploaded to a Tupelo store component over a network.  That disk was
 previously uploaded to the same store.  The upload time and filesystem
 usage at the store site should be less than for an initial upload.
 
-.. todo:: Fill in SR reference (then remove this todo)
-
 #. Test Levels: integration, system
 #. Test classes: expected value, timing
 #. Qualification Method: Demonstration, inspection
-#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. SR reference: :ref:`dimssr:diutuserstory6`
 #. Type of Data Recorded: Test log showing smaller stored disk and
    reduced elapsed time for disk acquisition.
 
@@ -385,12 +381,10 @@ ensure that Tupelo store-processing tools can create so-called
 'products' from previously uploaded disk images.  These products are
 then to be stored in the same store as the images.
 
-.. todo:: Fill in SR reference (then remove this todo)
-
 #. Test Levels: integration, system
 #. Test classes: expected value, timing
 #. Qualification Method: Demonstration, inspection
-#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. SR reference: :ref:`dimssr:diutuserstory6`
 #. Type of Data Recorded: Products of store tools to exist as
    supplementary files in Tupelo store.
 
@@ -406,12 +400,11 @@ communicated to the search invoker.  Similarly for a query which
 should be not located.  The objective is to avoid false positives
 and false negatives.
 
-.. todo:: Fill in SR reference (then remove this todo)
 
 #. Test Levels: integration, system
 #. Test classes: expected value, timing
 #. Qualification Method: Demonstration, inspection
-#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. SR reference: :ref:`dimssr:diutuserstory6`
 #. Type of Data Recorded: Log files generated when making test queries
    of the existence of various files to a Tupelo store.
 
@@ -423,12 +416,10 @@ This test also relates to Tupelo. The purpose of this test is to
 stress the Tupelo software by inputting a large disk image, on the
 order of 1 or even 2TB.
 
-.. todo:: Fill in SR reference (then remove this todo)
-
 #. Test Levels: integration, system
 #. Test classes: stress, timing
 #. Qualification Method: Demonstration, inspection
-#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. SR reference: :ref:`dimssr:diutuserstory6`
 #. Type of Data Recorded: Copy of test disk content stored in Tupelo store.
 
 
@@ -439,12 +430,11 @@ This test also relates to Tupelo. The purpose of this test is to
 assert the correctness of the Tupelo store when a disk upload is
 interrupted by both a client failure and a network failure.
 
-.. todo:: Fill in SR reference (then remove this todo)
 
 #. Test Levels: integration, system
 #. Test classes: expected state
 #. Qualification Method: Demonstration, inspection
-#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. SR reference: :ref:`dimssr:diutuserstory6`
 #. Type of Data Recorded: Summary of Tupelo store contents before and
    after a whole disk upload operation interrupted by a client or
    network failure.
@@ -457,12 +447,10 @@ that a computer can be booted from a CD/USB containing a Linux Live CD
 with integrated Tupelo software, and that the local hard drive(s) of
 that computer can be uploaded to a remote Tupelo store over the network.
 
-.. todo:: Fill in SR reference (then remove this todo)
-
 #. Test Levels: integration, system
 #. Test classes: expected state
 #. Qualification Method: Demonstration, inspection
-#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. SR reference: :ref:`dimssr:diutuserstory6`
 #. Type of Data Recorded: Observed behavior during demonstration.
 #. Special Requirements: Tupelo Boot CD
 
@@ -475,12 +463,10 @@ with integrated Tupelo software, and that the local hard drive(s) of
 that computer can be uploaded to a Tupelo store located on a locally
 attached external hard drive.
 
-.. todo:: Fill in SR reference (then remove this todo)
-
 #. Test Levels: integration, system
 #. Test classes: expected state
 #. Qualification Method: Demonstration, inspection
-#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. SR reference: :ref:`dimssr:diutuserstory6`
 #. Type of Data Recorded: Disk contents of computer's own hard drive
    and external hard drive.
 #. Special Requirements: Tupelo Boot CD and External Hard Drive and
