@@ -350,12 +350,10 @@ which is one component of the DIUT. The purpose of this test is to
 ensure that the entire contents of a test disk of arbitrary size can
 be uploaded to a Tupelo store component over a network.
 
-.. todo:: Fill in SR reference (then remove this todo)
-
 #. Test Levels: integration, system
 #. Test classes: expected value, timing, stress
 #. Qualification Method: Demonstration, inspection
-#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. SR reference: :ref:`dimssr:diutuserstory6`
 #. Type of Data Recorded: Copy of test disk content stored in Tupelo store.
 
 Tupelo Whole Disk Subsequent Acquisition Test
@@ -367,12 +365,10 @@ be uploaded to a Tupelo store component over a network.  That disk was
 previously uploaded to the same store.  The upload time and filesystem
 usage at the store site should be less than for an initial upload.
 
-.. todo:: Fill in SR reference (then remove this todo)
-
 #. Test Levels: integration, system
 #. Test classes: expected value, timing
 #. Qualification Method: Demonstration, inspection
-#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. SR reference: :ref:`dimssr:diutuserstory6`
 #. Type of Data Recorded: Test log showing smaller stored disk and
    reduced elapsed time for disk acquisition.
 
@@ -385,12 +381,10 @@ ensure that Tupelo store-processing tools can create so-called
 'products' from previously uploaded disk images.  These products are
 then to be stored in the same store as the images.
 
-.. todo:: Fill in SR reference (then remove this todo)
-
 #. Test Levels: integration, system
 #. Test classes: expected value, timing
 #. Qualification Method: Demonstration, inspection
-#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. SR reference: :ref:`dimssr:diutuserstory6`
 #. Type of Data Recorded: Products of store tools to exist as
    supplementary files in Tupelo store.
 
@@ -406,12 +400,11 @@ communicated to the search invoker.  Similarly for a query which
 should be not located.  The objective is to avoid false positives
 and false negatives.
 
-.. todo:: Fill in SR reference (then remove this todo)
 
 #. Test Levels: integration, system
 #. Test classes: expected value, timing
 #. Qualification Method: Demonstration, inspection
-#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. SR reference: :ref:`dimssr:diutuserstory6`
 #. Type of Data Recorded: Log files generated when making test queries
    of the existence of various files to a Tupelo store.
 
@@ -423,12 +416,10 @@ This test also relates to Tupelo. The purpose of this test is to
 stress the Tupelo software by inputting a large disk image, on the
 order of 1 or even 2TB.
 
-.. todo:: Fill in SR reference (then remove this todo)
-
 #. Test Levels: integration, system
 #. Test classes: stress, timing
 #. Qualification Method: Demonstration, inspection
-#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. SR reference: :ref:`dimssr:diutuserstory6`
 #. Type of Data Recorded: Copy of test disk content stored in Tupelo store.
 
 
@@ -439,12 +430,11 @@ This test also relates to Tupelo. The purpose of this test is to
 assert the correctness of the Tupelo store when a disk upload is
 interrupted by both a client failure and a network failure.
 
-.. todo:: Fill in SR reference (then remove this todo)
 
 #. Test Levels: integration, system
 #. Test classes: expected state
 #. Qualification Method: Demonstration, inspection
-#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. SR reference: :ref:`dimssr:diutuserstory6`
 #. Type of Data Recorded: Summary of Tupelo store contents before and
    after a whole disk upload operation interrupted by a client or
    network failure.
@@ -457,12 +447,10 @@ that a computer can be booted from a CD/USB containing a Linux Live CD
 with integrated Tupelo software, and that the local hard drive(s) of
 that computer can be uploaded to a remote Tupelo store over the network.
 
-.. todo:: Fill in SR reference (then remove this todo)
-
 #. Test Levels: integration, system
 #. Test classes: expected state
 #. Qualification Method: Demonstration, inspection
-#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. SR reference: :ref:`dimssr:diutuserstory6`
 #. Type of Data Recorded: Observed behavior during demonstration.
 #. Special Requirements: Tupelo Boot CD
 
@@ -475,12 +463,10 @@ with integrated Tupelo software, and that the local hard drive(s) of
 that computer can be uploaded to a Tupelo store located on a locally
 attached external hard drive.
 
-.. todo:: Fill in SR reference (then remove this todo)
-
 #. Test Levels: integration, system
 #. Test classes: expected state
 #. Qualification Method: Demonstration, inspection
-#. SR reference: [was Contract Reference: C3.1.2.c.3]
+#. SR reference: :ref:`dimssr:diutuserstory6`
 #. Type of Data Recorded: Disk contents of computer's own hard drive
    and external hard drive.
 #. Special Requirements: Tupelo Boot CD and External Hard Drive and
@@ -523,10 +509,25 @@ and Lateral Information Sharing (VLIS) CSCI.
 Test Levels
 ^^^^^^^^^^^
 
+General testing of the Vertical and Lateral Information Sharing CSCI will take
+place at the levels described in :ref:`testlevels`. Unit and
+integration levels apply to development, and the remaining levels
+apply to FQT.
+
+* Unit tests
+* Component interface tests
+* System tests
+
 .. _vlisclasses:
 
 Test Classes
 ^^^^^^^^^^^^
+
+The following classes of tests, described in :ref:`testclasses` will be 
+performed during formal qualification testing of the Vertical and
+Lateral Information Sharing CSCI:
+
+* Expected value testing
 
 .. _vlisconditions:
 
@@ -534,27 +535,42 @@ General Test Conditions
 ^^^^^^^^^^^^^^^^^^^^^^^
 The following sub-paragraphs identify and describe the planned groups of tests.
 
-.. todo::
+Ingest of Indicators of Compromise via STIX Documents
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-   These paragraphs shall identify a test by project unique identifier and shall
-   provide the information specified below for the test. Reference may be made
-   as needed to the general information in 4.1.
+This test relates to stix-java and Tupelo.  stix-java is a
+DIMS-sourced Java library for manipulation of Mitre's STIX document
+format.  STIX documents containing indicators-of-compromise (IOCs) in
+the form of file hashes and file names shall be parsed.  The hashes
+and names shall be submitted to the DIMS Tupelo component, and all the
+stored disks searched for the IOCs.  Hit or miss results are then
+collected.
 
-   + Test objective
-   + Test level
-   + Test type or class
-   + Qualification method(s) as specified in the requirements specification
-   + Identifier of the CSCI requirements and, if applicable, software system
-     requirements addressed by this test. (Alternatively, this information may be
-     provided in Section 6.)
-   + Special requirements (for example, 48 hours of continuous facility time, weapon
-     simulation, extent of test, use of a special input or database)
-   + Type of data to be recorded
-   + Type of data recording/reduction/analysis to be employed
-   + Assumptions and constraints, such as anticipated limitations on the test
-     due to system or test conditions--timing, interfaces, equipment,
-     personnel, database, etc.  Safety, security, and privacy considerations
-     associated with the test
+
+#. Test Levels: component interface, system
+#. Test classes: expected value
+#. Qualification Method: Demonstration, inspection
+#. SR reference: :ref:`dimssr:structuredinput`
+#. Type of Data Recorded: Copy of search results, copy of input STIX
+   documents, summary of Tupelo store state.
+
+..
+Authoring of Indicators of Compromise via STIX Documents
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+This test relates to stix-java.  stix-java is a DIMS-sourced Java
+library for manipulation of Mitre's STIX document format.  STIX
+documents containing indicators-of-compromise (IOCs) in the form of
+file hashes and file names shall be created.  The hashes and names
+shall be auto-generated from output of CIF feeds, from Ops-Trust email
+attachments and from Tupelo whole disk analysis results.
+
+#. Test Levels: component interface, system
+#. Test classes: expected value
+#. Qualification Method: Demonstration, inspection
+#. SR reference: :ref:`dimssr:structuredinput`
+#. Type of Data Recorded: Copy of created STIX
+   documents, summary of Tupelo store state, CIF feed results
 
 ..
 
