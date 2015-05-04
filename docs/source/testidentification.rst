@@ -150,50 +150,85 @@ Planned tests
 Backend Data Stores CSCI - (BDS)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following sections describe the scope of formal testing for the Backend
-Data Stores (BDS) CSCI.
-
+Backend data stores include temporary and long-term storage of
+event data, user attributes, user state, indicators and
+observables, and other incident response related data produced
+during use of the DIMS system.  The following sections describe the scope of
+formal testing for the Backend Data Stores (BDS) CSCI.
 
 .. _bdslevels:
 
 Test Levels
 ^^^^^^^^^^^
 
+General testing of the Backend Data Stores CSCI will take place at the
+levels described in :ref:`testlevels`. Unit and integration levels apply to
+development, and the remaining levels apply to :term:`FQT`.
+
+* Unit tests
+* Integration tests
+* Component interface tests
+* System tests
+
 .. _bdsclasses:
 
 Test Classes
 ^^^^^^^^^^^^
+
+The following classes of tests, described in :ref:`testclasses` will be
+performed during formal qualification testing of the Backend Data Stores CSCI:
+
+* Expected value testing
+* Simulated data
+* Erroneous input
+* Desk check testing
 
 .. _bdsconditions:
 
 General Test Conditions
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The following sub-paragraphs identify and describe the planned groups of tests.
+The following sub-paragraphs identify and describe the planned collections of
+:term:`FQT` tests.  Test personnel should have access to the Firefox web
+browser, VPN access, a properly configured DIMS shell environment for testing.
 
-.. todo::
+.. _bdsacceptance:
 
-   These paragraphs shall identify a test by project unique identifier and shall
-   provide the information specified below for the test. Reference may be made
-   as needed to the general information in 4.1.
+Acceptance Tests
+""""""""""""""""
 
-   + Test objective
-   + Test level
-   + Test type or class
-   + Qualification method(s) as specified in the requirements specification
-   + Identifier of the CSCI requirements and, if applicable, software system
-     requirements addressed by this test. (Alternatively, this information may be
-     provided in Section 6.)
-   + Special requirements (for example, 48 hours of continuous facility time, weapon
-     simulation, extent of test, use of a special input or database)
-   + Type of data to be recorded
-   + Type of data recording/reduction/analysis to be employed
-   + Assumptions and constraints, such as anticipated limitations on the test
-     due to system or test conditions--timing, interfaces, equipment,
-     personnel, database, etc.  Safety, security, and privacy considerations
-     associated with the test
+This collection of tests are run by a Tester via the User Interface to
+exercise the Backend Data Stores CSCI and verify its functionality satisfies
+requirements in requirements and user stories. Acceptance tests will be
+entered, managed, executed, and reported via JIRA. The test descriptions,
+steps, test data, expected results for each step, and actual results will be
+included in the Test Report.
 
-..
+#. Test levels: System
+#. Test type or class: Expected value, simulated data, erroneous input, desk check
+#. Qualification method: Test
+#. SR reference: :ref:`dimssr:attributestorage`, :ref:`bdsuserstory1`,
+   :ref:`dimssr:bdsuserstory2`,
+#. Special requirements: Access to the DIMS JIRA tool
+#. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
+
+.. _bdsoperational:
+
+Operational Tests
+"""""""""""""""""
+
+Tests in the Operational collection are automated tests that run when the CSCI is
+started and at proscribed intervals during operation. These tests will report
+results via a log fanout and are used to verify system operation and availability.
+(Some of the test capabilities in this category will also be used
+for performance of the tests described in :ref:`statesmodes`.)
+
+#. Test levels: System
+#. Test type or class: Timing, desk check
+#. Qualification method: Test
+#. SR reference: :ref:`dimssr:bdsuserstory1`, :ref:`dimssr:bdsuserstory2`
+#. Type of data to be recorded: Component ID, Wall clock time, other data TBD.
+
 
 .. _dwacsci:
 
@@ -288,6 +323,8 @@ Operational Tests
 Tests in the Operational collection are automated tests that run when the CSCI is
 started and at proscribed intervals during operation. These tests will report
 results via a log fanout and are used to verify system operation and availability.
+(Some of the test capabilities in this category will also be used
+for performance of the tests described in :ref:`statesmodes`.)
 
 #. Test levels: System
 #. Test type or class: Timing, desk check
@@ -332,7 +369,6 @@ and User Tools CSCI:
 * Simulated network failures testing
 * Stress testing
 * Timing testing
-
 
 .. _diutconditions:
 
@@ -474,29 +510,69 @@ attached external hard drive.
 #. Special Requirements: Tupelo Boot CD and External Hard Drive and
    Cabling
 
-.. todo::
+.. _diutuserinterface:
 
-   These paragraphs shall identify a test by project unique identifier and shall
-   provide the information specified below for the test. Reference may be made
-   as needed to the general information in 4.1.
+User Interface Tests
+""""""""""""""""""""
 
-   + Test objective
-   + Test level
-   + Test type or class
-   + Qualification method(s) as specified in the requirements specification
-   + Identifier of the CSCI requirements and, if applicable, software system
-     requirements addressed by this test. (Alternatively, this information may be
-     provided in Section 6.)
-   + Special requirements (for example, 48 hours of continuous facility time, weapon
-     simulation, extent of test, use of a special input or database)
-   + Type of data to be recorded
-   + Type of data recording/reduction/analysis to be employed
-   + Assumptions and constraints, such as anticipated limitations on the test
-     due to system or test conditions--timing, interfaces, equipment,
-     personnel, database, etc.  Safety, security, and privacy considerations
-     associated with the test
+The purpose of this collection is to validate the functionality of
+the Data Integration and User Tools capabilities related to
+general incident response and/or incident tracking or investigative
+activities.
+These tests are related to tests described in :ref:`dwauserinterface` in the DWA CSCI section.
+DIUT CSCI tests will be entered, managed, executed, and reported
+via JIRA. The test descriptions, steps, test data, expected results for each
+step, and actual results will be included in the Test Report.
 
-..
+#. Test levels: Component interface
+#. Test type or class: Expected value, simulated data, erroneous input, desk check
+#. Qualification method: Test
+#. SR reference: :ref:`dimssr:diutuserstory2`, :ref:`dimssr:diutuserstory8`
+#. Special requirements: Access to the DIMS JIRA tool
+#. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
+
+.. _diutacceptance:
+
+Acceptance Tests
+""""""""""""""""
+
+This collection of tests are run by a Tester via the User Interface to
+exercise the Data Integration and User Tools capabilities
+and verify its functionality satisfies
+requirements in user stories.
+These tests are related to tests described in :ref:`dwaacceptance` in the DWA CSCI section.
+Acceptance tests will be entered, managed, executed,
+and reported via JIRA. The test descriptions, steps, test data, expected results
+for each step, and actual results will be included in the Test Report.
+
+#. Test levels: System
+#. Test type or class: Expected value, simulated data, erroneous input, desk check
+#. Qualification method: Test
+#. SR reference: :ref:`dimssr:incidenttracking`, :ref:`dimssr:knowledgeacquisition`,
+   :ref:`dimssr:aggregatesummary`, :ref:`dimssr:diutuserstory1`,
+   :ref:`dimssr:diutuserstory3`, :ref:`dimssr:diutuserstory4`, :ref:`dimssr:diutuserstory5`,
+   :ref:`dimssr:diutuserstory7`
+#. Special requirements: Access to the DIMS JIRA tool
+#. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
+
+.. _diutoperational:
+
+Operational Tests
+"""""""""""""""""
+
+Tests in the Operational collection are automated tests that run when the CSCI is
+started and at proscribed intervals during operation. These tests will report
+results via a log fanout and are used to verify system operation and availability.
+(Some of the test capabilities in this category will also be used
+for performance of the tests described in :ref:`statesmodes`.)
+
+#. Test levels: System
+#. Test type or class: Timing, desk check
+#. Qualification method: Test
+#. SR reference: :ref:`dimssr:aggregatesummary`, :ref:`dimssr:diutuserstory2`,
+   :ref:`dimssr:diutuserstory4`, :ref:`dimssr:diutuserstory8`
+#. Type of data to be recorded: Component ID, Wall clock time, other data TBD.
+
 
 .. _vliscsci:
 
@@ -610,7 +686,7 @@ The following sub-paragraphs identify and describe the planned collections of
 :term:`FQT` tests.  Test personnel should have access to the Firefox web
 browser, VPN access, a properly configured DIMS shell environment for testing.
 
-.. _statesmodestests
+.. _statesmodestests:
 
 States/Modes Tests
 """"""""""""""""""
@@ -670,7 +746,7 @@ browser, VPN access, a properly configured DIMS shell environment for some
 testing, while other tests (e.g., port scanning) will be done from external
 hosts without any proper account or credential data.
 
-.. _securitytests
+.. _securitytests:
 
 Security Tests
 """"""""""""""
@@ -691,3 +767,36 @@ the Test Report.
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
+.. _securityoperational:
+
+Operational Tests
+"""""""""""""""""
+
+Tests in the Operational collection are automated tests that run on-demand or
+at proscribed intervals during normal operation. These tests will report
+results via both the DWA CSCI components, and a log fanout and are used to
+verify system operation and availability.  (Some of the test capabilities in
+this category are closely related to tests described in
+:ref:`diutoperational`.)
+
+#. Test levels: System
+#. Test type or class: Timing, desk check
+#. Qualification method: Test
+#. SR reference: :ref:`dimssr:diutuserstory2`, :ref:`dimssr:diutuserstory4`,
+   :ref:`dimssr:diutuserstory5`
+#. Type of data to be recorded: Component ID, Wall clock time, other data TBD.
+
+
+.. note::
+
+   An application penetration test of DIMS components, including the
+   :ref:`dwacsci` and the ops-trust portal (part of :ref:`vliscsci` and
+   desribed in :ref:`dimsocd:dimsoperationalconceptdescription`, Sections
+   :ref:`dimsocd:opstrustportalnow` and :ref:`dimsocd:opstrustportalchanges`)
+   is to be performed by a professional service company.
+
+   This is a separate test from those described in this Test Plan,
+   and the results will be reported in a separate document to be
+   included in the final Test Report.
+
+..
