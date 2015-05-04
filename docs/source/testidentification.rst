@@ -128,7 +128,7 @@ and post-processed for two primary reasons:
    were not anticipated during development, or uncover latent bugs related to
    services that are not managed properly and may not come up after a
    crash or other failure condition.
-   
+
 #. To be able to produce reStructuredText format files that can be inserted
    into a directory hierarchy for the Test Report document that can then
    be rendered using Sphinx to produce a deliverable HTML and/or PDF version.
@@ -198,8 +198,8 @@ The following sub-paragraphs identify and describe the planned groups of tests.
 Dashboard Web Application CSCI - (DWA)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Dashboard Web Application, also referred to as the DIMS Dashboard, 
-consists of web application server ("DWA Server") and 
+The Dashboard Web Application, also referred to as the DIMS Dashboard,
+consists of web application server ("DWA Server") and
 client ("DWA Client") components. The following sections
 describe the scope of testing for the Dashboard Web Application CSCI.
 
@@ -208,7 +208,7 @@ describe the scope of testing for the Dashboard Web Application CSCI.
 Test Levels
 ^^^^^^^^^^^
 
-General testing of the Dashboard Web Application CSCI will take place at the 
+General testing of the Dashboard Web Application CSCI will take place at the
 levels described in :ref:`testlevels`. Unit and integration levels apply to
 development, and the remaining levels apply to :term:`FQT`.
 
@@ -222,7 +222,7 @@ development, and the remaining levels apply to :term:`FQT`.
 Test Classes
 ^^^^^^^^^^^^
 
-The following classes of tests, described in :ref:`testclasses` will be 
+The following classes of tests, described in :ref:`testclasses` will be
 performed during formal qualification testing of the Dashboard Web Application CSCI:
 
 * Expected value testing
@@ -244,19 +244,19 @@ browser, VPN access, a properly configured DIMS shell environment for testing.
 User Interface Tests
 """"""""""""""""""""
 
-The purpose of this collection is to validate the functionality of  
-Dashboard Web Application User Interface (UI) elements. 
+The purpose of this collection is to validate the functionality of
+Dashboard Web Application User Interface (UI) elements.
 UI tests will be entered, managed, executed, and reported via
-JIRA. The test descriptions, steps, 
+JIRA. The test descriptions, steps,
 test data, expected results for each step,
 and actual results will be included in the Test Report.
 
-    #. Test levels: Component interface
-    #. Test type or class: Expected value, simulated data, erroneous input, desk check
-    #. Qualification method: Test
-    #. SR reference: :ref:`dimssr:dwauserstory7`
-    #. Special requirements: Access to the DIMS JIRA tool
-    #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
+#. Test levels: Component interface
+#. Test type or class: Expected value, simulated data, erroneous input, desk check
+#. Qualification method: Test
+#. SR reference: :ref:`dimssr:dwauserstory7`
+#. Special requirements: Access to the DIMS JIRA tool
+#. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
 .. _dwaacceptance:
 
@@ -265,18 +265,18 @@ Acceptance Tests
 
 This collection of tests are run by a Tester via the User Interface to
 exercise the Dashboard Web Application and verify its functionality satisfies
-requirements in user stories. Acceptance tests will be entered, managed, executed, 
-and reported via JIRA. The test descriptions, steps, test data, expected results 
+requirements in user stories. Acceptance tests will be entered, managed, executed,
+and reported via JIRA. The test descriptions, steps, test data, expected results
 for each step, and actual results will be included in the Test Report.
 
-    #. Test levels: System
-    #. Test type or class: Expected value, simulated data, erroneous input, desk check
-    #. Qualification method: Test
-    #. SR reference: :ref:`dimssr:dwauserstory1`, :ref:`dimssr:dwauserstory2`, 
-       :ref:`dimssr:dwauserstory3`, :ref:`dimssr:dwauserstory4`, :ref:`dimssr:dwauserstory5`,
-       :ref:`dimssr:dwauserstory6`
-    #. Special requirements: Access to the DIMS JIRA tool
-    #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail) 
+#. Test levels: System
+#. Test type or class: Expected value, simulated data, erroneous input, desk check
+#. Qualification method: Test
+#. SR reference: :ref:`dimssr:dwauserstory1`, :ref:`dimssr:dwauserstory2`,
+   :ref:`dimssr:dwauserstory3`, :ref:`dimssr:dwauserstory4`, :ref:`dimssr:dwauserstory5`,
+   :ref:`dimssr:dwauserstory6`
+#. Special requirements: Access to the DIMS JIRA tool
+#. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
 .. _dwaoperational:
 
@@ -284,14 +284,14 @@ Operational Tests
 """""""""""""""""
 
 Tests in the Operational collection are automated tests that run when the CSCI is
-started and at proscribed intervals during operation. These tests will report 
+started and at proscribed intervals during operation. These tests will report
 results via a log fanout and are used to verify system operation and availability.
 
 #. Test levels: System
 #. Test type or class: Timing, desk check
 #. Qualification method: Test
 #. SR reference: :ref:`dimssr:dwauserstory8`
-#. Type of data to be recorded: Component ID, Wall clock time, other data TBD. 
+#. Type of data to be recorded: Component ID, Wall clock time, other data TBD.
 
 
 .. _diutcsci:
@@ -322,7 +322,7 @@ apply to :term:`FQT`.
 Test Classes
 ^^^^^^^^^^^^
 
-The following classes of tests, described in :ref:`testclasses` will be 
+The following classes of tests, described in :ref:`testclasses` will be
 performed during formal qualification testing of the Data Integration
 and User Tools CSCI:
 
@@ -523,7 +523,7 @@ apply to FQT.
 Test Classes
 ^^^^^^^^^^^^
 
-The following classes of tests, described in :ref:`testclasses` will be 
+The following classes of tests, described in :ref:`testclasses` will be
 performed during formal qualification testing of the Vertical and
 Lateral Information Sharing CSCI:
 
@@ -554,7 +554,6 @@ collected.
 #. Type of Data Recorded: Copy of search results, copy of input STIX
    documents, summary of Tupelo store state.
 
-..
 Authoring of Indicators of Compromise via STIX Documents
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -571,8 +570,4 @@ attachments and from Tupelo whole disk analysis results.
 #. SR reference: :ref:`dimssr:structuredinput`
 #. Type of Data Recorded: Copy of created STIX
    documents, summary of Tupelo store state, CIF feed results
-
-..
-
-
 
