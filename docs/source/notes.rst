@@ -170,6 +170,9 @@ List of Acronyms
    EO
        Executive Order
 
+   FQT
+       Formal Qualification Test/Tests/Testing
+
    HSPD
        Homeland Security Presidential Directive
 
