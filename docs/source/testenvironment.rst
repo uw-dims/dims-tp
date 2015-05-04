@@ -171,11 +171,11 @@ related to testing.
     +------------------------+------------------------------------------------------------+
     | PRISEM participants  \ | Involved in higher-level testing focused on user           |
     |                      \ | acceptance testing and bug identification, as their time   |
-    |                        | and availability permit.                                   |
+    |                        | and availability permit. May be on-site or remote.         |
     +------------------------+------------------------------------------------------------+
     | Other stakeholders   \ | Involved in higher-level testing focused on user           |
     |                      \ | acceptance testing and bug identification, as their time   |
-    |                        | and availability permit.                                   |
+    |                        | and availability permit. Most likely will be remote.       |
     +------------------------+------------------------------------------------------------+
 
 ..
