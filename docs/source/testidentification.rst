@@ -8,8 +8,10 @@ Test identification
 General information
 -------------------
 
-Tests described in this section trace back to the DIMS System Requirements document
-Section :ref:`dimssr:requirements`.
+Tests described in this section trace back to the
+:ref:`dimssr:dimssystemrequirements` document, Section
+:ref:`dimssr:requirements`, as described in Section
+:ref:`requirementstraceability`.
 
 .. todo::
 
