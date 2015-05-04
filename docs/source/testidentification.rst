@@ -573,3 +573,121 @@ attachments and from Tupelo whole disk analysis results.
 #. Type of Data Recorded: Copy of created STIX
    documents, summary of Tupelo store state, CIF feed results
 
+
+.. _statesmodes:
+
+States and Modes
+~~~~~~~~~~~~~~~~
+
+There are several states/modes that the DIMS system must support,
+including a `test mode`, `debug mode`, and a `demonstration mode`.
+The following section describes the scope of testing for these states/modes.
+
+.. _statesmodesevels:
+
+Test Levels
+^^^^^^^^^^^
+
+General testing of the required states/modes will take place at the
+`System level` only, as described in :ref:`testlevels`.
+
+.. _statesmodesclasses:
+
+Test Classes
+^^^^^^^^^^^^
+
+The following classes of tests, described in :ref:`testclasses` will be
+performed during formal qualification testing of states/modes.
+
+* Desk check testing
+
+.. _statesmodesconditions:
+
+General Test Conditions
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The following sub-paragraphs identify and describe the planned collections of
+:term:`FQT` tests.  Test personnel should have access to the Firefox web
+browser, VPN access, a properly configured DIMS shell environment for testing.
+
+.. _statesmodestests
+
+States/Modes Tests
+""""""""""""""""""
+
+The purpose of this collection is to validate the functionality of
+the defined states/modes.  These tests will be entered, managed, executed, and
+reported via JIRA. The test descriptions, steps, test data, expected results
+for each step, and actual results will be included in the Test Report.
+
+#. Test levels: System level
+#. Test type or class: Desk check
+#. Qualification method: Test
+#. SR reference: :ref:`dimssr:modetoggles`, :ref:`dimssr:testmode`,
+   :ref:`dimssr:debugmode`, :ref:`dimssr:demomode`
+#. Special requirements: Access to the DIMS JIRA tool
+#. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
+
+
+.. _security:
+
+Security and Privacy Tests
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are several security controls related to user accounts, access keys, and
+network access.  The following section describes the scope of testing for these
+aspects of DIMS.
+
+.. _securityevels:
+
+Test Levels
+^^^^^^^^^^^
+
+General testing of the required security and privacy requirements will take
+place at the `Component interface level` and `System level`, as described in
+:ref:`testlevels`.
+
+.. _securityclasses:
+
+Test Classes
+^^^^^^^^^^^^
+
+The following classes of tests, described in :ref:`testclasses` will be
+performed during formal qualification testing of states/modes.
+
+* Expected value testing
+* Erroneous input
+* Desk check testing
+
+.. _securityconditions:
+
+General Test Conditions
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The following sub-paragraphs identify and describe the planned collections of
+:term:`FQT` tests.  Test personnel should have access to the Firefox web
+browser, VPN access, a properly configured DIMS shell environment for some
+testing, while other tests (e.g., port scanning) will be done from external
+hosts without any proper account or credential data.
+
+.. _securitytests
+
+Security Tests
+""""""""""""""
+
+The purpose of this collection is to validate the functionality of
+the defined security and privacy requirements.  These tests will be entered,
+managed, executed, and reported via JIRA. The test descriptions, steps, test
+data, expected results for each step, and actual results will be included in
+the Test Report.
+
+#. Test levels: Component interface level, System level
+#. Test type or class: Expected value, Erroneous Input, Desk check
+#. Qualification method: Test
+#. SR reference: :ref:`dimssr:networkaccesscontrols`,
+   :ref:`dimssr:accountaccesscontrols`,
+   :ref:`dimssr:secondfactorauth`, :ref:`dimssr:accountsuspension`,
+   :ref:`dimssr:rekeying`
+#. Special requirements: Access to the DIMS JIRA tool
+#. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
+
