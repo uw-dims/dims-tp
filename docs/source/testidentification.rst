@@ -66,8 +66,8 @@ DIMS components will be tested at four distinct levels.
    may have failed somewhere within the larger complex system.
 
 The first two levels of tests are performed on a continuous basis during
-development. The final two levels pertain to the final
-qualification testing (FQT) described in this document.
+development. The final two levels pertain to the :term:`FQT`
+described in this document.
 
 .. _testclasses:
 
@@ -210,7 +210,7 @@ Test Levels
 
 General testing of the Dashboard Web Application CSCI will take place at the 
 levels described in :ref:`testlevels`. Unit and integration levels apply to
-development, and the remaining levels apply to FQT.
+development, and the remaining levels apply to :term:`FQT`.
 
 * Unit tests
 * Integration tests
@@ -235,9 +235,9 @@ performed during formal qualification testing of the Dashboard Web Application C
 General Test Conditions
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-The following sub-paragraphs identify and describe the planned collections of FQT tests.
-Test personnel should have access to the Firefox web browser, VPN access, a
-properly configured DIMS shell environment for testing.
+The following sub-paragraphs identify and describe the planned collections of
+:term:`FQT` tests.  Test personnel should have access to the Firefox web
+browser, VPN access, a properly configured DIMS shell environment for testing.
 
 .. _dwauserinterface:
 
@@ -310,7 +310,7 @@ Test Levels
 General testing of the Data Integration and User Tools CSCI will take
 place at the levels described in :ref:`testlevels`. Unit and
 integration levels apply to development, and the remaining levels
-apply to FQT.
+apply to :term:`FQT`.
 
 * Unit tests
 * Integration tests

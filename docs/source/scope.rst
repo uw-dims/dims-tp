@@ -19,7 +19,8 @@ software, as defined within the statement of work.
 
 This Test Plan describes the Formal Qualification Test (FQT) activities and the
 environment in which those activities will take place for the DIMS deployed
-system. DIMS is composed of the following Computer Software Configuration Items (CSCIs):
+system. DIMS is composed of the following Computer Software Configuration Items
+(CSCIs):
 
 .. _capabilityrequirements:
 
@@ -45,9 +46,9 @@ Reference :ref:`dimssr:dimssystemrequirements` establishes the
 DIMS software requirements. Reference :ref:`dimsocd:dimsoperationalconceptdescription`
 describes the operational concept (and open source design concept) for DIMS.
 Reference :ref:`dimsad:dimsarchitecturedesign` sets forward the architectural
-design.  Unit testing and integration testing will be performed during development at
-the University of Washington. This document primarily addresses the FQT activities
-that take place when deploying the DIMS software.
+design.  Unit testing and integration testing will be performed during
+development at the University of Washington. This document primarily addresses
+the :term:`FQT` activities that take place when deploying the DIMS software.
 
 .. _systemoverview:
 
