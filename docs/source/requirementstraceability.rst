@@ -3,22 +3,34 @@
 Requirements traceability
 =========================
 
-.. todo::
+Traceability to requirements in this document is done in
+Section :ref:`testidentification` using ``intersphinx``
+document linking as part of the `SR reference` line
+in test descriptions. This creates hypertext links to
+reference the requirements and/or user stories from the
+appropriate sub-section(s) of Section :ref:`dimssr:requirements`
+from the document :ref:`dimssr:dimssystemrequirements`,
+like this:
 
-   This paragraph shall contain:
+    .
+    .
+    .
 
-   Traceability from each test identified in this plan to the CSCI requirements
-   and, if applicable, software system requirements it addresses.
-   (Alternatively, this traceability may be provided in 4.2.x.y and referenced
-   from this paragraph.)
+    #. Test levels: Component interface
+    #. Test type or class: Expected value, simulated data, erroneous input, desk check
+    #. Qualification method: Test
+    #. SR reference: :ref:`dimssr:dwauserstory7`
+    #. Special requirements: Access to the DIMS JIRA tool
+    #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
-   Traceability from each CSCI requirement and, if applicable, each software
-   system requirement covered by this test plan to the test(s) that address it.
-   The traceability shall cover the CSCI requirements in all applicable
-   Software Requirements Specifications (SRSs) and associated Interface
-   Requirements Specifications (IRSs), and, for software systems, the system
-   requirements in all applicable System/ Subsystem Specifications (SSSs) and
-   associated system-level IRSs.
+    .
+    .
+    .
+
+.. note::
+
+    The links only work when viewing the PDF and/or HTML versions of this
+    document, with an active network connection.
 
 ..
 
