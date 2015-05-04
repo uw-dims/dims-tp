@@ -155,52 +155,49 @@ general high-level steps will be performed:
 Participating organizations
 ---------------------------
 
-.. todo::
+Table :ref:`paticipanttable` lists participants, their roles and responsibilities,
+related to testing.
 
-    This paragraph shall identify the organizations that will participate in
-    the testing at the test sites(s) and the roles and responsibilities of
-    each.
+.. _paticipanttable:
+
+.. table:: Participants Roles
+
+    +------------------------+------------------------------------------------------------+
+    | Participants           | Roles and Responsibilities                                 |
+    +========================+============================================================+
+    | DIMS development team\ | Primary persons involved in testing DIMS components at     |
+    |                      \ | all test levels. Most will be on-site at the specified     |
+    |                        | test locations, while some will be remote.                 |
+    +------------------------+------------------------------------------------------------+
+    | PRISEM participants  \ | Involved in higher-level testing focused on user           |
+    |                      \ | acceptance testing and bug identification, as their time   |
+    |                        | and availability permit.                                   |
+    +------------------------+------------------------------------------------------------+
+    | Other stakeholders   \ | Involved in higher-level testing focused on user           |
+    |                      \ | acceptance testing and bug identification, as their time   |
+    |                        | and availability permit.                                   |
+    +------------------------+------------------------------------------------------------+
 
 ..
-
-.. _personnel:
-
-Personnel
----------
-
-.. todo::
-
-    This paragraph shall identify the number, type, and skill level of
-    personnel needed during the test period at the test site(s), the dates and
-    times they will be needed, and any special needs, such as multishift
-    operation and retention of key skills to ensure continuity and consistency
-    in extensive test programs.
-
 
 .. _orientationplan:
 
 Orientation plan
 ----------------
 
-.. todo::
-
-    This paragraph shall describe any orientation and training to be given
-    before and during the testing. This information shall be related to the
-    personnel needs given in 3.x.7. This training may include user instruction,
-    operator instruction, maintenance and control group instruction, and
-    orientation briefings to staff personnel. If extensive training is
-    anticipated, a separate plan may be developed and referenced here.
-
+People involved with testing will be provided with guidance in the form
+of user documentation, a copy of this test plan, and any specifics of
+how to perform the specified tests. This may include providing them with
+access to software described in :ref:`softwareitems`, or some other
+form of checklist that will enable them to know the tests to be performed,
+acceptance criteria, and a means of reporting test results.
 
 .. _teststoperform:
 
 Tests to be performed
 ---------------------
 
-.. todo::
-
-   This paragraph shall identify, by referencing section 4, the tests to be
-   performed at the test site(s).
-
-..
-
+Specific tests of test classes `expected value testing` and `desk check
+testing` (see Section :ref:`testclasses`) that are manual in nature, and are
+expected to be performed by stakeholders for the purpose of acceptance testing,
+will be documented and provided as part of orientation prior to testing.
