@@ -128,42 +128,39 @@ components:
 .. _qualificationmthods:
 
 Qualification Methods
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
-Four *qualification methods* [#qm]_ will be used in testing:
+Five *qualification methods* [#qm]_ will be used in testing to establish
+conformance with requirements as described in this Section.
 
-#. **Analysis**: Compliance with requirements is determined by models or by
-   interpreting results using established principles. For example, a design's
-   performance might be analyzed by running simulations.
+#. **Inspection**: Visual examination, review of descriptive documentation, and
+   comparison of the actual characteristics with predetermined criteria.
 
-#. **Demonstration**: Compliance with requirements is validated by observing
-   the item in operation.
+#. **Demonstration**: Exercise of a sample of observable functional operations.
+   This method is appropriate for demonstrating the successful integration,
+   high-level functionality, and connectivity provided by the overal system.
 
-#. **Inspection**: Compliance with requirements is determined by formal
-   examination—think of a building inspection for compliance with the local
-   code.
+#. **Manual Test**: Manual tests will be performed when automated tests are
+   not feasible.
 
-#. **Test**: Compliance with requirements is validated by evaluating or
-   executing an item under controlled conditions, configurations, and inputs in
-   order to observe the response. Results are quantified and analyzed.
+#. **Automated Test**: When possible, test procedures will be automated.
 
-..
-
-.. note::
-
-    The term "test" is often used to include all four methods. [#qm]_
+#. **Analysis**: Technical evaluation, processing, review, or study of
+   accumulated data.
 
 ..
+
 
 .. todo::
 
     These **qualification methods** are to be identified in test related code
     and data using the following identifiers:
 
-    * ``analysis``
-    * ``demonstration``
     * ``inspection``
-    * ``test``
+    * ``demonstration``
+    * ``manual_test``
+    * ``automated_test``
+    * ``analysis``
 
 ..
 
@@ -874,7 +871,7 @@ this category are closely related to tests described in
 
 
 .. The following are footnotes
-.. [#qm] Source: `Qualification Methods`_
+.. [#qm] Source: `Automated Software Testing\: Introduction, Management, and Performance`_, by Elfriede Dustin, Jeff Rashka, and John Paul.
 
 .. The following are references
-.. _Qualification Methods: http://www.jiludwig.com/Qualification_Method.html
+.. _Automated Software Testing\: Introduction, Management, and Performance: https://books.google.com/books?id=kl2H0G6EFf0C&pg=PA519&lpg=PA519
