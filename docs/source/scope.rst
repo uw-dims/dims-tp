@@ -93,21 +93,24 @@ Software System Test Strategy (General)
 ---------------------------------------
 
 The software system test strategy we will employ is compromises two
-high-level sets of tests.  The first set of test will be developed as the
-system is being designed using the Agile coding methodology.  Development and
-pre-release testing will be performed during "sprints" (cycles of development
-anticipated to be on 2 week time frames). These tests are centered on
-development and take place within the project team.  The project team will
-extract user stories from the use cases and in turn create epics derived from
-the user stories.  Tests will be written for the user stories and determine the
-necessary development.  This is essentially a test-driven approach that pushes
-development from one sprint to the next.  The other set of tests will be
-performed with interaction from the stakeholders and will entail an environment
-in which the stakeholders will, at determinate intervals, access the system and
-execute one or more user stories.  This environment, set up specifically for
-stakeholders, will enable them to interact with the system at their discretion
-and direct their feedback to the project team about the functionality delivered
-within their environment.
+high-level sets of tests.
+
+The first set of test will be developed as the system is being designed using
+the Agile coding methodology.  Development and pre-release testing will be
+performed during "sprints" (cycles of development anticipated to be on 2 week
+time frames). These tests are centered on development and take place within the
+project team.  The project team will extract user stories from the use cases
+and in turn create epics derived from the user stories.  Tests will be written
+for the user stories and determine the necessary development.  This is
+essentially a test-driven approach that pushes development from one sprint to
+the next.
+
+The other set of tests will be performed with interaction from the
+stakeholders and will entail an environment in which the stakeholders will, at
+determinate intervals, access the system and execute one or more user stories.
+This environment, set up specifically for stakeholders, will enable them to
+interact with the system at their discretion and direct their feedback to the
+project team about the functionality delivered within their environment.
 
 Delivery of software for testing will be conducted in the following manner:
 
@@ -126,6 +129,8 @@ Delivery of software for testing will be conducted in the following manner:
 
 + Iterations of testing will be conducted as builds are delivered to address
   bug fixes as well as delivered features or functionality.
+
+
 
 .. _documentoverview:
 
