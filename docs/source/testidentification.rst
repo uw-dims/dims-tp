@@ -98,6 +98,36 @@ components:
    analyzed
 
 
+.. _qualificationmthods:
+
+Qualification Methods
+---------------------
+
+Four *qualification methods* [#qm]_ will be used in testing:
+
+#. **Analysis**: Compliance with requirements is determined by models or by
+   interpreting results using established principles. For example, a design's
+   performance might be analyzed by running simulations.
+
+#. **Demonstration**: Compliance with requirements is validated by observing
+   the item in operation.
+
+#. **Inspection**: Compliance with requirements is determined by formal
+   examination—think of a building inspection for compliance with the local
+   code.
+
+#. **Test**: Compliance with requirements is validated by evaluating or
+   executing an item under controlled conditions, configurations, and inputs in
+   order to observe the response. Results are quantified and analyzed.
+
+..
+
+.. note::
+
+    The term "test" is often used to include all four methods. [#qm]_
+
+..
+
 .. _testconditions:
 
 General test conditions
@@ -801,3 +831,10 @@ this category are closely related to tests described in
    included in the final Test Report.
 
 ..
+
+
+.. The following are footnotes
+.. [#qm] Source: `Qualification Methods`_
+
+.. The following are references
+.. _Qualification Methods: http://www.jiludwig.com/Qualification_Method.html
