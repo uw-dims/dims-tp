@@ -71,6 +71,19 @@ The first two levels of tests are performed on a continuous basis during
 development. The final two levels pertain to the :term:`FQT`
 described in this document.
 
+.. todo::
+
+    These **test levels** are to be identified in test related code and data
+    using the following identifiers:
+
+    * ``unit``
+    * ``integration``
+    * ``component_interface``
+    * ``system``
+
+..
+
+
 .. _testclasses:
 
 Test classes
@@ -96,6 +109,20 @@ components:
 
 #. **Desk check**: both code and output will be manually inspected and
    analyzed
+
+.. todo::
+
+    These **test classes** are to be identified in test related code and data
+    using the following identifiers:
+
+    * ``expected_value``
+    * ``simulated_data``
+    * ``erroneous_input``
+    * ``stress``
+    * ``timing``
+    * ``desk_check``
+
+..
 
 
 .. _qualificationmthods:
@@ -127,6 +154,19 @@ Four *qualification methods* [#qm]_ will be used in testing:
     The term "test" is often used to include all four methods. [#qm]_
 
 ..
+
+.. todo::
+
+    These **qualification methods** are to be identified in test related code
+    and data using the following identifiers:
+
+    * ``analysis``
+    * ``demonstration``
+    * ``inspection``
+    * ``test``
+
+..
+
 
 .. _testconditions:
 
