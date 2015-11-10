@@ -10,8 +10,11 @@ Planning tests with JIRA
 
 This section describes how to plan a test cycle using JIRA.
 
+Test cycle
+~~~~~~~~~~
+
 We use a test cycle to plan and execute our tests. To view test cycles,
-click Tests > Plan Test Cycle:
+click ``Tests > Plan Test Cycle``:
 
 .. figure:: images/jira/plan_cycle1.png
     :alt: View test cycles
@@ -20,7 +23,7 @@ click Tests > Plan Test Cycle:
 ..
 
 The list of cycles displays. We need a new cycle for the tests due on
-11/15, so we'll create one. Click the Create New Cycle button to bring up
+11/15, so we'll create one. Click the ``Create New Cycle`` button to bring up
 a dialog to create the cycle. Give it a name and description.
 
 .. figure:: images/jira/create_cycle1.png
@@ -39,7 +42,10 @@ tests yet.
 ..
 
 For the purposes of this documentation, we created another cycle called
-Sample Test Cycle as well.
+Sample Test Cycle as well for illustration purposes.
+
+Creating tests
+~~~~~~~~~~~~~~
 
 To create a new test, select Tests > Create a Test.
 
