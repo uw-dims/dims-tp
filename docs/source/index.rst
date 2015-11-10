@@ -18,6 +18,7 @@ DIMS Test Plan v |release|
    requirementstraceability
    notes
    license
+   appendices
 
 Contact
 -------
