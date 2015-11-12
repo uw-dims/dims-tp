@@ -8,20 +8,133 @@ Running and planning tests
 
 This chapter describes:
 
-#. How to create a VM for Dashboard server and API component interface tests, Dashboard UI-based tests
+#. How to create a VM for Dashboard server and API component interface tests,
+   Dashboard UI-based tests
 #. How to create a VM for Tupelo tests
 #. How to plan tests with JIRA
 
-.. _creatingdashboardtestserver:
+.. _dashboardtestserver:
 
-Creating test Dashboard server VM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Test Dashboard server VM
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Tests performed using the Dashboard user interface, as well as some of the
+automated tests, require a Vagrant test server VM running on the tester's
+workstation.
+
+Whenever a test has a prerequisite of ``dashboard test server``, it is
+referring to this VM, up and running on the tester's workstation.
+
+Creating the VM
+"""""""""""""""
+
+To create this VM, do the following:
+
+.. _installboxfile:
+
+1. The Vagrant box ``ubuntu-14.04.2-amd64-base-keyed`` should be installed in Vagrant.
+   This box is created by the procedure described at :ref:`dimspacker:vmquickstart`.
+   If you have already performed those steps, through the subsection
+   :ref:`dimspacker:vmquickstartinstallboxes`, then you've already installed
+   this box file. You can also check by:
+
+   .. code-block:: none
+
+       vagrant box list
+
+   ..
+
+   If ``ubuntu-14.04.2-amd64-base-keyed`` appears in the list, then you already
+   have this box file installed, and you can go to the next step. If it is not
+   installed, perform the steps at :ref:`dimspacker:vmquickstart` throught the
+   box installation step at :ref:`dimspacker:vmquickstartinstallboxes`.
+
+..
+
+2. Set up Vagrant directory for the VM you're creating. You will need to
+   name the VM - the name ``dimstestserver is used in the code below
+   and will be used in Test prerequisite steps.
+   Then you will add a private IP
+   address to the auto-generated Vagrantfile. We are specifying the IP to be used
+   for testing as ``192.168.56.103.`` Finally, bring the VM up using ``vagrant up``.
+
+   .. code-block:: none
+
+      cd $GIT/dims-vagrant/ubuntu-14.04.2-amd64/
+      make server NAME=dimstestserver
+      cd dimstestserver
+      ../nic2 192.168.56.103
+      vagrant up
+
+   ..
+
+..
+
+3. Run the Ansible playbook ``dims-test-server-provision.yml`` as shown below. This will
+   take a while to run since it will install the virtual environmnet. Once this is done, you
+   can reuse the VM for multiple tests without destroying it.
+
+   .. code-block:: none
+
+       ./run_playbook -g dashboard-test-servers dims-test-server-provision.yml -vv
+
+   ..
+
+..
+
+Resetting VM Data
+"""""""""""""""""
+
+A test prerequisite may specify that you reset the test VM's data. To do this, you run
+the ``dashboard-test-data-reset`` playbook as follows. CD to the VM's Vagrantfile
+directory as shown in the first step if you aren't there already.
+
+.. code-block:: none
+
+    cd $GIT/dims-vagrant/ubuntu-14.04.2-amd64/dimstestserver
+    ./run_playbook -g dashboard-test-servers dashboard-test-data-reset.yml -vv
+
+..
 
 
-.. _creatingtupelotestserver:
+.. _creatingtupeloserver:
 
-Creating test Tupelo server VM
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating Tupelo server VM
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Tupelo tests require a Tupelo server VM.
+
+This server is created in a similar fashion to the dashboard test server:
+
+1. Make sure you have the box file installed as shown above in step one of creating
+   a dashboard test server.
+
+..
+
+2. Set up Vagrant directory for the VM, name it ``tupeloserver`` and
+   give it an IP of ``192.168.56.102``.
+
+   .. code-block:: none
+
+      cd $GIT/dims-vagrant/ubuntu-14.04.2-amd64/
+      make server NAME=tupeloserver
+      cd tupeloserver
+      ../nic2 192.168.56.102
+      vagrant up
+
+   ..
+
+..
+
+3. Run the Ansible playbook ``tupelo-server-install.yml`` as shown below.
+
+   .. code-block:: none
+
+       ./run_playbook -g tupelo-servers tupelo-server-install.yml -vv
+
+   ..
+
+..
 
 
 .. _jiratestplanner:
@@ -29,7 +142,7 @@ Creating test Tupelo server VM
 Planning tests with JIRA
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-This section describes how to plan a test cycle using JIRA.
+This section describes how to plan a test cycle and write tests using JIRA.
 
 Test cycle
 """"""""""
