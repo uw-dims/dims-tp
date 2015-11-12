@@ -3,15 +3,36 @@
 Appendices
 ==========
 
+Running and planning tests
+--------------------------
+
+This chapter describes:
+
+#. How to create a VM for Dashboard server and API component interface tests, Dashboard UI-based tests
+#. How to create a VM for Tupelo tests
+#. How to plan tests with JIRA
+
+.. _creatingdashboardtestserver:
+
+Creating test Dashboard server VM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. _creatingtupelotestserver:
+
+Creating test Tupelo server VM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 .. _jiratestplanner:
 
 Planning tests with JIRA
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 This section describes how to plan a test cycle using JIRA.
 
 Test cycle
-~~~~~~~~~~
+""""""""""
 
 We use a test cycle to plan and execute our tests. To view test cycles,
 click ``Tests > Plan Test Cycle``:
@@ -45,7 +66,7 @@ For the purposes of this documentation, we created another cycle called
 Sample Test Cycle as well for illustration purposes.
 
 Creating tests
-~~~~~~~~~~~~~~
+""""""""""""""
 
 To create a new test, select Tests > Create a Test.
 
