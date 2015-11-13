@@ -126,13 +126,27 @@ This server is created in a similar fashion to the dashboard test server:
 
 ..
 
-3. Run the Ansible playbook ``tupelo-server-install.yml`` as shown below.
+3. Run the Ansible playbook ``tupelo-test-server-provision.yml`` as shown below.
 
    .. code-block:: none
 
        ./run_playbook -g tupelo-servers tupelo-server-install.yml -vv
 
    ..
+
+..
+
+.. _installingtupeloclient:
+
+Installing Tupelo client
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The tester needs the Tupelo client installed on their host machine to perform many of the Tupelo tests.
+The tester installs the tupelo client on his/her developer workstation via Ansible:
+
+.. code-block:: none
+
+    RUNHOST=localhost RUNGROUP=tupelo-clients ansible-playbook -i $GIT/ansible-playbooks/dyn_inv.py $GIT/ansible-playbooks/tupelo-shell-deploy.yml -e artifact_branch=develop --ask-sudo-pass -vv
 
 ..
 
