@@ -23,13 +23,13 @@ Tests described in this section trace back to the
 
         .. code-block:: yaml
 
-            #. SR reference: :ref:`dimssr:attributestorage`, :ref:`dimssr:bdsuserstory1`
+            #. SR reference: :ref:`dimssr:attributeStorage`, :ref:`dimssr:bdsUserStory1`
 
         ..
 
         Which renders like this:
 
-        #. SR reference: :ref:`dimssr:attributestorage`, :ref:`dimssr:bdsuserstory1`
+        #. SR reference: :ref:`dimssr:attributeStorage`, :ref:`dimssr:bdsUserStory1`
 
    ..
 
@@ -275,8 +275,8 @@ included in the Test Report.
 #. Test levels: System
 #. Test type or class: Expected value, simulated data, erroneous input, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:attributestorage`, :ref:`bdsuserstory1`,
-   :ref:`dimssr:bdsuserstory2`,
+#. SR reference: :ref:`dimssr:attributeStorage`, :ref:`dimssr:bdsUserStory1`,
+   :ref:`dimssr:bdsUserStory2`,
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
@@ -294,7 +294,7 @@ for performance of the tests described in :ref:`statesmodes`.)
 #. Test levels: System
 #. Test type or class: Timing, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:bdsuserstory1`, :ref:`dimssr:bdsuserstory2`
+#. SR reference: :ref:`dimssr:bdsUserStory1`, :ref:`dimssr:bdsUserStory2`
 #. Type of data to be recorded: Component ID, Wall clock time, other data TBD.
 
 
@@ -359,7 +359,7 @@ and actual results will be included in the Test Report.
 #. Test levels: Component interface
 #. Test type or class: Expected value, simulated data, erroneous input, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:dwauserstory7`
+#. SR reference: :ref:`dimssr:dwaUserStory7`
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
@@ -377,9 +377,9 @@ for each step, and actual results will be included in the Test Report.
 #. Test levels: System
 #. Test type or class: Expected value, simulated data, erroneous input, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:dwauserstory1`, :ref:`dimssr:dwauserstory2`,
-   :ref:`dimssr:dwauserstory3`, :ref:`dimssr:dwauserstory4`, :ref:`dimssr:dwauserstory5`,
-   :ref:`dimssr:dwauserstory6`
+#. SR reference: :ref:`dimssr:dwaUserStory1`, :ref:`dimssr:dwaUserStory2`,
+   :ref:`dimssr:dwaUserStory3`, :ref:`dimssr:dwaUserStory4`, :ref:`dimssr:dwaUserStory5`,
+   :ref:`dimssr:dwaUserStory6`
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
@@ -397,7 +397,7 @@ for performance of the tests described in :ref:`statesmodes`.)
 #. Test levels: System
 #. Test type or class: Timing, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:dwauserstory8`
+#. SR reference: :ref:`dimssr:dwaUserStory8`
 #. Type of data to be recorded: Component ID, Wall clock time, other data TBD.
 
 
@@ -459,7 +459,7 @@ be uploaded to a Tupelo store component over a network.
 #. Test Levels: integration, system
 #. Test classes: expected value, timing, stress
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:diutuserstory6`
+#. SR reference: :ref:`dimssr:diutUserStory6`
 #. Type of Data Recorded: Copy of test disk content stored in Tupelo store.
 
 Tupelo Whole Disk Subsequent Acquisition Test
@@ -474,7 +474,7 @@ usage at the store site should be less than for an initial upload.
 #. Test Levels: integration, system
 #. Test classes: expected value, timing
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:diutuserstory6`
+#. SR reference: :ref:`dimssr:diutUserStory6`
 #. Type of Data Recorded: Test log showing smaller stored disk and
    reduced elapsed time for disk acquisition.
 
@@ -490,7 +490,7 @@ then to be stored in the same store as the images.
 #. Test Levels: integration, system
 #. Test classes: expected value, timing
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:diutuserstory6`
+#. SR reference: :ref:`dimssr:diutUserStory6`
 #. Type of Data Recorded: Products of store tools to exist as
    supplementary files in Tupelo store.
 
@@ -510,7 +510,7 @@ and false negatives.
 #. Test Levels: integration, system
 #. Test classes: expected value, timing
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:diutuserstory6`
+#. SR reference: :ref:`dimssr:diutUserStory6`
 #. Type of Data Recorded: Log files generated when making test queries
    of the existence of various files to a Tupelo store.
 
@@ -525,7 +525,7 @@ order of 1 or even 2TB.
 #. Test Levels: integration, system
 #. Test classes: stress, timing
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:diutuserstory6`
+#. SR reference: :ref:`dimssr:diutUserStory6`
 #. Type of Data Recorded: Copy of test disk content stored in Tupelo store.
 
 
@@ -540,7 +540,7 @@ interrupted by both a client failure and a network failure.
 #. Test Levels: integration, system
 #. Test classes: expected state
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:diutuserstory6`
+#. SR reference: :ref:`dimssr:diutUserStory6`
 #. Type of Data Recorded: Summary of Tupelo store contents before and
    after a whole disk upload operation interrupted by a client or
    network failure.
@@ -556,7 +556,7 @@ that computer can be uploaded to a remote Tupelo store over the network.
 #. Test Levels: integration, system
 #. Test classes: expected state
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:diutuserstory6`
+#. SR reference: :ref:`dimssr:diutUserStory6`
 #. Type of Data Recorded: Observed behavior during demonstration.
 #. Special Requirements: Tupelo Boot CD
 
@@ -572,7 +572,7 @@ attached external hard drive.
 #. Test Levels: integration, system
 #. Test classes: expected state
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:diutuserstory6`
+#. SR reference: :ref:`dimssr:diutUserStory6`
 #. Type of Data Recorded: Disk contents of computer's own hard drive
    and external hard drive.
 #. Special Requirements: Tupelo Boot CD and External Hard Drive and
@@ -595,7 +595,7 @@ step, and actual results will be included in the Test Report.
 #. Test levels: Component interface
 #. Test type or class: Expected value, simulated data, erroneous input, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:diutuserstory2`, :ref:`dimssr:diutuserstory8`
+#. SR reference: :ref:`dimssr:diutUserStory2`, :ref:`dimssr:diutUserStory8`
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
@@ -616,10 +616,10 @@ for each step, and actual results will be included in the Test Report.
 #. Test levels: System
 #. Test type or class: Expected value, simulated data, erroneous input, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:incidenttracking`, :ref:`dimssr:knowledgeacquisition`,
-   :ref:`dimssr:aggregatesummary`, :ref:`dimssr:diutuserstory1`,
-   :ref:`dimssr:diutuserstory3`, :ref:`dimssr:diutuserstory4`, :ref:`dimssr:diutuserstory5`,
-   :ref:`dimssr:diutuserstory7`
+#. SR reference: :ref:`dimssr:incidentTracking`, :ref:`dimssr:knowledgeacquisition`,
+   :ref:`dimssr:aggregateSummary`, :ref:`dimssr:diutUserStory1`,
+   :ref:`dimssr:diutUserStory3`, :ref:`dimssr:diutUserStory4`, :ref:`dimssr:diutUserStory5`,
+   :ref:`dimssr:diutUserStory7`
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
@@ -637,8 +637,8 @@ for performance of the tests described in :ref:`statesmodes`.)
 #. Test levels: System
 #. Test type or class: Timing, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:aggregatesummary`, :ref:`dimssr:diutuserstory2`,
-   :ref:`dimssr:diutuserstory4`, :ref:`dimssr:diutuserstory8`
+#. SR reference: :ref:`dimssr:aggregateSummary`, :ref:`dimssr:diutUserStory2`,
+   :ref:`dimssr:diutUserStory4`, :ref:`dimssr:diutUserStory8`
 #. Type of data to be recorded: Component ID, Wall clock time, other data TBD.
 
 
@@ -696,7 +696,7 @@ collected.
 #. Test Levels: component interface, system
 #. Test classes: expected value
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:structuredinput`
+#. SR reference: :ref:`dimssr:structuredInput`
 #. Type of Data Recorded: Copy of search results, copy of input STIX
    documents, summary of Tupelo store state.
 
@@ -713,7 +713,7 @@ attachments and from Tupelo whole disk analysis results.
 #. Test Levels: component interface, system
 #. Test classes: expected value
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:structuredinput`
+#. SR reference: :ref:`dimssr:structuredInput`
 #. Type of Data Recorded: Copy of created STIX
    documents, summary of Tupelo store state, CIF feed results
 
@@ -767,8 +767,8 @@ for each step, and actual results will be included in the Test Report.
 #. Test levels: System level
 #. Test type or class: Desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:modetoggles`, :ref:`dimssr:testmode`,
-   :ref:`dimssr:debugmode`, :ref:`dimssr:demomode`
+#. SR reference: :ref:`dimssr:modeToggles`, :ref:`dimssr:testmode`,
+   :ref:`dimssr:debugMode`, :ref:`dimssr:demoMode`
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
@@ -828,10 +828,10 @@ the Test Report.
 #. Test levels: Component interface level, System level
 #. Test type or class: Expected value, Erroneous Input, Desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:networkaccesscontrols`,
-   :ref:`dimssr:accountaccesscontrols`,
-   :ref:`dimssr:secondfactorauth`, :ref:`dimssr:accountsuspension`,
-   :ref:`dimssr:rekeying`
+#. SR reference: :ref:`dimssr:networkAccessControls`,
+   :ref:`dimssr:accountAccessControls`,
+   :ref:`dimssr:secondFactorAuth`, :ref:`dimssr:accountSuspension`,
+   :ref:`dimssr:keyRegeneration`
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
@@ -850,8 +850,8 @@ this category are closely related to tests described in
 #. Test levels: System
 #. Test type or class: Timing, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:diutuserstory2`, :ref:`dimssr:diutuserstory4`,
-   :ref:`dimssr:diutuserstory5`
+#. SR reference: :ref:`dimssr:diutUserStory2`, :ref:`dimssr:diutUserStory4`,
+   :ref:`dimssr:diutUserStory5`
 #. Type of data to be recorded: Component ID, Wall clock time, other data TBD.
 
 
