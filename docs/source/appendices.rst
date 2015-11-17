@@ -3,20 +3,19 @@
 Appendices
 ==========
 
-Running and planning tests
---------------------------
-
-This chapter describes:
+This appendix describes:
 
 #. How to create a VM for Dashboard server and API component interface tests,
    Dashboard UI-based tests
-#. How to create a VM for Tupelo tests
+#. How to create a Tupelo server VM for Tupelo tests
+#. How to install Tupelo client
 #. How to plan tests with JIRA
+#. More to be added...
 
 .. _dashboardtestserver:
 
 Test Dashboard server VM
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 Tests performed using the Dashboard user interface, as well as some of the
 automated tests, require a Vagrant test server VM running on the tester's
@@ -26,7 +25,7 @@ Whenever a test has a prerequisite of ``dashboard test server``, it is
 referring to this VM, up and running on the tester's workstation.
 
 Creating the VM
-"""""""""""""""
+~~~~~~~~~~~~~~~
 
 To create this VM, do the following:
 
@@ -83,7 +82,7 @@ To create this VM, do the following:
 ..
 
 Resetting VM Data
-"""""""""""""""""
+~~~~~~~~~~~~~~~~~
 
 A test prerequisite may specify that you reset the test VM's data. To do this, you run
 the ``dashboard-test-data-reset`` playbook as follows. CD to the VM's Vagrantfile
@@ -100,7 +99,7 @@ directory as shown in the first step if you aren't there already.
 .. _creatingtupeloserver:
 
 Creating Tupelo server VM
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 Tupelo tests require a Tupelo server VM.
 
@@ -139,7 +138,7 @@ This server is created in a similar fashion to the dashboard test server:
 .. _installingtupeloclient:
 
 Installing Tupelo client
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 The tester needs the Tupelo client installed on their host machine to perform many of the Tupelo tests.
 The tester installs the tupelo client on his/her developer workstation via Ansible:
@@ -154,12 +153,12 @@ The tester installs the tupelo client on his/her developer workstation via Ansib
 .. _jiratestplanner:
 
 Planning tests with JIRA
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 This section describes how to plan a test cycle and write tests using JIRA.
 
 Test cycle
-""""""""""
+~~~~~~~~~~
 
 We use a test cycle to plan and execute our tests. To view test cycles,
 click ``Tests > Plan Test Cycle``:
@@ -189,13 +188,12 @@ tests yet.
 
 ..
 
-For the purposes of this documentation, we created another cycle called
-Sample Test Cycle as well for illustration purposes.
+When you create a test in JIRA, you will add it to this test cycle.
 
 Creating tests
-""""""""""""""
+~~~~~~~~~~~~~~
 
-To create a new test, select Tests > Create a Test.
+To create a new test, select ``Tests > Create a Test``.
 
 .. figure:: images/jira/create_issue1.png
     :alt: View test cycles
@@ -205,18 +203,16 @@ To create a new test, select Tests > Create a Test.
 
 The Create Issue screen displays, with the issue type already set to Test.
 Enter a summary for the test, and fill in choices in the testLevel, testClass, and
-qualificationMethod pick boxes. These are described in this Test Plan. You should also
-a the reference to the DIMS SR - these are referenced in Section 4 of this plan for each
+qualificationMethod pick boxes. These are described in this Test Plan. Choose one item
+per pick box. You should also
+add the reference to the DIMS SR - these are referenced in Section 4 of this plan for each
 group of planned tests. typeOfData describes where the output data will be when
 you are done. You can add this later if you don't know it at this time.
 
+..  todo(lparsons): Update screen shot
 .. todo::
 
-    Will we have a dictionary of SR references to choose from? Can there be more
-    than one entry for SR reference? (Right now the field is just a text field).
-    Also need direction on how to format typeOfData. If path is in the dims-tr, how
-    is it referenced? $GIT/dims-tr/path/to/file? Are there other types other than
-    file?
+    Need to update to screenshot only showing one selection per item
 
 ..
 
@@ -230,13 +226,10 @@ in:
 ..
 
 Scrolling down, you describe the Environment and provide a Description of the test.
-The environment entry should be short - we should probably come up with some standard
-choices for this. If the test needs a local Vagrant VM to run, then the Test should
-reference how that is created in the Prerequisites.
+The environment entry should be short. If the test needs a local Vagrant VM to run,
+then the Test should reference how that is created in the prerequisites.
 
-Prerequisites can be added in the Description field. We could also put them as a
-separate test step - whichever works best. There isn't a dedicated field available
-for them. When you initially create the test, you can just add
+We enter prerequisites in the first test step. When you initially create the test, you can just add
 a short description and add prerequisites by editing the test.
 
 .. figure:: images/jira/create_issue3.png
