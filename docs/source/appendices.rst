@@ -10,6 +10,7 @@ This appendix describes:
 #. How to create a Tupelo server VM for Tupelo tests
 #. How to install Tupelo client
 #. How to plan tests with JIRA
+#. How to use the test report generation scripts in the ``$GIT/dims-tr`` repo.
 #. More to be added...
 
 .. _dashboardtestserver:
@@ -345,6 +346,213 @@ The Expected Result is given as how many tests should pass.
 .. figure:: images/jira/new_test_execute1.png
     :alt: View test cycles
     :width: 100%
+
+..
+
+
+.. _generatingTestReport:
+
+Generating a Test Report with the report generation utility
+-----------------------------------------------------------
+
+.. TODO(dittrich): clean this up... quick hack instructions
+
+.. note::
+
+    .. todo::
+
+        These are quick-hack instructions copied from an email to
+        the group about changes made on 2015-11-19 in preparation
+        for the Test Report deadline on the 23rd. They need to
+        be cleaned up.
+
+    ..
+
+..
+
+A Test Report is produced using a reporting utility that generates
+a Sphinx document, based on source from the ``$GIT/dims-tr``
+Git repository directory. It processes metadata descriptions of
+tests and their results, producing a Sphinx document.
+
+Test cycles are named with a date, e.g., ``2015-11-15``.
+A simple directory structure is used that combines test results
+from both test managed within Jira using Zephyr for Jira, as
+well as non-Jira test results. Both of these sources are rooted
+at ``$GIT/dims-tr/test_cycles`` along with a copy of the 
+Sphinx document skeleton found in the ``$GIT/dims-tr/docs`` directory.
+This separates the report and data from which the report was
+generated for each test cycle into its own directory tree. For
+example,
+
+.. code-block:: none
+
+    [dimscli] dittrich@27b:~/dims/git/dims-tr/test_cycles
+    (feature/dims-529*) $ tree
+    .
+    ├── 2015-11-15
+    │   ├── docs
+    │   │   ├── Makefile
+    │   │   ├── build
+    │   │   └── source
+    │   ├── jira_data
+    │   │   ├── DIMS-553.json
+    │   │   ├── DIMS-553.pdf
+    │   │   ├── DIMS-554.json
+    │   │   ├── DIMS-554.pdf
+    │   │   ├── DIMS-565.json
+    │   │   ├── DIMS-565.pdf
+    │   │   ├── DIMS-566.json
+    │   │   ├── DIMS-569.json
+    │   │   ├── DIMS-570.json
+    │   │   ├── DIMS-570.pdf
+    │   │   ├── DIMS-571.json
+    │   │   ├── DIMS-571.pdf
+    │   │   ├── DIMS-574.json
+    │   │   └── DIMS-574.pdf
+    │   ├── jira_data_summary.json
+    │   └── nonjira_data
+    │       ├── test1.json
+    │       ├── test1.pdf
+    │       ├── test2.json
+    │       └── test3.json
+    └── 2016_00_00
+        ├── docs
+        │   ├── Makefile
+        │   ├── build
+        │   └── source
+        ├── jira_data
+        │   └── blahblah
+        ├── jira_data_summary.json
+        └── nonjira_data
+            └── blahblah
+    
+    20 directories, 91 files
+
+..
+
+.. note::
+
+   The  directory ``2016_00_00`` is just an example to show two
+   sub-trees, not just one: it does not exist in Git.
+
+..
+
+A file ``$GIT/dims-tr/CURRENT_CYCLE`` contains the test cycle identifier for
+the current test cycle (and can be over-ridden with a command line option in
+the test utilitiy.)
+
+.. TODO(dittrich): Make sure that option exists...
+.. todo::
+
+    Make sure that option exists.
+
+..
+
+It can be used with inline command substitution in the BASH shell
+like this:
+
+.. code-block:: none
+
+    [dimscli] dittrich@27b:~/dims/git/dims-tr (feature/dims-529*) $ tree -L
+    1 test_cycles/$(cat CURRENT_CYCLE)
+    test_cycles/2015-11-15
+    ├── docs
+    ├── jira_data
+    ├── jira_data_summary.json
+    └── nonjira_data
+    
+    3 directories, 1 file
+    
+    
+    [dimscli] dittrich@27b:~/dims/git/dims-tr (feature/dims-529*) $ tree -L
+    1 test_cycles/$(cat CURRENT_CYCLE)/jira_data
+    test_cycles/2015-11-15/jira_data
+    ├── DIMS-553.json
+    ├── DIMS-553.pdf
+    ├── DIMS-554.json
+    ├── DIMS-554.pdf
+    ├── DIMS-565.json
+    ├── DIMS-565.pdf
+    ├── DIMS-566.json
+    ├── DIMS-569.json
+    ├── DIMS-570.json
+    ├── DIMS-570.pdf
+    ├── DIMS-571.json
+    ├── DIMS-571.pdf
+    ├── DIMS-574.json
+    └── DIMS-574.pdf
+    
+    0 directories, 14 files
+
+..
+
+There is a helper ``Makefile`` at the root of the repo to make it
+easier to generate a report.
+
+.. code-block:: none
+
+    dimscli] dittrich@27b:~/dims/git/dims-tr (feature/dims-529*) $ make help
+    /Users/dittrich/dims/git/dims-tr
+    [Using Makefile.dims.global v1.6.124 rev ]
+    ---------------------------------------------------------------------------
+    Usage: make [something]
+    
+    Where "something" is one of the targets listed in the sections below.
+    
+     ---------------------------------------------------------------------------
+                     Targets from Makefile.dims.global
+    
+     help - Show this help information (usually the default rule)
+     dimsdefaults - show default variables included from Makefile.dims.global
+     version - show the Git revision for this repo
+     envcheck - perform checks of requirements for DIMS development
+     ---------------------------------------------------------------------------
+                       Targets from Makefile
+    
+     all - defaults to 'report'
+     showcurrent - show the current test cycle
+     enter - enter a test description
+     report - generate a 'results.rst' file in ../docs/source/
+     autobuild - run dims.sphinxautobuild for this test cycle
+     install - install Python script and pre-requisites
+     clean - remove build files and generated .rst files.
+     spotless - clean, then also get rid of dist/ directory
+    ---------------------------------------------------------------------------
+    
+    [dimscli] dittrich@27b:~/dims/git/dims-tr (feature/dims-529*) $ make
+    showcurrent
+    Current test cycle is 2015-11-15
+    
+    
+    [dimscli] dittrich@27b:~/dims/git/dims-tr (feature/dims-529*) $ make report
+    python scripts/get_test.py
+    
+    [dimsenv] dittrich@27b:~/dims/git/dims-tr (feature/dims-529*) $ make
+    autobuild
+    tar -cf - docs | (cd "test_cycles/2015-11-15" && tar -xf -)
+    rm -rf build/*
+    [I 151119 21:35:18 server:271] Serving on http://127.0.0.1:48196
+    [I 151119 21:35:18 handlers:58] Start watching changes
+    [I 151119 21:35:18 handlers:60] Start detecting changes
+    
+    +--------- source/test3.rst changed
+    ---------------------------------------------
+    /Users/dittrich/dims/git/dims-tr/test_cycles/2015-11-15/docs/source/test3.rst::
+    WARNING: document isn't included in any toctree
+    +--------------------------------------------------------------------------------
+    
+    
+    +--------- source/index.rst changed
+    ---------------------------------------------
+    +--------------------------------------------------------------------------------
+    
+    
+    +--------- source/results.rst changed
+    -------------------------------------------
+    +--------------------------------------------------------------------------------
+    
+    [I 151119 21:35:24 handlers:131] Browser Connected: http://127.0.0.1:48196/
 
 ..
 
