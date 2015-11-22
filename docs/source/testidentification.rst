@@ -616,7 +616,7 @@ for each step, and actual results will be included in the Test Report.
 #. Test levels: System
 #. Test type or class: Expected value, simulated data, erroneous input, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:incidentTracking`, :ref:`dimssr:knowledgeacquisition`,
+#. SR reference: :ref:`dimssr:incidentTracking`, :ref:`dimssr:knowledgeAcquisition`,
    :ref:`dimssr:aggregateSummary`, :ref:`dimssr:diutUserStory1`,
    :ref:`dimssr:diutUserStory3`, :ref:`dimssr:diutUserStory4`, :ref:`dimssr:diutUserStory5`,
    :ref:`dimssr:diutUserStory7`
@@ -767,7 +767,7 @@ for each step, and actual results will be included in the Test Report.
 #. Test levels: System level
 #. Test type or class: Desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:modeToggles`, :ref:`dimssr:testmode`,
+#. SR reference: :ref:`dimssr:modeToggles`, :ref:`dimssr:testMode`,
    :ref:`dimssr:debugMode`, :ref:`dimssr:demoMode`
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
