@@ -869,6 +869,41 @@ this category are closely related to tests described in
 
 ..
 
+.. _designAndImplementation:
+
+Design and Implementation Tests
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A set of contractual requirements deal with the design and implementation of
+the internal software system and documentation.  Tests in this collection are
+manual tests based on inspection or other observational qualification methods.
+
+#. Test levels: System
+#. Test type or class: Desk check
+#. Qualification method: Manual Test, Inspection
+#. SR reference: :ref:`dimssr:automatedProvisioning`,
+   :ref:`dimssr:agileDevelopment`, :ref:`dimssr:continuousIntegration`,
+   :ref:`dimssr:leverageOpenSource`
+#. Type of data to be recorded: Declarative statements as appropropriate.
+
+
+.. _softwareReleaseTests:
+
+Software Release Tests
+~~~~~~~~~~~~~~~~~~~~~~
+
+A set of contractual requirements deal with the public release of
+open source software components and documentation. Tests in this
+collection are manual tests based on inspection or other observational
+qualification methods.
+
+#. Test levels: System
+#. Test type or class: Desk check
+#. Qualification method: Manual Test, Inspection
+#. SR reference: :ref:`dimssr:exportControl`,
+   :ref:`dimssr:noEncryption`, :ref:`dimssr:openSourceRelease`
+#. Type of data to be recorded: Declarative statements as appropropriate.
+
 
 .. The following are footnotes
 .. [#qm] Source: `Automated Software Testing\: Introduction, Management, and Performance`_, by Elfriede Dustin, Jeff Rashka, and John Paul.
