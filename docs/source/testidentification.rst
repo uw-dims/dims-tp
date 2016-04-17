@@ -379,7 +379,7 @@ for each step, and actual results will be included in the Test Report.
 #. Qualification method: Test
 #. SR reference: :ref:`dimssr:dwaUserStory1`, :ref:`dimssr:dwaUserStory2`,
    :ref:`dimssr:dwaUserStory3`, :ref:`dimssr:dwaUserStory4`, :ref:`dimssr:dwaUserStory5`,
-   :ref:`dimssr:dwaUserStory6`
+   :ref:`dimssr:dwaUserStory6`, :ref:`dimssr:dwaUserStory9`
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
