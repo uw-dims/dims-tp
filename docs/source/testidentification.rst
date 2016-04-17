@@ -23,13 +23,13 @@ Tests described in this section trace back to the
 
         .. code-block:: yaml
 
-            #. SR reference: :ref:`dimssr:attributestorage`, :ref:`dimssr:bdsuserstory1`
+            #. SR reference: :ref:`dimssr:attributeStorage`, :ref:`dimssr:bdsUserStory1`
 
         ..
 
         Which renders like this:
 
-        #. SR reference: :ref:`dimssr:attributestorage`, :ref:`dimssr:bdsuserstory1`
+        #. SR reference: :ref:`dimssr:attributeStorage`, :ref:`dimssr:bdsUserStory1`
 
    ..
 
@@ -42,25 +42,25 @@ Test levels
 
 DIMS components will be tested at four distinct levels.
 
-#. Unit tests -- These are tests of individual software components at the program or
+#. **Unit tests**: These are tests of individual software components at the program or
    library level. These tests are primarily written by those who are developing
    the software to validate the software elements at a low (e.g., library or
    discrete shell command) perform their functions properly, independent
    of any other components.
 
-#. Integration tests -- These are tests that are intended to verify the interfaces
+#. **Integration tests**: These are tests that are intended to verify the interfaces
    between components against the software design. Defects between interfaces are
    identified by these tests before their impact is observe at the system level
    through random or systemic failures.
 
-#. Component interface tests -- These are checks of how data is processed as
+#. **Component interface tests**: These are checks of how data is processed as
    it is entered into and output from the system. Expected output may be compared
    against a cryptographic hash of the actual output to determine when actual
    output is malformed or otherwise deviates from expectations. Other interface
    tests (e.g., web application graphical user interface input/output) may
    be tested manually through visual inspection by a test user.
 
-#. System tests -- Also known as `end-to-end` tests, these are tests to
+#. **System tests**: Also known as `end-to-end` tests, these are tests to
    determine if the overall system meets it requirements for general data
    processing and function. All system components produce test results that are
    complied into a single system test report that can be compared to detect
@@ -71,6 +71,19 @@ The first two levels of tests are performed on a continuous basis during
 development. The final two levels pertain to the :term:`FQT`
 described in this document.
 
+.. todo::
+
+    These **test levels** are to be identified in test related code and data
+    using the following identifiers:
+
+    * ``unit``
+    * ``integration``
+    * ``component_interface``
+    * ``system``
+
+..
+
+
 .. _testclasses:
 
 Test classes
@@ -79,23 +92,77 @@ Test classes
 We will employ one or more of the following classes of tests to DIMS
 components:
 
-* Expected value testing: values from the expected classes of the input
-  domain will be used to test nominal performance
+#. **Expected value**: values from the expected classes of the input
+   domain will be used to test nominal performance
 
-* Simulated data: simulated data for nominal and extreme geophysical
-  conditions will be used to support error detection, recovery and reporting
+#. **Simulated data**: simulated data for nominal and extreme geophysical
+   conditions will be used to support error detection, recovery and reporting
 
-* Erroneous input: sample values known to be erroneous will be used to test
-  error detection, recovery and reporting
+#. **Erroneous input**: sample values known to be erroneous will be used to test
+   error detection, recovery and reporting
 
-* Stress testing: maximum capacity of the input domain, including concurrent
-  execution of multiple processes will be used to test external interfaces,
-  error handling and size and execution time
+#. **Stress**: maximum capacity of the input domain, including concurrent
+   execution of multiple processes will be used to test external interfaces,
+   error handling and size and execution time
 
-* Timing testing: wall clock time, CPU time and I/O time will be recorded
+#. **Timing**: wall clock time, CPU time and I/O time will be recorded
 
-* Desk check testing: both code and output will be manually inspected and
-  analyzed
+#. **Desk check**: both code and output will be manually inspected and
+   analyzed
+
+.. todo::
+
+    These **test classes** are to be identified in test related code and data
+    using the following identifiers:
+
+    * ``expected_value``
+    * ``simulated_data``
+    * ``erroneous_input``
+    * ``stress``
+    * ``timing``
+    * ``desk_check``
+
+..
+
+
+.. _qualificationmthods:
+
+Qualification Methods
+~~~~~~~~~~~~~~~~~~~~~
+
+Five *qualification methods* [#qm]_ will be used in testing to establish
+conformance with requirements as described in this Section.
+
+#. **Inspection**: Visual examination, review of descriptive documentation, and
+   comparison of the actual characteristics with predetermined criteria.
+
+#. **Demonstration**: Exercise of a sample of observable functional operations.
+   This method is appropriate for demonstrating the successful integration,
+   high-level functionality, and connectivity provided by the overal system.
+
+#. **Manual Test**: Manual tests will be performed when automated tests are
+   not feasible.
+
+#. **Automated Test**: When possible, test procedures will be automated.
+
+#. **Analysis**: Technical evaluation, processing, review, or study of
+   accumulated data.
+
+..
+
+
+.. todo::
+
+    These **qualification methods** are to be identified in test related code
+    and data using the following identifiers:
+
+    * ``inspection``
+    * ``demonstration``
+    * ``manual_test``
+    * ``automated_test``
+    * ``analysis``
+
+..
 
 
 .. _testconditions:
@@ -139,6 +206,7 @@ This will allow developers to test code releases before they are pushed to
 "production" deployments, and for involved stakeholders doing independent field
 testing to generate test reports that can be sent back to the DIMS development
 team for debugging and code fixes.
+
 
 .. _plannedtests:
 
@@ -207,8 +275,8 @@ included in the Test Report.
 #. Test levels: System
 #. Test type or class: Expected value, simulated data, erroneous input, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:attributestorage`, :ref:`bdsuserstory1`,
-   :ref:`dimssr:bdsuserstory2`,
+#. SR reference: :ref:`dimssr:attributeStorage`, :ref:`dimssr:bdsUserStory1`,
+   :ref:`dimssr:bdsUserStory2`,
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
@@ -226,7 +294,7 @@ for performance of the tests described in :ref:`statesmodes`.)
 #. Test levels: System
 #. Test type or class: Timing, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:bdsuserstory1`, :ref:`dimssr:bdsuserstory2`
+#. SR reference: :ref:`dimssr:bdsUserStory1`, :ref:`dimssr:bdsUserStory2`
 #. Type of data to be recorded: Component ID, Wall clock time, other data TBD.
 
 
@@ -291,7 +359,7 @@ and actual results will be included in the Test Report.
 #. Test levels: Component interface
 #. Test type or class: Expected value, simulated data, erroneous input, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:dwauserstory7`
+#. SR reference: :ref:`dimssr:dwaUserStory7`
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
@@ -309,9 +377,9 @@ for each step, and actual results will be included in the Test Report.
 #. Test levels: System
 #. Test type or class: Expected value, simulated data, erroneous input, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:dwauserstory1`, :ref:`dimssr:dwauserstory2`,
-   :ref:`dimssr:dwauserstory3`, :ref:`dimssr:dwauserstory4`, :ref:`dimssr:dwauserstory5`,
-   :ref:`dimssr:dwauserstory6`
+#. SR reference: :ref:`dimssr:dwaUserStory1`, :ref:`dimssr:dwaUserStory2`,
+   :ref:`dimssr:dwaUserStory3`, :ref:`dimssr:dwaUserStory4`, :ref:`dimssr:dwaUserStory5`,
+   :ref:`dimssr:dwaUserStory6`, :ref:`dimssr:dwaUserStory9`
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
@@ -329,7 +397,7 @@ for performance of the tests described in :ref:`statesmodes`.)
 #. Test levels: System
 #. Test type or class: Timing, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:dwauserstory8`
+#. SR reference: :ref:`dimssr:dwaUserStory8`
 #. Type of data to be recorded: Component ID, Wall clock time, other data TBD.
 
 
@@ -391,7 +459,7 @@ be uploaded to a Tupelo store component over a network.
 #. Test Levels: integration, system
 #. Test classes: expected value, timing, stress
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:diutuserstory6`
+#. SR reference: :ref:`dimssr:diutUserStory6`
 #. Type of Data Recorded: Copy of test disk content stored in Tupelo store.
 
 Tupelo Whole Disk Subsequent Acquisition Test
@@ -406,7 +474,7 @@ usage at the store site should be less than for an initial upload.
 #. Test Levels: integration, system
 #. Test classes: expected value, timing
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:diutuserstory6`
+#. SR reference: :ref:`dimssr:diutUserStory6`
 #. Type of Data Recorded: Test log showing smaller stored disk and
    reduced elapsed time for disk acquisition.
 
@@ -422,7 +490,7 @@ then to be stored in the same store as the images.
 #. Test Levels: integration, system
 #. Test classes: expected value, timing
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:diutuserstory6`
+#. SR reference: :ref:`dimssr:diutUserStory6`
 #. Type of Data Recorded: Products of store tools to exist as
    supplementary files in Tupelo store.
 
@@ -442,7 +510,7 @@ and false negatives.
 #. Test Levels: integration, system
 #. Test classes: expected value, timing
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:diutuserstory6`
+#. SR reference: :ref:`dimssr:diutUserStory6`
 #. Type of Data Recorded: Log files generated when making test queries
    of the existence of various files to a Tupelo store.
 
@@ -457,7 +525,7 @@ order of 1 or even 2TB.
 #. Test Levels: integration, system
 #. Test classes: stress, timing
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:diutuserstory6`
+#. SR reference: :ref:`dimssr:diutUserStory6`
 #. Type of Data Recorded: Copy of test disk content stored in Tupelo store.
 
 
@@ -472,7 +540,7 @@ interrupted by both a client failure and a network failure.
 #. Test Levels: integration, system
 #. Test classes: expected state
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:diutuserstory6`
+#. SR reference: :ref:`dimssr:diutUserStory6`
 #. Type of Data Recorded: Summary of Tupelo store contents before and
    after a whole disk upload operation interrupted by a client or
    network failure.
@@ -488,7 +556,7 @@ that computer can be uploaded to a remote Tupelo store over the network.
 #. Test Levels: integration, system
 #. Test classes: expected state
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:diutuserstory6`
+#. SR reference: :ref:`dimssr:diutUserStory6`
 #. Type of Data Recorded: Observed behavior during demonstration.
 #. Special Requirements: Tupelo Boot CD
 
@@ -504,7 +572,7 @@ attached external hard drive.
 #. Test Levels: integration, system
 #. Test classes: expected state
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:diutuserstory6`
+#. SR reference: :ref:`dimssr:diutUserStory6`
 #. Type of Data Recorded: Disk contents of computer's own hard drive
    and external hard drive.
 #. Special Requirements: Tupelo Boot CD and External Hard Drive and
@@ -527,7 +595,7 @@ step, and actual results will be included in the Test Report.
 #. Test levels: Component interface
 #. Test type or class: Expected value, simulated data, erroneous input, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:diutuserstory2`, :ref:`dimssr:diutuserstory8`
+#. SR reference: :ref:`dimssr:diutUserStory2`, :ref:`dimssr:diutUserStory8`
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
@@ -548,10 +616,10 @@ for each step, and actual results will be included in the Test Report.
 #. Test levels: System
 #. Test type or class: Expected value, simulated data, erroneous input, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:incidenttracking`, :ref:`dimssr:knowledgeacquisition`,
-   :ref:`dimssr:aggregatesummary`, :ref:`dimssr:diutuserstory1`,
-   :ref:`dimssr:diutuserstory3`, :ref:`dimssr:diutuserstory4`, :ref:`dimssr:diutuserstory5`,
-   :ref:`dimssr:diutuserstory7`
+#. SR reference: :ref:`dimssr:incidentTracking`, :ref:`dimssr:knowledgeAcquisition`,
+   :ref:`dimssr:aggregateSummary`, :ref:`dimssr:diutUserStory1`,
+   :ref:`dimssr:diutUserStory3`, :ref:`dimssr:diutUserStory4`, :ref:`dimssr:diutUserStory5`,
+   :ref:`dimssr:diutUserStory7`
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
@@ -569,8 +637,8 @@ for performance of the tests described in :ref:`statesmodes`.)
 #. Test levels: System
 #. Test type or class: Timing, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:aggregatesummary`, :ref:`dimssr:diutuserstory2`,
-   :ref:`dimssr:diutuserstory4`, :ref:`dimssr:diutuserstory8`
+#. SR reference: :ref:`dimssr:aggregateSummary`, :ref:`dimssr:diutUserStory2`,
+   :ref:`dimssr:diutUserStory4`, :ref:`dimssr:diutUserStory8`
 #. Type of data to be recorded: Component ID, Wall clock time, other data TBD.
 
 
@@ -628,7 +696,7 @@ collected.
 #. Test Levels: component interface, system
 #. Test classes: expected value
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:structuredinput`
+#. SR reference: :ref:`dimssr:structuredInput`
 #. Type of Data Recorded: Copy of search results, copy of input STIX
    documents, summary of Tupelo store state.
 
@@ -645,7 +713,7 @@ attachments and from Tupelo whole disk analysis results.
 #. Test Levels: component interface, system
 #. Test classes: expected value
 #. Qualification Method: Demonstration, inspection
-#. SR reference: :ref:`dimssr:structuredinput`
+#. SR reference: :ref:`dimssr:structuredInput`
 #. Type of Data Recorded: Copy of created STIX
    documents, summary of Tupelo store state, CIF feed results
 
@@ -699,8 +767,8 @@ for each step, and actual results will be included in the Test Report.
 #. Test levels: System level
 #. Test type or class: Desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:modetoggles`, :ref:`dimssr:testmode`,
-   :ref:`dimssr:debugmode`, :ref:`dimssr:demomode`
+#. SR reference: :ref:`dimssr:modeToggles`, :ref:`dimssr:testMode`,
+   :ref:`dimssr:debugMode`, :ref:`dimssr:demoMode`
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
@@ -760,10 +828,10 @@ the Test Report.
 #. Test levels: Component interface level, System level
 #. Test type or class: Expected value, Erroneous Input, Desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:networkaccesscontrols`,
-   :ref:`dimssr:accountaccesscontrols`,
-   :ref:`dimssr:secondfactorauth`, :ref:`dimssr:accountsuspension`,
-   :ref:`dimssr:rekeying`
+#. SR reference: :ref:`dimssr:networkAccessControls`,
+   :ref:`dimssr:accountAccessControls`,
+   :ref:`dimssr:secondFactorAuth`, :ref:`dimssr:accountSuspension`,
+   :ref:`dimssr:keyRegeneration`
 #. Special requirements: Access to the DIMS JIRA tool
 #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
@@ -782,8 +850,8 @@ this category are closely related to tests described in
 #. Test levels: System
 #. Test type or class: Timing, desk check
 #. Qualification method: Test
-#. SR reference: :ref:`dimssr:diutuserstory2`, :ref:`dimssr:diutuserstory4`,
-   :ref:`dimssr:diutuserstory5`
+#. SR reference: :ref:`dimssr:diutUserStory2`, :ref:`dimssr:diutUserStory4`,
+   :ref:`dimssr:diutUserStory5`
 #. Type of data to be recorded: Component ID, Wall clock time, other data TBD.
 
 
@@ -800,3 +868,45 @@ this category are closely related to tests described in
    included in the final Test Report.
 
 ..
+
+.. _designAndImplementation:
+
+Design and Implementation Tests
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A set of contractual requirements deal with the design and implementation of
+the internal software system and documentation.  Tests in this collection are
+manual tests based on inspection or other observational qualification methods.
+
+#. Test levels: System
+#. Test type or class: Desk check
+#. Qualification method: Manual Test, Inspection
+#. SR reference: :ref:`dimssr:automatedProvisioning`,
+   :ref:`dimssr:agileDevelopment`, :ref:`dimssr:continuousIntegration`,
+   :ref:`dimssr:leverageOpenSource`
+#. Type of data to be recorded: Declarative statements as appropropriate.
+
+
+.. _softwareReleaseTests:
+
+Software Release Tests
+~~~~~~~~~~~~~~~~~~~~~~
+
+A set of contractual requirements deal with the public release of
+open source software components and documentation. Tests in this
+collection are manual tests based on inspection or other observational
+qualification methods.
+
+#. Test levels: System
+#. Test type or class: Desk check
+#. Qualification method: Manual Test, Inspection
+#. SR reference: :ref:`dimssr:exportControl`,
+   :ref:`dimssr:noEncryption`, :ref:`dimssr:openSourceRelease`
+#. Type of data to be recorded: Declarative statements as appropropriate.
+
+
+.. The following are footnotes
+.. [#qm] Source: `Automated Software Testing\: Introduction, Management, and Performance`_, by Elfriede Dustin, Jeff Rashka, and John Paul.
+
+.. The following are references
+.. _Automated Software Testing\: Introduction, Management, and Performance: https://books.google.com/books?id=kl2H0G6EFf0C&pg=PA519&lpg=PA519

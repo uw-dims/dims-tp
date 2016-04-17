@@ -60,7 +60,7 @@ copyright = u'2014, 2015 University of Washington'
 # built documents.
 #
 # The short X.Y version.
-version = '2.2.0'
+version = '2.5.0'
 # The full version, including alpha/beta/rc tags.
 release = version
 
@@ -348,12 +348,13 @@ os.environ['GITBRANCH'] = "develop"
 
 if os.environ.get('DOCSURL') is None:
     #os.environ['DOCSURL'] = "file://{}".format(os.environ.get('GIT'))
-    os.environ['DOCSURL'] = "http://u12-dev-svr-1.prisem.washington.edu:8080/docs/{}/html/".format(
+    os.environ['DOCSURL'] = "http://u12-dev-svr-1.prisem.washington.edu:8080/docs/{}/html".format(
         os.environ['GITBRANCH'])
 
 intersphinx_cache_limit = -1   # days to keep the cached inventories (0 == forever)
 intersphinx_mapping = {
         'dimsocd': ("{}/dims-ocd".format(os.environ['DOCSURL']), None),
         'dimsad': ("{}/dims-ad".format(os.environ['DOCSURL']), None),
-        'dimssr': ("{}/dims-sr".format(os.environ['DOCSURL']), None)
+        'dimssr': ("{}/dims-sr".format(os.environ['DOCSURL']), None),
+        'dimspacker': ("{}/dims-packer".format(os.environ['DOCSURL']), None)
 }

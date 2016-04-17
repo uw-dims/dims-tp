@@ -17,7 +17,7 @@ like this:
     #. Test levels: Component interface
     #. Test type or class: Expected value, simulated data, erroneous input, desk check
     #. Qualification method: Test
-    #. SR reference: :ref:`dimssr:dwauserstory7`
+    #. SR reference: :ref:`dimssr:dwaUserStory7`
     #. Special requirements: Access to the DIMS JIRA tool
     #. Type of data to be recorded: Tester, Execution date, Status (Pass/Fail)
 
