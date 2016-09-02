@@ -3,12 +3,14 @@
 Software test environment
 =========================
 
-UW Tower and BHB server rooms
------------------------------
+UW Tower server room
+-------------------
 
-DIMS deployments will all be hosted at the same site, currently two server room
-racks at the University of Washington Tower ("UW Tower") and Benjamin Hall
-Research Building ("BRB").
+DIMS deployments are currently hosted in the University of Washington Tower
+("UW Tower") data center. Plans are in place to migrate hardware to
+another data center at `Semaphore Corporation`_ in Seattle.
+
+.. _Semaphore Corporation: http://www.semaphore.com/
 
 Each deployed system will be separated from the others and operate
 independantly (in terms of services and logical network topologies).
