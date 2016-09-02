@@ -39,12 +39,16 @@ Software items
     +------------------------+------------------------------------------------------------+
     | `Robot Framework`_     | Open source Acceptance Test-Driven Development (ATTD) tool |
     +------------------------+------------------------------------------------------------+
+    | `Bats`_                | `TAP`_-compliant testing framework for Bash                |
+    +------------------------+------------------------------------------------------------+
     | Custom DIMS scripts    | Serve specific custom test functions as needed.            |
     +------------------------+------------------------------------------------------------+
 
 ..
 
 .. _Robot Framework: http://robotframework.org/
+.. _Bats: https://github.com/sstephenson/bats#bats-bash-automated-testing-system
+.. _TAP: http://testanything.org
 
 .. _hardwarefirmwareitems:
 
