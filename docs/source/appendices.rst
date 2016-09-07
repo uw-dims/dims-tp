@@ -599,7 +599,7 @@ organizational structure:
 
 .. code-block:: none
 
-    [dimsenv] dittrich@27b:/tmp () $ tree tests
+    $ tree tests
     tests
     ├── a
     │   └── a.bats
@@ -618,7 +618,7 @@ assumed to contain files with names that end in ``.bats``:
 
 .. code-block:: none
 
-    [dimsenv] dittrich@27b:/tmp () $ bats -h
+    $ bats -h
     Bats 0.4.0
     Usage: bats [-c] [-p | -t] <test> [<test> ...]
 
@@ -645,7 +645,7 @@ tests in subordinate directories:
 
 .. code-block:: none
 
-    [dimsenv] dittrich@27b:/tmp () $ bats tests
+    $ bats tests
 
     0 tests, 0 failures
 
@@ -657,7 +657,7 @@ directory*.
 
 .. code-block:: none
 
-    [dimsenv] dittrich@27b:/tmp () $ bats tests/a
+    $ bats tests/a
      ✓ a
 
     1 test, 0 failures
@@ -670,7 +670,7 @@ but will not traverse down into the ``tests/b/c/`` directory.
 
 .. code-block:: none
 
-    [dimsenv] dittrich@27b:/tmp () $ bats tests/b
+    $ bats tests/b
      ✓ b
 
     1 test, 0 failures
@@ -682,7 +682,7 @@ directory must be given on the command line:
 
 .. code-block:: none
 
-    [dimsenv] dittrich@27b:/tmp () $ bats tests/b/c
+    $ bats tests/b/c
      ✓ c
 
     1 test, 0 failures
@@ -694,7 +694,7 @@ does not work, as seen here:
 
 .. code-block:: none
 
-    [dimsenv] dittrich@27b:/tmp () $ bats tests/a /tests/b tests/b/c
+    $ bats tests/a /tests/b tests/b/c
     bats: /tmp/b does not exist
     /usr/local/Cellar/bats/0.4.0/libexec/bats-exec-suite: line 20: let: count+=: syntax error: operand expected (error token is "+=")
 
@@ -708,7 +708,7 @@ wildcards:
 
 .. code-block:: none
 
-    [dimsenv] dittrich@27b:/tmp () $ bats tests/a/*.bats tests/b/*.bats tests/b/c/*.bats
+    $ bats tests/a/*.bats tests/b/*.bats tests/b/c/*.bats
      ✓ a
      ✓ b
      ✓ c
@@ -727,7 +727,7 @@ identified test:
 
 .. code-block:: none
 
-    [dimsenv] dittrich@27b:/tmp () $ find tests -name '*.bats' | xargs bats
+    $ find tests -name '*.bats' | xargs bats
     1..3
     ok 1 a
     ok 2 b
@@ -738,7 +738,7 @@ identified test:
 .. note::
 
    Note that the output changed from the examples above, which include the
-   arrow ("✓") character, to now include the word ``ok`` instead in `TAP`_
+   arrow ("✓") character, to now include the word ``ok`` instead in TAP
    format. This is because the default for terminals (i.e., a program that is
    using a TTY device, not a simple file handle to something like a pipe).  To
    get the pretty-print output, add the ``-p`` flag, like this:
