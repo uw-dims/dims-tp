@@ -78,7 +78,7 @@ described in this document.
 
     * ``unit`` [**U**]
     * ``integration`` [**I**]
-    * ``component_interface`` [**C**]
+    * ``component`` [**C**]
     * ``system`` [**S**]
 
 ..
