@@ -71,7 +71,7 @@ The first two levels of tests are performed on a continuous basis during
 development. The final two levels pertain to the :term:`FQT`
 described in this document.
 
-.. todo::
+.. note::
 
     These **test levels** are to be identified in test related code and data
     using the following identifiers:
@@ -110,7 +110,7 @@ components:
 #. **Desk check** [**DC**]: both code and output will be manually inspected and
    analyzed
 
-.. todo::
+.. note::
 
     These **test classes** are to be identified in test related code and data
     using the following identifiers:
@@ -151,7 +151,7 @@ conformance with requirements as described in this Section.
 ..
 
 
-.. todo::
+.. note::
 
     These **qualification methods** are to be identified in test related code
     and data using the following identifiers:
