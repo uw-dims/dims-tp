@@ -574,15 +574,55 @@ many `TAP Consumers`_, including the Python program `tap.py`_.
 .. _tap.py: https://pypi.python.org/pypi/tap.py
 
 
-Bats test organization
-~~~~~~~~~~~~~~~~~~~~~~
+.. _bats:
+
+Organizing Bats Tests
+~~~~~~~~~~~~~~~~~~~~~
 
 This section covers the basic functionality of ``bats`` and
 how it can be used to produce test results.
 
-We start with a simple example that has tests that do
-nothing other than report success with their name.
-In this case, test ``a.bats`` looks like this:
+We should start by looking at the ``--help`` output for ``bats`` to understand
+how it works in general.
+
+.. code-block:: none
+
+    $ bats -h
+    Bats 0.4.0
+    Usage: bats [-c] [-p | -t] <test> [<test> ...]
+
+      <test> is the path to a Bats test file, or the path to a directory
+      containing Bats test files.
+
+      -c, --count    Count the number of test cases without running any tests
+      -h, --help     Display this help message
+      -p, --pretty   Show results in pretty format (default for terminals)
+      -t, --tap      Show results in TAP format
+      -v, --version  Display the version number
+
+      For more information, see https://github.com/sstephenson/bats
+
+..
+
+As is seen, multiple tests -- files that end in ``.bats`` -- can be passed
+as a series of arguments on the command line.  This can be either individual
+arguments, or a wildcard shell expression like ``*.bats``.
+
+If the argument evaluates to being a directory, ``bats`` will look through that
+directory and run all files in it that end in ``.bats``.
+
+.. caution::
+
+    As we will see, ``bats`` has some limitations that do not allow mixing file
+    arguments and directory arguments. You can either give ``bats`` one or more
+    files, or you can give it one or more directories, but you **cannot mix
+    files and directories**.
+
+..
+
+To see how this works, let us start with a simple example that has tests that
+do nothing other than report success with their name.  In this case, test
+``a.bats`` looks like this:
 
 .. code-block:: bash
 
@@ -612,36 +652,12 @@ organizational structure:
 
 ..
 
-The help for ``bats`` shows that multiple tests can be
-passed to ``bats``, or a directory can be specified that is
-assumed to contain files with names that end in ``.bats``:
+Since the hierarchy shown here does not contain tests itself, but rather holds
+directories that in turn hold tests, how does we run the tests?
 
-.. code-block:: none
-
-    $ bats -h
-    Bats 0.4.0
-    Usage: bats [-c] [-p | -t] <test> [<test> ...]
-
-      <test> is the path to a Bats test file, or the path to a directory
-      containing Bats test files.
-
-      -c, --count    Count the number of test cases without running any tests
-      -h, --help     Display this help message
-      -p, --pretty   Show results in pretty format (default for terminals)
-      -t, --tap      Show results in TAP format
-      -v, --version  Display the version number
-
-      For more information, see https://github.com/sstephenson/bats
-
-..
-
-Since the hierarchy shown here does not contain tests itself,
-but rather holds directories that in turn hold tests, how does
-we run the tests?
-
-Running ``bats`` with an argument that includes the highest level
-of the directory hierarchy does not work to run any of the
-tests in subordinate directories:
+Running ``bats`` with an argument that includes the highest level of the
+directory hierarchy does not work to run any of the tests in subordinate
+directories:
 
 .. code-block:: none
 
@@ -762,7 +778,7 @@ Edition Python IDE.
 
 .. _PyCharm: https://www.jetbrains.com/pycharm/
 
-.. code-block:: none
+.. code-block:: bash
 
     #!/usr/bin/env bats
     #
@@ -802,3 +818,175 @@ Edition Python IDE.
 
 ..
 
+.. _organizingtests:
+
+Organizing tests in DIMS Ansible Playbooks Roles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The DIMS project uses a more elaborate version of the above example, which
+uses a *drop-in* model that allows any Ansible role to drop its own
+tests into a structured hierarchy that supports fine-grained test
+execution control.  This drop-in model is implemented by the
+``tasks/bats-tests.yml`` task playbook.
+
+.. todo::
+
+    Cross-reference the ``ansible-playbooks`` documentation on this task
+    file.
+
+..
+
+To illustrate how this works, we start with an empty test directory:
+
+.. code-block:: none
+
+    $ tree /opt/dims/tests.d
+    /opt/dims/tests.d
+
+    0 directories, 0 files
+
+..
+
+The ``base`` role has the largest number of tests, since it does
+the most complex foundational setup work for DIMS computer systems.
+The ``template/tests`` directory is filled with Jinja template
+Bash scripts and/or ``bats`` tests, in a hierarchy that includes
+subdirectories for each of the defined test levels from Section
+:ref:`testlevels`.
+
+.. code-block:: none
+
+    $ tree base/templates/tests
+    base/templates/tests
+    ├── component
+    ├── helpers.bash.j2
+    ├── integration
+    ├── README.txt
+    ├── system
+    │   ├── deprecated.bats.j2
+    │   ├── dims-accounts.bats.j2
+    │   ├── dims-accounts-sudo.bats.j2
+    │   ├── dims-base.bats.j2
+    │   ├── dns.bats.j2
+    │   ├── proxy.bats.j2
+    │   ├── sudo
+    │   │   └── sudo-iptables.bats.j2
+    │   └── user
+    │       └── vpn.bats.j2
+    └── unit
+        └── dims-filters.bats.j2
+
+    6 directories, 11 files
+
+..
+
+After running just the ``base`` role, the highlighted subdirectories that
+correspond to each of the test levels are now present in the
+``/opt/dims/tests.d/`` directory:
+
+.. code-block:: none
+   :emphasize-lines: 3,6,8,16,19,22
+
+    $ tree /opt/dims/tests.d
+    /opt/dims/tests.d
+    ├── component
+    │   └── helpers.bash -> /opt/dims/tests.d/helpers.bash
+    ├── helpers.bash
+    ├── integration
+    │   └── helpers.bash -> /opt/dims/tests.d/helpers.bash
+    ├── system
+    │   ├── deprecated.bats
+    │   ├── dims-accounts.bats
+    │   ├── dims-accounts-sudo.bats
+    │   ├── dims-base.bats
+    │   ├── dns.bats
+    │   ├── helpers.bash -> /opt/dims/tests.d/helpers.bash
+    │   ├── proxy.bats
+    │   ├── sudo
+    │   │   ├── helpers.bash -> /opt/dims/tests.d/helpers.bash
+    │   │   └── sudo-iptables.bats
+    │   └── user
+    │       ├── helpers.bash -> /opt/dims/tests.d/helpers.bash
+    │       └── vpn.bats
+    └── unit
+        ├── dims-filters.bats
+        └── helpers.bash -> /opt/dims/tests.d/helpers.bash
+
+    6 directories, 16 files
+
+..
+
+The ``docker`` role has two ``bats`` test files:
+
+.. code-block:: none
+
+    docker/templates/tests
+    └── system
+        ├── coreos-prereqs.bats.j2
+        └── docker.bats.j2
+
+    1 directory, 2 files
+
+..
+
+If we now run the ``docker`` role, it will drop these files into
+the ``system`` subdirectory:
+
+.. code-block:: none
+
+    $ dims.ansible-playbook --role docker
+
+    PLAY [Ansible (2.x / v2) Base Playbook] ****************************************
+
+    TASK [docker : include] ********************************************************
+    included: /home/dittrich/dims/git/ansible-playbooks/v2/tasks/pre_tasks.yml for dimsdemo1.devops.develop
+
+     . . .
+
+    PLAY RECAP *********************************************************************
+    dimsdemo1.devops.develop   : ok=34   changed=20   unreachable=0    failed=0
+
+..
+
+There are now 18 files (see emphasized lines for the new additions):
+
+.. code-block:: none
+   :emphasize-lines: 9,15
+
+    $ tree /opt/dims/tests.d
+    /opt/dims/tests.d
+    ├── component
+    │   └── helpers.bash -> /opt/dims/tests.d/helpers.bash
+    ├── helpers.bash
+    ├── integration
+    │   └── helpers.bash -> /opt/dims/tests.d/helpers.bash
+    ├── system
+    │   ├── coreos-prereqs.bats
+    │   ├── deprecated.bats
+    │   ├── dims-accounts.bats
+    │   ├── dims-accounts-sudo.bats
+    │   ├── dims-base.bats
+    │   ├── dns.bats
+    │   ├── docker.bats
+    │   ├── helpers.bash -> /opt/dims/tests.d/helpers.bash
+    │   ├── proxy.bats
+    │   ├── sudo
+    │   │   ├── helpers.bash -> /opt/dims/tests.d/helpers.bash
+    │   │   └── sudo-iptables.bats
+    │   └── user
+    │       ├── helpers.bash -> /opt/dims/tests.d/helpers.bash
+    │       └── vpn.bats
+    └── unit
+        ├── dims-filters.bats
+        └── helpers.bash -> /opt/dims/tests.d/helpers.bash
+
+..
+
+Tests can now be run by level, multiple levels at the same time,
+or more fine-grained filtering can be performed using ``find``
+and ``grep`` filtering. A test runner script is planned that
+mirrors something like `test_runner.sh`_ from the GitHub
+`docker/swarm/test/integration`_ repository.
+
+.. _test_runner.sh: https://github.com/docker/swarm/blob/master/test/integration/test_runner.sh
+.. _docker/swarm/test/integration: https://github.com/docker/swarm/blob/master/test/integration
