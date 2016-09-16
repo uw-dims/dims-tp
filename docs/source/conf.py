@@ -305,6 +305,8 @@ texinfo_documents = [
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
 
+git_branch = os.environ.get('GITBRANCH', "develop")
+git_tag = os.environ.get('GITTAG', "latest")
 
 # -- Options for Epub output ----------------------------------------------
 
