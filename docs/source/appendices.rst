@@ -46,7 +46,7 @@ To create this VM, do the following:
 
    If ``ubuntu-14.04.2-amd64-base-keyed`` appears in the list, then you already
    have this box file installed, and you can go to the next step. If it is not
-   installed, perform the steps at :ref:`dimspacker:vmquickstart` throught the
+   installed, perform the steps at :ref:`dimspacker:vmquickstart` through the
    box installation step at :ref:`dimspacker:vmquickstartinstallboxes`.
 
 ..
@@ -71,7 +71,7 @@ To create this VM, do the following:
 ..
 
 3. Run the Ansible playbook ``dims-test-server-provision.yml`` as shown below. This will
-   take a while to run since it will install the virtual environmnet. Once this is done, you
+   take a while to run since it will install the virtual environment. Once this is done, you
    can reuse the VM for multiple tests without destroying it.
 
    .. code-block:: none
@@ -440,7 +440,7 @@ example,
 
 A file ``$GIT/dims-tr/CURRENT_CYCLE`` contains the test cycle identifier for
 the current test cycle (and can be over-ridden with a command line option in
-the test utilitiy.)
+the test utility.)
 
 .. TODO(dittrich): Make sure that option exists...
 .. todo::
@@ -563,7 +563,7 @@ Using ``bats`` for Producing and Executing Tests
 
 The DIMS project has adopted use of the `Bats: Bash Automated Testing System`_
 (known as ``bats``) to perform simple tests in a manner that produces
-parseable output following the `Test Anything Protocol`_ (TAP).
+parsable output following the `Test Anything Protocol`_ (TAP).
 
 Bats is a **TAP Producer**, whose output can be processed by one of
 many `TAP Consumers`_, including the Python program `tap.py`_.

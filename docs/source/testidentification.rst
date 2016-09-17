@@ -50,7 +50,7 @@ DIMS components will be tested at four distinct levels.
 
 #. **Integration tests** [**I**]: These are tests that are intended to verify the interfaces
    between components against the software design. Defects between interfaces are
-   identified by these tests before their impact is observe at the system level
+   identified by these tests before their impact is observed at the system level
    through random or systemic failures.
 
 #. **Component interface tests** [**C**]: These are checks of how data is processed as
@@ -138,7 +138,7 @@ conformance with requirements as described in this Section.
 
 #. **Demonstration**: Exercise of a sample of observable functional operations.
    This method is appropriate for demonstrating the successful integration,
-   high-level functionality, and connectivity provided by the overal system.
+   high-level functionality, and connectivity provided by the overall system.
 
 #. **Manual Test**: Manual tests will be performed when automated tests are
    not feasible.
@@ -180,7 +180,7 @@ General test conditions
    extent selected. The extent of testing shall be expressed as a percentage of
    some well defined total quantity, such as the number of samples of discrete
    operating conditions or values, or other sampling approach. Also included
-   shall be the approach to be followed for retesting/regression testing.
+   shall be the approach to be followed for re-testing/regression testing.
 
 ..
 
@@ -859,7 +859,7 @@ this category are closely related to tests described in
 
    An application penetration test of DIMS components, including the
    :ref:`dwacsci` and the ops-trust portal (part of :ref:`vliscsci` and
-   desribed in :ref:`dimsocd:dimsoperationalconceptdescription`, Sections
+   described in :ref:`dimsocd:dimsoperationalconceptdescription`, Sections
    :ref:`dimsocd:opstrustportalnow` and :ref:`dimsocd:opstrustportalchanges`)
    is to be performed by a professional service company.
 
@@ -884,10 +884,10 @@ manual tests based on inspection or other observational qualification methods.
 #. SR reference: :ref:`dimssr:automatedProvisioning`,
    :ref:`dimssr:agileDevelopment`, :ref:`dimssr:continuousIntegration`,
    :ref:`dimssr:leverageOpenSource`
-#. Type of data to be recorded: Declarative statements as appropropriate.
+#. Type of data to be recorded: Declarative statements as appropriate.
 
 
-.. _softwareReleaseTests:
+.. _:
 
 Software Release Tests
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -902,7 +902,7 @@ qualification methods.
 #. Qualification method: Manual Test, Inspection
 #. SR reference: :ref:`dimssr:exportControl`,
    :ref:`dimssr:noEncryption`, :ref:`dimssr:openSourceRelease`
-#. Type of data to be recorded: Declarative statements as appropropriate.
+#. Type of data to be recorded: Declarative statements as appropriate.
 
 
 .. The following are footnotes

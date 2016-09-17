@@ -13,7 +13,7 @@ another data center at `Semaphore Corporation`_ in Seattle.
 .. _Semaphore Corporation: http://www.semaphore.com/
 
 Each deployed system will be separated from the others and operate
-independantly (in terms of services and logical network topologies).
+independently (in terms of services and logical network topologies).
 Even if they are in the same rack and possibly sharing some fundamental
 resources (e.g., Network Attached Storage (NAS), or switched VLANs,
 they will each be deployed, configured, and will operate in such
@@ -21,7 +21,7 @@ a manner as to be fully taken down without impacting the operation
 of the other environments.
 
 This will allow development, test and evaluation, and user acceptance
-test 
+test
 
 .. _softwareitems:
 
@@ -37,7 +37,7 @@ Software items
     +========================+============================================================+
     | `Jira`_                | Ticketing, task tracking, etc.                             |
     +------------------------+------------------------------------------------------------+
-    | `Zephyr for Jira`_     | Test management plugin for `Jira`_                         |
+    | `Zephyr for Jira`_     | Test management plug-in for `Jira`_                        |
     +------------------------+------------------------------------------------------------+
     | `Robot Framework`_     | Open source Acceptance Test-Driven Development (ATTD) tool |
     +------------------------+------------------------------------------------------------+
@@ -95,7 +95,7 @@ Hardware and firmware items
 
 .. todo::
 
-   Get RAM and CPU configruation for Seamus (R510 server).
+   Get RAM and CPU configuration for Seamus (R510 server).
 
 ..
 
@@ -106,7 +106,7 @@ Proprietary nature, acquirer's rights, and licensing
 
 Some tests defined and anticipated under this plan involve use of
 a licensed `Jira`_ ticketing system using the `Zephyr for Jira`_
-plugin. These are primarily development-related tests that fall under
+plug-in. These are primarily development-related tests that fall under
 the levels `Unit`, `Integration`, and/or `Component Interface` test
 levels, of type `Expected Value` and/or `Desk check` as defined
 in Section :ref:`testlevels` and :ref:`testclasses`, respectively.

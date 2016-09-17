@@ -5,7 +5,7 @@ Notes
 
 This document is structured on `MIL-STD-498`_, described at `A forgotten military
 standard that saves weeks of work (by providing free project management
-templates)`_, by Kristof Kovacs. Specifically, this document is modelled on
+templates)`_, by Kristof Kovacs. Specifically, this document is modeled on
 `STP.html`_.
 
 .. _MIL-STD-498: http://en.wikipedia.org/wiki/MIL-STD-498

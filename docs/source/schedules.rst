@@ -18,7 +18,7 @@ Test schedules
    environment and other equipment, system debugging, orientation, and
    familiarization Collection of database/data file values, input values, and
    other operational data needed for the testing Conducting the tests,
-   including planned retesting Preparation, review, and approval of the
+   including planned re-testing Preparation, review, and approval of the
    Software Test Report (STR)
 
 ..
@@ -36,10 +36,10 @@ Because of the amount of effort required, more automated tests in the
 form of **expected_value** class tests) that can be integrated into
 the system provisioning and Ansible configuration processes to assist
 with regression testing and acceptance testing of bugfix and feature
-branches prior to making new releases.  The use of the `TAP`_-compiant
+branches prior to making new releases.  The use of the `TAP`_-compliant
 `Bats`_ program, and `Robot Framework`_ (see Section :ref:`swtable`),
 will eventually allow an automated test and report generation flow that could
-support more frequent tesing with less staff time required to perform the
+support more frequent testing with less staff time required to perform the
 testing.
 
 .. _Robot Framework: http://robotframework.org/
