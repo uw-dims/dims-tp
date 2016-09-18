@@ -164,6 +164,8 @@ Test cycle
 We use a test cycle to plan and execute our tests. To view test cycles,
 click ``Tests > Plan Test Cycle``:
 
+.. _testCycles:
+
 .. figure:: images/jira/plan_cycle1.png
     :alt: View test cycles
     :width: 100%
@@ -984,9 +986,354 @@ There are now 18 files (see emphasized lines for the new additions):
 
 Tests can now be run by level, multiple levels at the same time,
 or more fine-grained filtering can be performed using ``find``
-and ``grep`` filtering. A test runner script is planned that
-mirrors something like `test_runner.sh`_ from the GitHub
-`docker/swarm/test/integration`_ repository.
+and ``grep`` filtering.
+
+.. _runningTests:
+
+Running Bats Tests Using the DIMS ``test.runner``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A test runner script (creatively named ``test.runner``) is available to This
+script builds on and extends the capabilities of scipts like `test_runner.sh`_
+from the GitHub `docker/swarm/test/integration`_ repository.
 
 .. _test_runner.sh: https://github.com/docker/swarm/blob/master/test/integration/test_runner.sh
 .. _docker/swarm/test/integration: https://github.com/docker/swarm/blob/master/test/integration
+
+.. code-block:: none
+
+    $ base/templates/tests/test.runner --help
+    usage: test.runner [options] args
+    flags:
+      -d,--[no]debug:  enable debug mode (default: false)
+      -E,--exclude:  tests to exclude (default: '')
+      -L,--level:  test level (default: 'system')
+      -M,--match:  regex to match tests (default: '.*')
+      -l,--[no]list-tests:  list available tests (default: false)
+      -t,--[no]tap:  output tap format (default: false)
+      -S,--[no]sudo-tests:  perform sudo tests (default: false)
+      -T,--[no]terse:  print only failed tests (default: false)
+      -D,--testdir:  test directory (default: '/opt/dims/tests.d/')
+      -u,--[no]usage:  print usage information (default: false)
+      -v,--[no]verbose:  be verbose (default: false)
+      -h,--help:  show this help (default: false)
+
+..
+
+To see a list of all tests under a given test level, specify the level using
+the ``--level`` option. (The default is ``system``).  The following example
+shows a list of all the available ``system`` level tests:
+
+.. code-block:: none
+
+    $ test.runner --list-tests
+    system/dims-base.bats
+    system/pycharm.bats
+    system/dns.bats
+    system/docker.bats
+    system/dims-accounts.bats
+    system/dims-ci-utils.bats
+    system/deprecated.bats
+    system/coreos-prereqs.bats
+    system/user/vpn.bats
+    system/proxy.bats
+
+..
+
+To see all tests under any level, use ``*`` or a space-separated list
+of levels:
+
+.. code-block:: none
+
+    $ test.runner --level "*" --list-tests
+    system/dims-base.bats
+    system/pycharm.bats
+    system/dns.bats
+    system/docker.bats
+    system/dims-accounts.bats
+    system/dims-ci-utils.bats
+    system/deprecated.bats
+    system/coreos-prereqs.bats
+    system/user/vpn.bats
+    system/proxy.bats
+    unit/dims-filters.bats
+    unit/bats-helpers.bats
+
+..
+
+Certain tests that require elevated privileges (i.e., use of ``sudo``)
+are handled separately. To list or run these tests, use the ``--sudo-tests``
+option:
+
+.. code-block:: none
+
+    $ test.runner --list-tests --sudo-tests
+    system/dims-accounts-sudo.bats
+    system/iptables-sudo.bats
+
+..
+
+
+A subset of the tests can be selected using the ``--match`` option.
+To see all tests that include the word ``dims``, do:
+
+.. code-block:: none
+
+    $ test.runner --level system --match dims --list-tests
+    system/dims-base.bats
+    system/dims-accounts.bats
+    system/dims-ci-utils.bats
+
+..
+
+The ``--match`` option takes a an ``egrep`` expression to filter
+the selected tests, so multiple substrings (or regular expressions)
+can be passed with pipe separation:
+
+.. code-block:: none
+
+    $ test.runner --level system --match "dims|coreos" --list-tests
+    system/dims-base.bats
+    system/dims-accounts.bats
+    system/dims-ci-utils.bats
+    system/coreos-prereqs.bats
+
+..
+
+There is a similar option ``--exclude`` that filters out tests by
+``egrep`` regular expression. Two of the four selected tests are
+then excluded like this:
+
+.. code-block:: none
+
+    $ test.runner --level system --match "dims|coreos" --exclude "base|utils" --list-tests
+    system/dims-accounts.bats
+    system/coreos-prereqs.bats
+
+..
+
+
+Controlling the Amount and Type of Output
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The default for the ``bats`` program is to use ``--pretty`` formatting when
+standard output is being sent to a terminal.  This allows the use of colors and
+characters like ✓ and ✗ to be used for passed and failed tests (respectively).
+
+.. code-block:: none
+
+    $ bats --help
+
+    [No write since last change]
+    Bats 0.4.0
+    Usage: bats [-c] [-p | -t] <test> [<test> ...]
+
+      <test> is the path to a Bats test file, or the path to a directory
+      containing Bats test files.
+
+      -c, --count    Count the number of test cases without running any tests
+      -h, --help     Display this help message
+      -p, --pretty   Show results in pretty format (default for terminals)
+      -t, --tap      Show results in TAP format
+      -v, --version  Display the version number
+
+      For more information, see https://github.com/sstephenson/bats
+
+
+    Press ENTER or type command to continue
+
+..
+
+We will limit the tests in this example to just those for ``pycharm``
+and ``coreos`` in their names. These are relatively small tests, so it is
+easier to see the effects of the options we will be examining.
+
+.. code-block:: none
+
+    $ test.runner --match "pycharm|coreos" --list-tests
+    system/pycharm.bats
+    system/coreos-prereqs.bats
+
+..
+
+
+The DIMS ``test.runner`` script follows this same default output
+style of ``bats``, so just running the two tests above gives
+the following output:
+
+.. code-block:: none
+
+    $ test.runner --match "pycharm|coreos"
+    [+] Running test system/pycharm.bats
+     ✓ [S][EV] Pycharm is not an installed apt package.
+     ✓ [S][EV] Pycharm Community edition is installed in /opt
+     ✓ [S][EV] "pycharm" is /opt/dims/bin/pycharm
+     ✓ [S][EV] /opt/dims/bin/pycharm is a symbolic link to installed pycharm
+     ✓ [S][EV] Pycharm Community installed version number is 2016.2.2
+
+    5 tests, 0 failures
+    [+] Running test system/coreos-prereqs.bats
+     ✓ [S][EV] consul service is running
+     ✓ [S][EV] consul is /opt/dims/bin/consul
+     ✓ [S][EV] 10.142.29.116 is member of consul cluster
+     ✓ [S][EV] 10.142.29.117 is member of consul cluster
+     ✓ [S][EV] 10.142.29.120 is member of consul cluster
+     ✓ [S][EV] docker overlay network "ingress" exists
+     ✗ [S][EV] docker overlay network "app.develop" exists
+       (from function `assert' in file system/helpers.bash, line 18,
+        in test file system/coreos-prereqs.bats, line 41)
+         `assert 'app.develop' bash -c "docker network ls --filter driver=overlay | awk '/app.develop/ { print \$2; }'"' failed
+       expected: "app.develop"
+       actual:   ""
+     ✗ [S][EV] docker overlay network "data.develop" exists
+       (from function `assert' in file system/helpers.bash, line 18,
+        in test file system/coreos-prereqs.bats, line 45)
+         `assert 'data.develop' bash -c "docker network ls --filter driver=overlay | awk '/data.develop/ { print \$2; }'"' failed
+       expected: "data.develop"
+       actual:   ""
+
+    8 tests, 2 failures
+
+..
+
+To get TAP compliant output, add the ``--tap`` (or
+``-t``) option:
+
+.. code-block:: none
+
+    $ test.runner --match "pycharm|coreos" --tap
+    [+] Running test system/pycharm.bats
+    1..5
+    ok 1 [S][EV] Pycharm is not an installed apt package.
+    ok 2 [S][EV] Pycharm Community edition is installed in /opt
+    ok 3 [S][EV] "pycharm" is /opt/dims/bin/pycharm
+    ok 4 [S][EV] /opt/dims/bin/pycharm is a symbolic link to installed pycharm
+    ok 5 [S][EV] Pycharm Community installed version number is 2016.2.2
+    [+] Running test system/coreos-prereqs.bats
+    1..8
+    ok 1 [S][EV] consul service is running
+    ok 2 [S][EV] consul is /opt/dims/bin/consul
+    ok 3 [S][EV] 10.142.29.116 is member of consul cluster
+    ok 4 [S][EV] 10.142.29.117 is member of consul cluster
+    ok 5 [S][EV] 10.142.29.120 is member of consul cluster
+    ok 6 [S][EV] docker overlay network "ingress" exists
+    not ok 7 [S][EV] docker overlay network "app.develop" exists
+    # (from function `assert' in file system/helpers.bash, line 18,
+    #  in test file system/coreos-prereqs.bats, line 41)
+    #   `assert 'app.develop' bash -c "docker network ls --filter driver=overlay | awk '/app.develop/ { print \$2; }'"' failed
+    # expected: "app.develop"
+    # actual:   ""
+    not ok 8 [S][EV] docker overlay network "data.develop" exists
+    # (from function `assert' in file system/helpers.bash, line 18,
+    #  in test file system/coreos-prereqs.bats, line 45)
+    #   `assert 'data.develop' bash -c "docker network ls --filter driver=overlay | awk '/data.develop/ { print \$2; }'"' failed
+    # expected: "data.develop"
+    # actual:   ""
+
+..
+
+When running a large suite of tests, the total number of individual tests
+can get very large (along with the resulting output). To increase the signal
+to noise ratio, you can use the ``--terse`` option to filter out all of
+the successful tests, just focusing on the remaining failed tests. This is
+handy for things like validation of code changes and regression testing
+of newly provisioned Vagrant virtual machines.
+
+.. code-block:: none
+
+    $ test.runner --match "pycharm|coreos" --terse
+    [+] Running test system/pycharm.bats
+
+    5 tests, 0 failures
+    [+] Running test system/coreos-prereqs.bats
+     ✗ [S][EV] docker overlay network "app.develop" exists
+       (from function `assert' in file system/helpers.bash, line 18,
+        in test file system/coreos-prereqs.bats, line 41)
+         `assert 'app.develop' bash -c "docker network ls --filter driver=overlay | awk '/app.develop/ { print \$2; }'"' failed
+       expected: "app.develop"
+       actual:   ""
+     ✗ [S][EV] docker overlay network "data.develop" exists
+       (from function `assert' in file system/helpers.bash, line 18,
+        in test file system/coreos-prereqs.bats, line 45)
+         `assert 'data.develop' bash -c "docker network ls --filter driver=overlay | awk '/data.develop/ { print \$2; }'"' failed
+       expected: "data.develop"
+       actual:   ""
+
+    8 tests, 2 failures
+
+..
+
+Here is the same examples as above, but this time using the TAP compliant
+output:
+
+.. code-block:: none
+
+    $ test.runner --match "pycharm|coreos" --tap
+    [+] Running test system/pycharm.bats
+    1..5
+    ok 1 [S][EV] Pycharm is not an installed apt package.
+    ok 2 [S][EV] Pycharm Community edition is installed in /opt
+    ok 3 [S][EV] "pycharm" is /opt/dims/bin/pycharm
+    ok 4 [S][EV] /opt/dims/bin/pycharm is a symbolic link to installed pycharm
+    ok 5 [S][EV] Pycharm Community installed version number is 2016.2.2
+    [+] Running test system/coreos-prereqs.bats
+    1..8
+    ok 1 [S][EV] consul service is running
+    ok 2 [S][EV] consul is /opt/dims/bin/consul
+    ok 3 [S][EV] 10.142.29.116 is member of consul cluster
+    ok 4 [S][EV] 10.142.29.117 is member of consul cluster
+    ok 5 [S][EV] 10.142.29.120 is member of consul cluster
+    ok 6 [S][EV] docker overlay network "ingress" exists
+    not ok 7 [S][EV] docker overlay network "app.develop" exists
+    # (from function `assert' in file system/helpers.bash, line 18,
+    #  in test file system/coreos-prereqs.bats, line 41)
+    #   `assert 'app.develop' bash -c "docker network ls --filter driver=overlay | awk '/app.develop/ { print \$2; }'"' failed
+    # expected: "app.develop"
+    # actual:   ""
+    not ok 8 [S][EV] docker overlay network "data.develop" exists
+    # (from function `assert' in file system/helpers.bash, line 18,
+    #  in test file system/coreos-prereqs.bats, line 45)
+    #   `assert 'data.develop' bash -c "docker network ls --filter driver=overlay | awk '/data.develop/ { print \$2; }'"' failed
+    # expected: "data.develop"
+    # actual:   ""
+
+..
+
+.. code-block:: none
+
+    $ test.runner --match "pycharm|coreos" --tap --terse
+    [+] Running test system/pycharm.bats
+    1..5
+    [+] Running test system/coreos-prereqs.bats
+    1..8
+    not ok 7 [S][EV] docker overlay network "app.develop" exists
+    # (from function `assert' in file system/helpers.bash, line 18,
+    #  in test file system/coreos-prereqs.bats, line 41)
+    #   `assert 'app.develop' bash -c "docker network ls --filter driver=overlay | awk '/app.develop/ { print \$2; }'"' failed
+    # expected: "app.develop"
+    # actual:   ""
+    not ok 8 [S][EV] docker overlay network "data.develop" exists
+    # (from function `assert' in file system/helpers.bash, line 18,
+    #  in test file system/coreos-prereqs.bats, line 45)
+    #   `assert 'data.develop' bash -c "docker network ls --filter driver=overlay | awk '/data.develop/ { print \$2; }'"' failed
+    # expected: "data.develop"
+    # actual:   ""
+
+..
+
+Figure :ref:`vagrantTestRunner` shows the output of
+``test.runner --level system --terse`` at the completion of provisioning
+of two Vagrants. The one on the left has passed all tests, while the Vagrant
+on the right has failed two tests. Note that the error result has been
+passed on to ``make``, which reports the failure and passes it along
+to the shell (as seen by the red ``$`` prompt on the right, indicating
+a non-zero return value).
+
+.. _vagrantTestRunner:
+
+.. figure:: images/vagrant-bats-terse.png
+    :alt: Using ``test.runner`` in Vagrant Provisioning
+    :width: 100%
+
+..
+
