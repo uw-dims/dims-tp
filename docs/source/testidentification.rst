@@ -42,25 +42,25 @@ Test levels
 
 DIMS components will be tested at four distinct levels.
 
-#. **Unit tests**: These are tests of individual software components at the program or
+#. **Unit tests** [**U**]: These are tests of individual software components at the program or
    library level. These tests are primarily written by those who are developing
    the software to validate the software elements at a low (e.g., library or
    discrete shell command) perform their functions properly, independent
    of any other components.
 
-#. **Integration tests**: These are tests that are intended to verify the interfaces
+#. **Integration tests** [**I**]: These are tests that are intended to verify the interfaces
    between components against the software design. Defects between interfaces are
-   identified by these tests before their impact is observe at the system level
+   identified by these tests before their impact is observed at the system level
    through random or systemic failures.
 
-#. **Component interface tests**: These are checks of how data is processed as
+#. **Component interface tests** [**C**]: These are checks of how data is processed as
    it is entered into and output from the system. Expected output may be compared
    against a cryptographic hash of the actual output to determine when actual
    output is malformed or otherwise deviates from expectations. Other interface
    tests (e.g., web application graphical user interface input/output) may
    be tested manually through visual inspection by a test user.
 
-#. **System tests**: Also known as `end-to-end` tests, these are tests to
+#. **System tests** [**S**]: Also known as `end-to-end` tests, these are tests to
    determine if the overall system meets it requirements for general data
    processing and function. All system components produce test results that are
    complied into a single system test report that can be compared to detect
@@ -71,15 +71,15 @@ The first two levels of tests are performed on a continuous basis during
 development. The final two levels pertain to the :term:`FQT`
 described in this document.
 
-.. todo::
+.. note::
 
     These **test levels** are to be identified in test related code and data
     using the following identifiers:
 
-    * ``unit``
-    * ``integration``
-    * ``component_interface``
-    * ``system``
+    * ``unit`` [**U**]
+    * ``integration`` [**I**]
+    * ``component`` [**C**]
+    * ``system`` [**S**]
 
 ..
 
@@ -92,35 +92,35 @@ Test classes
 We will employ one or more of the following classes of tests to DIMS
 components:
 
-#. **Expected value**: values from the expected classes of the input
+#. **Expected value** [**EV**]: values from the expected classes of the input
    domain will be used to test nominal performance
 
-#. **Simulated data**: simulated data for nominal and extreme geophysical
+#. **Simulated data** [**SD**]: simulated data for nominal and extreme geophysical
    conditions will be used to support error detection, recovery and reporting
 
-#. **Erroneous input**: sample values known to be erroneous will be used to test
+#. **Erroneous input** [**EI**]: sample values known to be erroneous will be used to test
    error detection, recovery and reporting
 
-#. **Stress**: maximum capacity of the input domain, including concurrent
+#. **Stress** [**ST**]: maximum capacity of the input domain, including concurrent
    execution of multiple processes will be used to test external interfaces,
    error handling and size and execution time
 
-#. **Timing**: wall clock time, CPU time and I/O time will be recorded
+#. **Timing** [**TT**]: wall clock time, CPU time and I/O time will be recorded
 
-#. **Desk check**: both code and output will be manually inspected and
+#. **Desk check** [**DC**]: both code and output will be manually inspected and
    analyzed
 
-.. todo::
+.. note::
 
     These **test classes** are to be identified in test related code and data
     using the following identifiers:
 
-    * ``expected_value``
-    * ``simulated_data``
-    * ``erroneous_input``
-    * ``stress``
-    * ``timing``
-    * ``desk_check``
+    * ``expected_value`` [**EV**]
+    * ``simulated_data`` [**SD**]
+    * ``erroneous_input`` [**EI**]
+    * ``stress`` [**ST**]
+    * ``timing`` [**TT**]
+    * ``desk_check`` [**DC**]
 
 ..
 
@@ -138,7 +138,7 @@ conformance with requirements as described in this Section.
 
 #. **Demonstration**: Exercise of a sample of observable functional operations.
    This method is appropriate for demonstrating the successful integration,
-   high-level functionality, and connectivity provided by the overal system.
+   high-level functionality, and connectivity provided by the overall system.
 
 #. **Manual Test**: Manual tests will be performed when automated tests are
    not feasible.
@@ -151,7 +151,7 @@ conformance with requirements as described in this Section.
 ..
 
 
-.. todo::
+.. note::
 
     These **qualification methods** are to be identified in test related code
     and data using the following identifiers:
@@ -180,7 +180,7 @@ General test conditions
    extent selected. The extent of testing shall be expressed as a percentage of
    some well defined total quantity, such as the number of samples of discrete
    operating conditions or values, or other sampling approach. Also included
-   shall be the approach to be followed for retesting/regression testing.
+   shall be the approach to be followed for re-testing/regression testing.
 
 ..
 
@@ -859,7 +859,7 @@ this category are closely related to tests described in
 
    An application penetration test of DIMS components, including the
    :ref:`dwacsci` and the ops-trust portal (part of :ref:`vliscsci` and
-   desribed in :ref:`dimsocd:dimsoperationalconceptdescription`, Sections
+   described in :ref:`dimsocd:dimsoperationalconceptdescription`, Sections
    :ref:`dimsocd:opstrustportalnow` and :ref:`dimsocd:opstrustportalchanges`)
    is to be performed by a professional service company.
 
@@ -884,10 +884,10 @@ manual tests based on inspection or other observational qualification methods.
 #. SR reference: :ref:`dimssr:automatedProvisioning`,
    :ref:`dimssr:agileDevelopment`, :ref:`dimssr:continuousIntegration`,
    :ref:`dimssr:leverageOpenSource`
-#. Type of data to be recorded: Declarative statements as appropropriate.
+#. Type of data to be recorded: Declarative statements as appropriate.
 
 
-.. _softwareReleaseTests:
+.. _:
 
 Software Release Tests
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -902,7 +902,7 @@ qualification methods.
 #. Qualification method: Manual Test, Inspection
 #. SR reference: :ref:`dimssr:exportControl`,
    :ref:`dimssr:noEncryption`, :ref:`dimssr:openSourceRelease`
-#. Type of data to be recorded: Declarative statements as appropropriate.
+#. Type of data to be recorded: Declarative statements as appropriate.
 
 
 .. The following are footnotes

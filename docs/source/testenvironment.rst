@@ -3,15 +3,17 @@
 Software test environment
 =========================
 
-UW Tower and BHB server rooms
------------------------------
+UW Tower server room
+-------------------
 
-DIMS deployments will all be hosted at the same site, currently two server room
-racks at the University of Washington Tower ("UW Tower") and Benjamin Hall
-Research Building ("BRB").
+DIMS deployments are currently hosted in the University of Washington Tower
+("UW Tower") data center. Plans are in place to migrate hardware to
+another data center at `Semaphore Corporation`_ in Seattle.
+
+.. _Semaphore Corporation: http://www.semaphore.com/
 
 Each deployed system will be separated from the others and operate
-independantly (in terms of services and logical network topologies).
+independently (in terms of services and logical network topologies).
 Even if they are in the same rack and possibly sharing some fundamental
 resources (e.g., Network Attached Storage (NAS), or switched VLANs,
 they will each be deployed, configured, and will operate in such
@@ -19,7 +21,7 @@ a manner as to be fully taken down without impacting the operation
 of the other environments.
 
 This will allow development, test and evaluation, and user acceptance
-test 
+test
 
 .. _softwareitems:
 
@@ -35,9 +37,11 @@ Software items
     +========================+============================================================+
     | `Jira`_                | Ticketing, task tracking, etc.                             |
     +------------------------+------------------------------------------------------------+
-    | `Zephyr for Jira`_     | Test management plugin for `Jira`_                         |
+    | `Zephyr for Jira`_     | Test management plug-in for `Jira`_                        |
     +------------------------+------------------------------------------------------------+
     | `Robot Framework`_     | Open source Acceptance Test-Driven Development (ATTD) tool |
+    +------------------------+------------------------------------------------------------+
+    | `Bats`_                | `TAP`_-compliant testing framework for Bash                |
     +------------------------+------------------------------------------------------------+
     | Custom DIMS scripts    | Serve specific custom test functions as needed.            |
     +------------------------+------------------------------------------------------------+
@@ -45,6 +49,8 @@ Software items
 ..
 
 .. _Robot Framework: http://robotframework.org/
+.. _Bats: https://github.com/sstephenson/bats#bats-bash-automated-testing-system
+.. _TAP: http://testanything.org
 
 .. _hardwarefirmwareitems:
 
@@ -89,7 +95,7 @@ Hardware and firmware items
 
 .. todo::
 
-   Get RAM and CPU configruation for Seamus (R510 server).
+   Get RAM and CPU configuration for Seamus (R510 server).
 
 ..
 
@@ -100,7 +106,7 @@ Proprietary nature, acquirer's rights, and licensing
 
 Some tests defined and anticipated under this plan involve use of
 a licensed `Jira`_ ticketing system using the `Zephyr for Jira`_
-plugin. These are primarily development-related tests that fall under
+plug-in. These are primarily development-related tests that fall under
 the levels `Unit`, `Integration`, and/or `Component Interface` test
 levels, of type `Expected Value` and/or `Desk check` as defined
 in Section :ref:`testlevels` and :ref:`testclasses`, respectively.
