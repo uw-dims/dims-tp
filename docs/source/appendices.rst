@@ -784,39 +784,47 @@ Edition Python IDE.
 
     #!/usr/bin/env bats
     #
-    # Ansible managed: /home/dittrich/dims/git/ansible-playbooks/v2/roles/pycharm/templates/tests/pycharm.bats.j2 modified on 2016-08-23 21:47:43 by dittrich on dimsdemo1 [ansible-playbooks v1.3.33]
+    # Ansible managed: /home/dittrich/dims/git/ansible-playbooks/v2/roles/pycharm/templates/../templates/tests/./system/pycharm.bats.j2 modified on 2016-09-15 20:14:38 by dittrich on dimsdemo1 [ansible-playbooks v1.3.33]
     #
     # vim: set ts=4 sw=4 tw=0 et :
 
-    @test "Pycharm Community edition is installed in /opt" {
+    load helpers
+
+    @test "[S][EV] Pycharm is not an installed apt package." {
+        ! is_installed_package pycharm
+    }
+
+    @test "[S][EV] Pycharm Community edition is installed in /opt" {
         results=$(ls -d /opt/pycharm-community-* | wc -l)
         echo $results >&2
         [ $results -ne 0 ]
     }
 
-    @test "Version of Pycharm installed is /opt/dims/bin/pycharm" {
-        [ "$(which pycharm)" == "/opt/dims/bin/pycharm" ]
+    @test "[S][EV] \"pycharm\" is /opt/dims/bin/pycharm" {
+        assert "pycharm is /opt/dims/bin/pycharm" type pycharm
     }
 
-    @test "/opt/dims/bin/pycharm is a symbolic link to installed pycharm" {
+    @test "[S][EV] /opt/dims/bin/pycharm is a symbolic link to installed pycharm" {
         [ -L /opt/dims/bin/pycharm ]
     }
 
-    @test "Pycharm Community installed version number is 2016.2.1" {
-        version=$(ls -l $(which pycharm) | awk '{print $NF;}' | awk -F/ '{print $3;}' | sed 's/pycharm-community-//')
-        [ "$version" == "2016.2.1" ]
+    @test "[S][EV] Pycharm Community installed version number is 2016.2.3" {
+        assert "2016.2.3" bash -c "file $(which pycharm) | sed 's|\(.*/pycharm-community-\)\([^/]*\)\(/.*$\)|\2|'"
     }
 
 ..
 
 .. code-block:: none
 
-    $ bats -t /opt/dims/tests.d/pycharm.bats
-    1..4
-    ok 1 Pycharm Community edition is installed in /opt
-    ok 2 Version of Pycharm installed is /opt/dims/bin/pycharm
-    ok 3 /opt/dims/bin/pycharm is a symbolic link to installed pycharm
-    ok 4 Pycharm Community installed version number is 2016.2.1
+    $ test.runner --level system --match pycharm
+    [+] Running test system/pycharm
+     ✓ [S][EV] Pycharm is not an installed apt package.
+     ✓ [S][EV] Pycharm Community edition is installed in /opt
+     ✓ [S][EV] "pycharm" is /opt/dims/bin/pycharm
+     ✓ [S][EV] /opt/dims/bin/pycharm is a symbolic link to installed pycharm
+     ✓ [S][EV] Pycharm Community installed version number is 2016.2.3
+
+    5 tests, 0 failures
 
 ..
 
@@ -887,10 +895,10 @@ correspond to each of the test levels are now present in the
 ``/opt/dims/tests.d/`` directory:
 
 .. code-block:: none
-   :emphasize-lines: 3,6,8,16,19,22
+   :emphasize-lines: 3,6,8,21
 
-    $ tree /opt/dims/tests.d
-    /opt/dims/tests.d
+    $ tree /opt/dims/tests.d/
+    /opt/dims/tests.d/
     ├── component
     │   └── helpers.bash -> /opt/dims/tests.d/helpers.bash
     ├── helpers.bash
@@ -901,33 +909,35 @@ correspond to each of the test levels are now present in the
     │   ├── dims-accounts.bats
     │   ├── dims-accounts-sudo.bats
     │   ├── dims-base.bats
+    │   ├── dims-ci-utils.bats
     │   ├── dns.bats
     │   ├── helpers.bash -> /opt/dims/tests.d/helpers.bash
+    │   ├── iptables-sudo.bats
     │   ├── proxy.bats
-    │   ├── sudo
-    │   │   ├── helpers.bash -> /opt/dims/tests.d/helpers.bash
-    │   │   └── sudo-iptables.bats
     │   └── user
     │       ├── helpers.bash -> /opt/dims/tests.d/helpers.bash
     │       └── vpn.bats
     └── unit
+        ├── bats-helpers.bats
         ├── dims-filters.bats
+        ├── dims-functions.bats
         └── helpers.bash -> /opt/dims/tests.d/helpers.bash
 
-    6 directories, 16 files
+    5 directories, 18 files
 
 ..
 
-The ``docker`` role has two ``bats`` test files:
+Here is the directory structure for tests in the ``docker`` role:
 
 .. code-block:: none
 
-    docker/templates/tests
+    /docker/templates/tests
     └── system
-        ├── coreos-prereqs.bats.j2
-        └── docker.bats.j2
+        ├── docker-consul.bats.j2
+        ├── docker-core.bats.j2
+        └── docker-network.bats.j2
 
-    1 directory, 2 files
+    1 directories, 3 files
 
 ..
 
@@ -950,10 +960,10 @@ the ``system`` subdirectory:
 
 ..
 
-There are now 18 files (see emphasized lines for the new additions):
+There are now 3 additional files (see emphasized lines for the new additions):
 
 .. code-block:: none
-   :emphasize-lines: 9,15
+   :emphasize-lines: 15,16,17
 
     $ tree /opt/dims/tests.d
     /opt/dims/tests.d
@@ -963,24 +973,28 @@ There are now 18 files (see emphasized lines for the new additions):
     ├── integration
     │   └── helpers.bash -> /opt/dims/tests.d/helpers.bash
     ├── system
-    │   ├── coreos-prereqs.bats
     │   ├── deprecated.bats
     │   ├── dims-accounts.bats
     │   ├── dims-accounts-sudo.bats
     │   ├── dims-base.bats
+    │   ├── dims-ci-utils.bats
     │   ├── dns.bats
-    │   ├── docker.bats
+    │   ├── docker-consul.bats
+    │   ├── docker-core.bats
+    │   ├── docker-network.bats
     │   ├── helpers.bash -> /opt/dims/tests.d/helpers.bash
+    │   ├── iptables-sudo.bats
     │   ├── proxy.bats
-    │   ├── sudo
-    │   │   ├── helpers.bash -> /opt/dims/tests.d/helpers.bash
-    │   │   └── sudo-iptables.bats
     │   └── user
     │       ├── helpers.bash -> /opt/dims/tests.d/helpers.bash
     │       └── vpn.bats
     └── unit
+        ├── bats-helpers.bats
         ├── dims-filters.bats
+        ├── dims-functions.bats
         └── helpers.bash -> /opt/dims/tests.d/helpers.bash
+
+    5 directories, 21 files
 
 ..
 
