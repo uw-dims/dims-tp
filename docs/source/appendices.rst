@@ -1351,3 +1351,113 @@ a non-zero return value).
 
 ..
 
+
+Using DIMS Bash functions in Bats tests
+---------------------------------------
+
+The DIMS project Bash shells take advantage of a library of functions
+that are installed by the ``base`` role into ``$DIMS/bin/dims_functions.sh``.
+
+Bats has a pre- and post-test hooking feature that is very tersely documented
+(see `setup and teardown: Pre- and post-test hooks`_):
+
+    You can define special setup and teardown functions, which run before and
+    after each test case, respectively. Use these to load fixtures, set up your
+    environment, and clean up when you're done.
+
+
+What this means is that if you define a ``setup()`` function, it will be run
+*before* every ``@test``, and if you define a ``teardown()`` function, it will
+be run *after* every ``@test``.
+
+.. _setup and teardown\: Pre- and post-test hooks: https://github.com/sstephenson/bats#setup-and-teardown-pre--and-post-test-hooks
+
+We can take advantage of this to source the common DIMS ``dims_functions.sh``
+library, making any defined functions in that file available to be called
+directly in a ``@TEST`` the same way it would be called in a Bash script.
+
+An example of how this works can be seen in the
+unit tests for the ``dims_functions.sh`` library itself.
+
+.. code-block:: bash
+   :emphasize-lines: 9-11,14,23,27,31,35,39,43,47,51,55,59,63
+   :linenos:
+
+    #!/usr/bin/env bats
+    #
+    # Ansible managed: /home/dittrich/dims/git/ansible-playbooks/v2/roles/base/templates/../templates/tests/./unit/dims-functions.bats.j2 modified on 2016-10-01 13:50:49 by dittrich on dimsdemo1 [ansible-playbooks v1.3.33]
+    #
+    # vim: set ts=4 sw=4 tw=0 et :
+
+    load helpers
+
+    function setup() {
+        source $DIMS/bin/dims_functions.sh
+    }
+
+    @test "[U][EV] say() strips whitespace properly" {
+        assert '[+] unce, tice, fee times a madie...' say '    unce,   tice,        fee times a madie...      '
+    }
+
+    # This test needs to directly source dims_functions in bash command string because of multi-command structure.
+    @test "[U][EV] add_on_exit() saves and get_on_exit() returns content properly" {
+        assert "'([0]=\"cat /dev/null\")'" bash -c ". $DIMS/bin/dims_functions.sh; touch /tmp/foo; add_on_exit cat /dev/null; get_on_exit"
+    }
+
+    @test "[U][EV] get_hostname() returns hostname" {
+        assert "$(hostname)" get_hostname
+    }
+
+    @test "[U][EV] is_fqdn host.category.deployment returns success" {
+        is_fqdn host.category.deployment
+    }
+
+    @test "[U][EV] is_fqdn host.subdomain.category.deployment returns success" {
+        is_fqdn host.subdomain.category.deployment
+    }
+
+    @test "[U][EV] is_fqdn 12345 returns failure" {
+        ! is_fqdn 12345
+    }
+
+    @test "[U][EV] parse_fqdn host.category.deployment returns 'host category deployment'" {
+        assert "host category deployment" parse_fqdn host.category.deployment
+    }
+
+    @test "[U][EV] get_deployment_from_fqdn host.category.deployment returns 'deployment'" {
+        assert "deployment" get_deployment_from_fqdn host.category.deployment
+    }
+
+    @test "[U][EV] get_category_from_fqdn host.category.deployment returns 'category'" {
+        assert "category" get_category_from_fqdn host.category.deployment
+    }
+
+    @test "[U][EV] get_hostname_from_fqdn host.category.deployment returns 'host'" {
+        assert "host" get_hostname_from_fqdn host.category.deployment
+    }
+
+    @test "[U][EV] plural_s returns 's' for 0" {
+        assert "s" plural_s 0
+    }
+
+    @test "[U][EV] plural_s returns '' for 1" {
+        assert "" plural_s 1
+    }
+
+    @test "[U][EV] plural_s returns 's' for 2" {
+        assert "s" plural_s 2
+    }
+
+..
+
+.. attention::
+
+    Note that there is one test, shown on lines 17 through 20, that has multiple
+    commands separated by semicolons. That compound command sequence needs to be
+    run as a single command string using ``bash -c``, which means it is going
+    to be run as a new sub-process to the ``assert`` command line. Sourcing
+    the functions in the outer shell does not make them available in the sub-process,
+    so that command string must itself also source the ``dims_functions.sh`` library
+    in order to have the functions defined at that level.
+
+..
